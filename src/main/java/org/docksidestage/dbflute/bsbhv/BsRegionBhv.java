@@ -81,7 +81,7 @@ public abstract class BsRegionBhv extends AbstractBehaviorWritable<Region, Regio
     /** {@inheritDoc} */
     public RegionDbm asDBMeta() { return RegionDbm.getInstance(); }
     /** {@inheritDoc} */
-    public String asTableDbName() { return "region"; }
+    public String asTableDbName() { return "REGION"; }
 
     // ===================================================================================
     //                                                                        New Instance

@@ -36,7 +36,7 @@ import org.docksidestage.dbflute.cbean.*;
 import org.docksidestage.dbflute.cbean.cq.*;
 
 /**
- * The base condition-bean of member_status.
+ * The base condition-bean of MEMBER_STATUS.
  * @author DBFlute(AutoGenerator)
  */
 public class BsMemberStatusCB extends AbstractConditionBean {
@@ -88,7 +88,7 @@ public class BsMemberStatusCB extends AbstractConditionBean {
     }
 
     public String asTableDbName() {
-        return "member_status";
+        return "MEMBER_STATUS";
     }
 
     // ===================================================================================
@@ -337,10 +337,10 @@ public class BsMemberStatusCB extends AbstractConditionBean {
             columnMemberStatusCode(); // PK
         }
         @Override
-        protected String getTableDbName() { return "member_status"; }
+        protected String getTableDbName() { return "MEMBER_STATUS"; }
         /**
          * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>
-         * {select max(FOO) from member where ...) as FOO_MAX} <br>
+         * {select max(FOO) from MEMBER where ...) as FOO_MAX} <br>
          * (会員)MEMBER by MEMBER_STATUS_CODE, named 'memberList'.
          * <pre>
          * cb.specify().<span style="color: #CC4747">derived${relationMethodIdentityName}()</span>.<span style="color: #CC4747">max</span>(memberCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
@@ -357,7 +357,7 @@ public class BsMemberStatusCB extends AbstractConditionBean {
         }
         /**
          * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>
-         * {select max(FOO) from member_login where ...) as FOO_MAX} <br>
+         * {select max(FOO) from MEMBER_LOGIN where ...) as FOO_MAX} <br>
          * (会員ログイン)MEMBER_LOGIN by LOGIN_MEMBER_STATUS_CODE, named 'memberLoginList'.
          * <pre>
          * cb.specify().<span style="color: #CC4747">derived${relationMethodIdentityName}()</span>.<span style="color: #CC4747">max</span>(loginCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {

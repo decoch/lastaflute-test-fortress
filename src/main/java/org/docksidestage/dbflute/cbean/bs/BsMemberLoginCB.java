@@ -36,7 +36,7 @@ import org.docksidestage.dbflute.cbean.cq.*;
 import org.docksidestage.dbflute.cbean.nss.*;
 
 /**
- * The base condition-bean of member_login.
+ * The base condition-bean of MEMBER_LOGIN.
  * @author DBFlute(AutoGenerator)
  */
 public class BsMemberLoginCB extends AbstractConditionBean {
@@ -88,7 +88,7 @@ public class BsMemberLoginCB extends AbstractConditionBean {
     }
 
     public String asTableDbName() {
-        return "member_login";
+        return "MEMBER_LOGIN";
     }
 
     // ===================================================================================
@@ -108,7 +108,7 @@ public class BsMemberLoginCB extends AbstractConditionBean {
 
     /**
      * Accept the query condition of unique key as equal.
-     * @param memberId (会員ID): UQ+, NotNull, INT(10), FK to member. (NotNull)
+     * @param memberId (会員ID): UQ+, NotNull, INT(10), FK to MEMBER. (NotNull)
      * @param loginDatetime (ログイン日時): +UQ, IX, NotNull, DATETIME(19). (NotNull)
      * @return this. (NotNull)
      */
@@ -368,7 +368,7 @@ public class BsMemberLoginCB extends AbstractConditionBean {
          */
         public SpecifiedColumn columnMemberLoginId() { return doColumn("MEMBER_LOGIN_ID"); }
         /**
-         * (会員ID)MEMBER_ID: {UQ+, NotNull, INT(10), FK to member}
+         * (会員ID)MEMBER_ID: {UQ+, NotNull, INT(10), FK to MEMBER}
          * @return The information object of specified column. (NotNull)
          */
         public SpecifiedColumn columnMemberId() { return doColumn("MEMBER_ID"); }
@@ -383,7 +383,7 @@ public class BsMemberLoginCB extends AbstractConditionBean {
          */
         public SpecifiedColumn columnMobileLoginFlg() { return doColumn("MOBILE_LOGIN_FLG"); }
         /**
-         * (ログイン会員ステータスコード)LOGIN_MEMBER_STATUS_CODE: {IX, NotNull, CHAR(3), FK to member_status, classification=MemberStatus}
+         * (ログイン会員ステータスコード)LOGIN_MEMBER_STATUS_CODE: {IX, NotNull, CHAR(3), FK to MEMBER_STATUS, classification=MemberStatus}
          * @return The information object of specified column. (NotNull)
          */
         public SpecifiedColumn columnLoginMemberStatusCode() { return doColumn("LOGIN_MEMBER_STATUS_CODE"); }
@@ -402,7 +402,7 @@ public class BsMemberLoginCB extends AbstractConditionBean {
             }
         }
         @Override
-        protected String getTableDbName() { return "member_login"; }
+        protected String getTableDbName() { return "MEMBER_LOGIN"; }
         /**
          * Prepare to specify functions about relation table. <br>
          * (会員)MEMBER by my MEMBER_ID, named 'member'.

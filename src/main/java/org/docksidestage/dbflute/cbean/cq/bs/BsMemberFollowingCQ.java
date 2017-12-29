@@ -28,7 +28,7 @@ import org.docksidestage.dbflute.cbean.*;
 import org.docksidestage.dbflute.cbean.cq.*;
 
 /**
- * The base condition-query of member_following.
+ * The base condition-query of MEMBER_FOLLOWING.
  * @author DBFlute(AutoGenerator)
  */
 public class BsMemberFollowingCQ extends AbstractBsMemberFollowingCQ {
@@ -50,7 +50,7 @@ public class BsMemberFollowingCQ extends AbstractBsMemberFollowingCQ {
     //                                                                 ===================
     /**
      * Prepare InlineView query. <br>
-     * {select ... from ... left outer join (select * from member_following) where FOO = [value] ...}
+     * {select ... from ... left outer join (select * from MEMBER_FOLLOWING) where FOO = [value] ...}
      * <pre>
      * cb.query().queryMemberStatus().<span style="color: #CC4747">inline()</span>.setFoo...;
      * </pre>
@@ -73,7 +73,7 @@ public class BsMemberFollowingCQ extends AbstractBsMemberFollowingCQ {
 
     /**
      * Prepare OnClause query. <br>
-     * {select ... from ... left outer join member_following on ... and FOO = [value] ...}
+     * {select ... from ... left outer join MEMBER_FOLLOWING on ... and FOO = [value] ...}
      * <pre>
      * cb.query().queryMemberStatus().<span style="color: #CC4747">on()</span>.setFoo...;
      * </pre>
@@ -116,14 +116,14 @@ public class BsMemberFollowingCQ extends AbstractBsMemberFollowingCQ {
 
     /** 
      * Add order-by as ascend. <br>
-     * (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to member}
+     * (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to MEMBER}
      * @return this. (NotNull)
      */
     public BsMemberFollowingCQ addOrderBy_MyMemberId_Asc() { regOBA("MY_MEMBER_ID"); return this; }
 
     /**
      * Add order-by as descend. <br>
-     * (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to member}
+     * (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to MEMBER}
      * @return this. (NotNull)
      */
     public BsMemberFollowingCQ addOrderBy_MyMemberId_Desc() { regOBD("MY_MEMBER_ID"); return this; }
@@ -136,14 +136,14 @@ public class BsMemberFollowingCQ extends AbstractBsMemberFollowingCQ {
 
     /** 
      * Add order-by as ascend. <br>
-     * (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to member}
+     * (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to MEMBER}
      * @return this. (NotNull)
      */
     public BsMemberFollowingCQ addOrderBy_YourMemberId_Asc() { regOBA("YOUR_MEMBER_ID"); return this; }
 
     /**
      * Add order-by as descend. <br>
-     * (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to member}
+     * (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to MEMBER}
      * @return this. (NotNull)
      */
     public BsMemberFollowingCQ addOrderBy_YourMemberId_Desc() { regOBD("YOUR_MEMBER_ID"); return this; }
@@ -234,7 +234,7 @@ public class BsMemberFollowingCQ extends AbstractBsMemberFollowingCQ {
         return xgetQueRlMap(prop);
     }
     protected MemberCQ xcreateQueryMemberByMyMemberId() {
-        String nrp = xresolveNRP("member_following", "memberByMyMemberId"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        String nrp = xresolveNRP("MEMBER_FOLLOWING", "memberByMyMemberId"); String jan = xresolveJAN(nrp, xgetNNLvl());
         return xinitRelCQ(new MemberCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "memberByMyMemberId", nrp);
     }
     protected void xsetupOuterJoinMemberByMyMemberId() { xregOutJo("memberByMyMemberId"); }
@@ -254,7 +254,7 @@ public class BsMemberFollowingCQ extends AbstractBsMemberFollowingCQ {
         return xgetQueRlMap(prop);
     }
     protected MemberCQ xcreateQueryMemberByYourMemberId() {
-        String nrp = xresolveNRP("member_following", "memberByYourMemberId"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        String nrp = xresolveNRP("MEMBER_FOLLOWING", "memberByYourMemberId"); String jan = xresolveJAN(nrp, xgetNNLvl());
         return xinitRelCQ(new MemberCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "memberByYourMemberId", nrp);
     }
     protected void xsetupOuterJoinMemberByYourMemberId() { xregOutJo("memberByYourMemberId"); }

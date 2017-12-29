@@ -36,7 +36,7 @@ import org.docksidestage.dbflute.cbean.cq.*;
 import org.docksidestage.dbflute.cbean.nss.*;
 
 /**
- * The base condition-bean of purchase_payment.
+ * The base condition-bean of PURCHASE_PAYMENT.
  * @author DBFlute(AutoGenerator)
  */
 public class BsPurchasePaymentCB extends AbstractConditionBean {
@@ -88,7 +88,7 @@ public class BsPurchasePaymentCB extends AbstractConditionBean {
     }
 
     public String asTableDbName() {
-        return "purchase_payment";
+        return "PURCHASE_PAYMENT";
     }
 
     // ===================================================================================
@@ -334,7 +334,7 @@ public class BsPurchasePaymentCB extends AbstractConditionBean {
          */
         public SpecifiedColumn columnPurchasePaymentId() { return doColumn("PURCHASE_PAYMENT_ID"); }
         /**
-         * (購入ID)PURCHASE_ID: {IX, NotNull, BIGINT(19), FK to purchase}
+         * (購入ID)PURCHASE_ID: {IX, NotNull, BIGINT(19), FK to PURCHASE}
          * @return The information object of specified column. (NotNull)
          */
         public SpecifiedColumn columnPurchaseId() { return doColumn("PURCHASE_ID"); }
@@ -384,7 +384,7 @@ public class BsPurchasePaymentCB extends AbstractConditionBean {
             }
         }
         @Override
-        protected String getTableDbName() { return "purchase_payment"; }
+        protected String getTableDbName() { return "PURCHASE_PAYMENT"; }
         /**
          * Prepare to specify functions about relation table. <br>
          * (購入)PURCHASE by my PURCHASE_ID, named 'purchase'.

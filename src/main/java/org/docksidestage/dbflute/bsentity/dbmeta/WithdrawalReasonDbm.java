@@ -28,7 +28,7 @@ import org.docksidestage.dbflute.allcommon.*;
 import org.docksidestage.dbflute.exentity.*;
 
 /**
- * The DB meta of withdrawal_reason. (Singleton)
+ * The DB meta of WITHDRAWAL_REASON. (Singleton)
  * @author DBFlute(AutoGenerator)
  */
 public class WithdrawalReasonDbm extends AbstractDBMeta {
@@ -74,7 +74,7 @@ public class WithdrawalReasonDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                          Table Info
     //                                                                          ==========
-    protected final String _tableDbName = "withdrawal_reason";
+    protected final String _tableDbName = "WITHDRAWAL_REASON";
     protected final String _tableDispName = "WITHDRAWAL_REASON";
     protected final String _tablePropertyName = "withdrawalReason";
     protected final TableSqlName _tableSqlName = new TableSqlName("WITHDRAWAL_REASON", _tableDbName);

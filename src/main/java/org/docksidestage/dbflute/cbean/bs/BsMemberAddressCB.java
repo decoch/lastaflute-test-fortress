@@ -36,7 +36,7 @@ import org.docksidestage.dbflute.cbean.cq.*;
 import org.docksidestage.dbflute.cbean.nss.*;
 
 /**
- * The base condition-bean of member_address.
+ * The base condition-bean of MEMBER_ADDRESS.
  * @author DBFlute(AutoGenerator)
  */
 public class BsMemberAddressCB extends AbstractConditionBean {
@@ -88,7 +88,7 @@ public class BsMemberAddressCB extends AbstractConditionBean {
     }
 
     public String asTableDbName() {
-        return "member_address";
+        return "MEMBER_ADDRESS";
     }
 
     // ===================================================================================
@@ -108,7 +108,7 @@ public class BsMemberAddressCB extends AbstractConditionBean {
 
     /**
      * Accept the query condition of unique key as equal.
-     * @param memberId (会員ID): UQ+, NotNull, INT(10), FK to member. (NotNull)
+     * @param memberId (会員ID): UQ+, NotNull, INT(10), FK to MEMBER. (NotNull)
      * @param validBeginDate (有効開始日): +UQ, NotNull, DATE(10). (NotNull)
      * @return this. (NotNull)
      */
@@ -368,7 +368,7 @@ public class BsMemberAddressCB extends AbstractConditionBean {
          */
         public SpecifiedColumn columnMemberAddressId() { return doColumn("MEMBER_ADDRESS_ID"); }
         /**
-         * (会員ID)MEMBER_ID: {UQ+, NotNull, INT(10), FK to member}
+         * (会員ID)MEMBER_ID: {UQ+, NotNull, INT(10), FK to MEMBER}
          * @return The information object of specified column. (NotNull)
          */
         public SpecifiedColumn columnMemberId() { return doColumn("MEMBER_ID"); }
@@ -388,7 +388,7 @@ public class BsMemberAddressCB extends AbstractConditionBean {
          */
         public SpecifiedColumn columnAddress() { return doColumn("ADDRESS"); }
         /**
-         * (地域ID)REGION_ID: {IX, NotNull, INT(10), FK to region, classification=Region}
+         * (地域ID)REGION_ID: {IX, NotNull, INT(10), FK to REGION, classification=Region}
          * @return The information object of specified column. (NotNull)
          */
         public SpecifiedColumn columnRegionId() { return doColumn("REGION_ID"); }
@@ -432,7 +432,7 @@ public class BsMemberAddressCB extends AbstractConditionBean {
             }
         }
         @Override
-        protected String getTableDbName() { return "member_address"; }
+        protected String getTableDbName() { return "MEMBER_ADDRESS"; }
         /**
          * Prepare to specify functions about relation table. <br>
          * (会員)MEMBER by my MEMBER_ID, named 'member'.

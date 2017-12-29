@@ -36,7 +36,7 @@ import org.docksidestage.dbflute.cbean.cq.*;
 import org.docksidestage.dbflute.cbean.nss.*;
 
 /**
- * The base condition-bean of member_security.
+ * The base condition-bean of MEMBER_SECURITY.
  * @author DBFlute(AutoGenerator)
  */
 public class BsMemberSecurityCB extends AbstractConditionBean {
@@ -88,7 +88,7 @@ public class BsMemberSecurityCB extends AbstractConditionBean {
     }
 
     public String asTableDbName() {
-        return "member_security";
+        return "MEMBER_SECURITY";
     }
 
     // ===================================================================================
@@ -96,7 +96,7 @@ public class BsMemberSecurityCB extends AbstractConditionBean {
     //                                                                 ===================
     /**
      * Accept the query condition of primary key as equal.
-     * @param memberId (会員ID): PK, NotNull, INT(10), FK to member. (NotNull)
+     * @param memberId (会員ID): PK, NotNull, INT(10), FK to MEMBER. (NotNull)
      * @return this. (NotNull)
      */
     public MemberSecurityCB acceptPK(Integer memberId) {
@@ -326,7 +326,7 @@ public class BsMemberSecurityCB extends AbstractConditionBean {
                              , HpSDRFunctionFactory sdrFuncFactory)
         { super(baseCB, qyCall, purpose, dbmetaProvider, sdrFuncFactory); }
         /**
-         * (会員ID)MEMBER_ID: {PK, NotNull, INT(10), FK to member}
+         * (会員ID)MEMBER_ID: {PK, NotNull, INT(10), FK to MEMBER}
          * @return The information object of specified column. (NotNull)
          */
         public SpecifiedColumn columnMemberId() { return doColumn("MEMBER_ID"); }
@@ -382,7 +382,7 @@ public class BsMemberSecurityCB extends AbstractConditionBean {
             columnMemberId(); // PK
         }
         @Override
-        protected String getTableDbName() { return "member_security"; }
+        protected String getTableDbName() { return "MEMBER_SECURITY"; }
         /**
          * Prepare to specify functions about relation table. <br>
          * (会員)MEMBER by my MEMBER_ID, named 'member'.

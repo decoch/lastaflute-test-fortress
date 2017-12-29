@@ -106,7 +106,7 @@ public abstract class BsMemberStatus extends AbstractEntity implements DomainEnt
 
     /** {@inheritDoc} */
     public String asTableDbName() {
-        return "member_status";
+        return "MEMBER_STATUS";
     }
 
     // ===================================================================================

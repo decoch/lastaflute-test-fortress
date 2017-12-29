@@ -80,7 +80,7 @@ public abstract class BsPurchasePaymentBhv extends AbstractBehaviorWritable<Purc
     /** {@inheritDoc} */
     public PurchasePaymentDbm asDBMeta() { return PurchasePaymentDbm.getInstance(); }
     /** {@inheritDoc} */
-    public String asTableDbName() { return "purchase_payment"; }
+    public String asTableDbName() { return "PURCHASE_PAYMENT"; }
 
     // ===================================================================================
     //                                                                        New Instance

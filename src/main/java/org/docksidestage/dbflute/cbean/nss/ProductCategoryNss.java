@@ -18,7 +18,7 @@ package org.docksidestage.dbflute.cbean.nss;
 import org.docksidestage.dbflute.cbean.cq.ProductCategoryCQ;
 
 /**
- * The nest select set-upper of product_category.
+ * The nest select set-upper of PRODUCT_CATEGORY.
  * @author DBFlute(AutoGenerator)
  */
 public class ProductCategoryNss {

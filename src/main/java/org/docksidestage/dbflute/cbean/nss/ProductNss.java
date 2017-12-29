@@ -18,7 +18,7 @@ package org.docksidestage.dbflute.cbean.nss;
 import org.docksidestage.dbflute.cbean.cq.ProductCQ;
 
 /**
- * The nest select set-upper of product.
+ * The nest select set-upper of PRODUCT.
  * @author DBFlute(AutoGenerator)
  */
 public class ProductNss {

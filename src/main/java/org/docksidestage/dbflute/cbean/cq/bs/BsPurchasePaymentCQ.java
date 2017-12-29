@@ -28,7 +28,7 @@ import org.docksidestage.dbflute.cbean.*;
 import org.docksidestage.dbflute.cbean.cq.*;
 
 /**
- * The base condition-query of purchase_payment.
+ * The base condition-query of PURCHASE_PAYMENT.
  * @author DBFlute(AutoGenerator)
  */
 public class BsPurchasePaymentCQ extends AbstractBsPurchasePaymentCQ {
@@ -50,7 +50,7 @@ public class BsPurchasePaymentCQ extends AbstractBsPurchasePaymentCQ {
     //                                                                 ===================
     /**
      * Prepare InlineView query. <br>
-     * {select ... from ... left outer join (select * from purchase_payment) where FOO = [value] ...}
+     * {select ... from ... left outer join (select * from PURCHASE_PAYMENT) where FOO = [value] ...}
      * <pre>
      * cb.query().queryMemberStatus().<span style="color: #CC4747">inline()</span>.setFoo...;
      * </pre>
@@ -73,7 +73,7 @@ public class BsPurchasePaymentCQ extends AbstractBsPurchasePaymentCQ {
 
     /**
      * Prepare OnClause query. <br>
-     * {select ... from ... left outer join purchase_payment on ... and FOO = [value] ...}
+     * {select ... from ... left outer join PURCHASE_PAYMENT on ... and FOO = [value] ...}
      * <pre>
      * cb.query().queryMemberStatus().<span style="color: #CC4747">on()</span>.setFoo...;
      * </pre>
@@ -116,14 +116,14 @@ public class BsPurchasePaymentCQ extends AbstractBsPurchasePaymentCQ {
 
     /** 
      * Add order-by as ascend. <br>
-     * (購入ID)PURCHASE_ID: {IX, NotNull, BIGINT(19), FK to purchase}
+     * (購入ID)PURCHASE_ID: {IX, NotNull, BIGINT(19), FK to PURCHASE}
      * @return this. (NotNull)
      */
     public BsPurchasePaymentCQ addOrderBy_PurchaseId_Asc() { regOBA("PURCHASE_ID"); return this; }
 
     /**
      * Add order-by as descend. <br>
-     * (購入ID)PURCHASE_ID: {IX, NotNull, BIGINT(19), FK to purchase}
+     * (購入ID)PURCHASE_ID: {IX, NotNull, BIGINT(19), FK to PURCHASE}
      * @return this. (NotNull)
      */
     public BsPurchasePaymentCQ addOrderBy_PurchaseId_Desc() { regOBD("PURCHASE_ID"); return this; }
@@ -331,7 +331,7 @@ public class BsPurchasePaymentCQ extends AbstractBsPurchasePaymentCQ {
         return xgetQueRlMap(prop);
     }
     protected PurchaseCQ xcreateQueryPurchase() {
-        String nrp = xresolveNRP("purchase_payment", "purchase"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        String nrp = xresolveNRP("PURCHASE_PAYMENT", "purchase"); String jan = xresolveJAN(nrp, xgetNNLvl());
         return xinitRelCQ(new PurchaseCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "purchase", nrp);
     }
     protected void xsetupOuterJoinPurchase() { xregOutJo("purchase"); }

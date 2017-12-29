@@ -98,7 +98,7 @@ public abstract class BsWithdrawalReason extends AbstractEntity implements Domai
 
     /** {@inheritDoc} */
     public String asTableDbName() {
-        return "withdrawal_reason";
+        return "WITHDRAWAL_REASON";
     }
 
     // ===================================================================================

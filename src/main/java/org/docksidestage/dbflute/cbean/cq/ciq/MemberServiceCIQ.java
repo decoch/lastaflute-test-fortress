@@ -27,7 +27,7 @@ import org.docksidestage.dbflute.cbean.cq.bs.*;
 import org.docksidestage.dbflute.cbean.cq.*;
 
 /**
- * The condition-query for in-line of member_service.
+ * The condition-query for in-line of MEMBER_SERVICE.
  * @author DBFlute(AutoGenerator)
  */
 public class MemberServiceCIQ extends AbstractBsMemberServiceCQ {

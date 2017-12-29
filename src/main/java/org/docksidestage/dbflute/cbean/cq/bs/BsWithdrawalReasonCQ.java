@@ -28,7 +28,7 @@ import org.docksidestage.dbflute.cbean.*;
 import org.docksidestage.dbflute.cbean.cq.*;
 
 /**
- * The base condition-query of withdrawal_reason.
+ * The base condition-query of WITHDRAWAL_REASON.
  * @author DBFlute(AutoGenerator)
  */
 public class BsWithdrawalReasonCQ extends AbstractBsWithdrawalReasonCQ {
@@ -50,7 +50,7 @@ public class BsWithdrawalReasonCQ extends AbstractBsWithdrawalReasonCQ {
     //                                                                 ===================
     /**
      * Prepare InlineView query. <br>
-     * {select ... from ... left outer join (select * from withdrawal_reason) where FOO = [value] ...}
+     * {select ... from ... left outer join (select * from WITHDRAWAL_REASON) where FOO = [value] ...}
      * <pre>
      * cb.query().queryMemberStatus().<span style="color: #CC4747">inline()</span>.setFoo...;
      * </pre>
@@ -73,7 +73,7 @@ public class BsWithdrawalReasonCQ extends AbstractBsWithdrawalReasonCQ {
 
     /**
      * Prepare OnClause query. <br>
-     * {select ... from ... left outer join withdrawal_reason on ... and FOO = [value] ...}
+     * {select ... from ... left outer join WITHDRAWAL_REASON on ... and FOO = [value] ...}
      * <pre>
      * cb.query().queryMemberStatus().<span style="color: #CC4747">on()</span>.setFoo...;
      * </pre>

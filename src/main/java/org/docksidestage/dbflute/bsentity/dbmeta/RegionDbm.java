@@ -28,7 +28,7 @@ import org.docksidestage.dbflute.allcommon.*;
 import org.docksidestage.dbflute.exentity.*;
 
 /**
- * The DB meta of region. (Singleton)
+ * The DB meta of REGION. (Singleton)
  * @author DBFlute(AutoGenerator)
  */
 public class RegionDbm extends AbstractDBMeta {
@@ -73,7 +73,7 @@ public class RegionDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                          Table Info
     //                                                                          ==========
-    protected final String _tableDbName = "region";
+    protected final String _tableDbName = "REGION";
     protected final String _tableDispName = "REGION";
     protected final String _tablePropertyName = "region";
     protected final TableSqlName _tableSqlName = new TableSqlName("REGION", _tableDbName);

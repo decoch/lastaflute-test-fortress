@@ -85,10 +85,10 @@ public abstract class BsMemberFollowing extends AbstractEntity implements Domain
     /** (会員フォローイングID)MEMBER_FOLLOWING_ID: {PK, ID, NotNull, BIGINT(19)} */
     protected Long _memberFollowingId;
 
-    /** (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to member} */
+    /** (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to MEMBER} */
     protected Integer _myMemberId;
 
-    /** (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to member} */
+    /** (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to MEMBER} */
     protected Integer _yourMemberId;
 
     /** (その瞬間)FOLLOW_DATETIME: {IX, NotNull, DATETIME(19)} */
@@ -104,7 +104,7 @@ public abstract class BsMemberFollowing extends AbstractEntity implements Domain
 
     /** {@inheritDoc} */
     public String asTableDbName() {
-        return "member_following";
+        return "MEMBER_FOLLOWING";
     }
 
     // ===================================================================================
@@ -119,8 +119,8 @@ public abstract class BsMemberFollowing extends AbstractEntity implements Domain
     /**
      * To be unique by the unique column. <br>
      * You can update the entity by the key when entity update (NOT batch update).
-     * @param myMemberId (わたし): UQ+, NotNull, INT(10), FK to member. (NotNull)
-     * @param yourMemberId (あなた): +UQ, IX, NotNull, INT(10), FK to member. (NotNull)
+     * @param myMemberId (わたし): UQ+, NotNull, INT(10), FK to MEMBER. (NotNull)
+     * @param yourMemberId (あなた): +UQ, IX, NotNull, INT(10), FK to MEMBER. (NotNull)
      */
     public void uniqueBy(Integer myMemberId, Integer yourMemberId) {
         __uniqueDrivenProperties.clear();
@@ -272,7 +272,7 @@ public abstract class BsMemberFollowing extends AbstractEntity implements Domain
     }
 
     /**
-     * [get] (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to member} <br>
+     * [get] (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to MEMBER} <br>
      * 気になった人がいて...勇気を振り絞った会員のID。
      * @return The value of the column 'MY_MEMBER_ID'. (basically NotNull if selected: for the constraint)
      */
@@ -282,7 +282,7 @@ public abstract class BsMemberFollowing extends AbstractEntity implements Domain
     }
 
     /**
-     * [set] (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to member} <br>
+     * [set] (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to MEMBER} <br>
      * 気になった人がいて...勇気を振り絞った会員のID。
      * @param myMemberId The value of the column 'MY_MEMBER_ID'. (basically NotNull if update: for the constraint)
      */
@@ -292,7 +292,7 @@ public abstract class BsMemberFollowing extends AbstractEntity implements Domain
     }
 
     /**
-     * [get] (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to member} <br>
+     * [get] (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to MEMBER} <br>
      * いきなりのアクションに...ちょっと心揺らいだ会員のID。
      * @return The value of the column 'YOUR_MEMBER_ID'. (basically NotNull if selected: for the constraint)
      */
@@ -302,7 +302,7 @@ public abstract class BsMemberFollowing extends AbstractEntity implements Domain
     }
 
     /**
-     * [set] (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to member} <br>
+     * [set] (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to MEMBER} <br>
      * いきなりのアクションに...ちょっと心揺らいだ会員のID。
      * @param yourMemberId The value of the column 'YOUR_MEMBER_ID'. (basically NotNull if update: for the constraint)
      */

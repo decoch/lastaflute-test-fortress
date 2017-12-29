@@ -81,7 +81,7 @@ public abstract class BsWithdrawalReasonBhv extends AbstractBehaviorWritable<Wit
     /** {@inheritDoc} */
     public WithdrawalReasonDbm asDBMeta() { return WithdrawalReasonDbm.getInstance(); }
     /** {@inheritDoc} */
-    public String asTableDbName() { return "withdrawal_reason"; }
+    public String asTableDbName() { return "WITHDRAWAL_REASON"; }
 
     // ===================================================================================
     //                                                                        New Instance

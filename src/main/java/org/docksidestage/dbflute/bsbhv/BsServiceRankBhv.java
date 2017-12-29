@@ -81,7 +81,7 @@ public abstract class BsServiceRankBhv extends AbstractBehaviorWritable<ServiceR
     /** {@inheritDoc} */
     public ServiceRankDbm asDBMeta() { return ServiceRankDbm.getInstance(); }
     /** {@inheritDoc} */
-    public String asTableDbName() { return "service_rank"; }
+    public String asTableDbName() { return "SERVICE_RANK"; }
 
     // ===================================================================================
     //                                                                        New Instance

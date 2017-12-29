@@ -28,7 +28,7 @@ import org.docksidestage.dbflute.allcommon.*;
 import org.docksidestage.dbflute.exentity.*;
 
 /**
- * The DB meta of service_rank. (Singleton)
+ * The DB meta of SERVICE_RANK. (Singleton)
  * @author DBFlute(AutoGenerator)
  */
 public class ServiceRankDbm extends AbstractDBMeta {
@@ -84,7 +84,7 @@ public class ServiceRankDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                          Table Info
     //                                                                          ==========
-    protected final String _tableDbName = "service_rank";
+    protected final String _tableDbName = "SERVICE_RANK";
     protected final String _tableDispName = "SERVICE_RANK";
     protected final String _tablePropertyName = "serviceRank";
     protected final TableSqlName _tableSqlName = new TableSqlName("SERVICE_RANK", _tableDbName);

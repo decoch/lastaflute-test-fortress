@@ -18,7 +18,7 @@ package org.docksidestage.dbflute.cbean.nss;
 import org.docksidestage.dbflute.cbean.cq.MemberLoginCQ;
 
 /**
- * The nest select set-upper of member_login.
+ * The nest select set-upper of MEMBER_LOGIN.
  * @author DBFlute(AutoGenerator)
  */
 public class MemberLoginNss {

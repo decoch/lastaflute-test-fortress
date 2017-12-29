@@ -36,7 +36,7 @@ import org.docksidestage.dbflute.cbean.*;
 import org.docksidestage.dbflute.cbean.cq.*;
 
 /**
- * The base condition-bean of region.
+ * The base condition-bean of REGION.
  * @author DBFlute(AutoGenerator)
  */
 public class BsRegionCB extends AbstractConditionBean {
@@ -88,7 +88,7 @@ public class BsRegionCB extends AbstractConditionBean {
     }
 
     public String asTableDbName() {
-        return "region";
+        return "REGION";
     }
 
     // ===================================================================================
@@ -315,10 +315,10 @@ public class BsRegionCB extends AbstractConditionBean {
             columnRegionId(); // PK
         }
         @Override
-        protected String getTableDbName() { return "region"; }
+        protected String getTableDbName() { return "REGION"; }
         /**
          * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>
-         * {select max(FOO) from member_address where ...) as FOO_MAX} <br>
+         * {select max(FOO) from MEMBER_ADDRESS where ...) as FOO_MAX} <br>
          * (会員住所情報)MEMBER_ADDRESS by REGION_ID, named 'memberAddressList'.
          * <pre>
          * cb.specify().<span style="color: #CC4747">derived${relationMethodIdentityName}()</span>.<span style="color: #CC4747">max</span>(addressCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {

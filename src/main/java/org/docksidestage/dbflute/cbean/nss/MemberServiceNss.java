@@ -18,7 +18,7 @@ package org.docksidestage.dbflute.cbean.nss;
 import org.docksidestage.dbflute.cbean.cq.MemberServiceCQ;
 
 /**
- * The nest select set-upper of member_service.
+ * The nest select set-upper of MEMBER_SERVICE.
  * @author DBFlute(AutoGenerator)
  */
 public class MemberServiceNss {

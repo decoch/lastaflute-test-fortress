@@ -80,7 +80,7 @@ public abstract class BsPurchaseBhv extends AbstractBehaviorWritable<Purchase, P
     /** {@inheritDoc} */
     public PurchaseDbm asDBMeta() { return PurchaseDbm.getInstance(); }
     /** {@inheritDoc} */
-    public String asTableDbName() { return "purchase"; }
+    public String asTableDbName() { return "PURCHASE"; }
 
     // ===================================================================================
     //                                                                        New Instance
@@ -201,8 +201,8 @@ public abstract class BsPurchaseBhv extends AbstractBehaviorWritable<Purchase, P
 
     /**
      * Select the entity by the unique-key value.
-     * @param memberId (会員ID): UQ+, IX+, NotNull, INT(10), FK to member. (NotNull)
-     * @param productId (商品ID): +UQ, IX+, NotNull, INT(10), FK to product. (NotNull)
+     * @param memberId (会員ID): UQ+, IX+, NotNull, INT(10), FK to MEMBER. (NotNull)
+     * @param productId (商品ID): +UQ, IX+, NotNull, INT(10), FK to PRODUCT. (NotNull)
      * @param purchaseDatetime (購入日時): +UQ, IX+, NotNull, DATETIME(19). (NotNull)
      * @return The optional entity selected by the unique key. (NotNull: if no data, empty entity)
      * @throws EntityAlreadyDeletedException When get(), required() of return value is called and the value is null, which means entity has already been deleted (not found).

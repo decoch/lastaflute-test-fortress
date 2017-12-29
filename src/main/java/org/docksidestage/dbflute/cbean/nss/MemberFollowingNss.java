@@ -18,7 +18,7 @@ package org.docksidestage.dbflute.cbean.nss;
 import org.docksidestage.dbflute.cbean.cq.MemberFollowingCQ;
 
 /**
- * The nest select set-upper of member_following.
+ * The nest select set-upper of MEMBER_FOLLOWING.
  * @author DBFlute(AutoGenerator)
  */
 public class MemberFollowingNss {

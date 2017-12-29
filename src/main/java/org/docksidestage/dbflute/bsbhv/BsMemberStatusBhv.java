@@ -81,7 +81,7 @@ public abstract class BsMemberStatusBhv extends AbstractBehaviorWritable<MemberS
     /** {@inheritDoc} */
     public MemberStatusDbm asDBMeta() { return MemberStatusDbm.getInstance(); }
     /** {@inheritDoc} */
-    public String asTableDbName() { return "member_status"; }
+    public String asTableDbName() { return "MEMBER_STATUS"; }
 
     // ===================================================================================
     //                                                                        New Instance

@@ -28,7 +28,7 @@ import org.docksidestage.dbflute.allcommon.*;
 import org.docksidestage.dbflute.exentity.*;
 
 /**
- * The DB meta of product_status. (Singleton)
+ * The DB meta of PRODUCT_STATUS. (Singleton)
  * @author DBFlute(AutoGenerator)
  */
 public class ProductStatusDbm extends AbstractDBMeta {
@@ -74,7 +74,7 @@ public class ProductStatusDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                          Table Info
     //                                                                          ==========
-    protected final String _tableDbName = "product_status";
+    protected final String _tableDbName = "PRODUCT_STATUS";
     protected final String _tableDispName = "PRODUCT_STATUS";
     protected final String _tablePropertyName = "productStatus";
     protected final TableSqlName _tableSqlName = new TableSqlName("PRODUCT_STATUS", _tableDbName);

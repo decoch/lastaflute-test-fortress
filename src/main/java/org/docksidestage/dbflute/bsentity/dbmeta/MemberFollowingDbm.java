@@ -29,7 +29,7 @@ import org.docksidestage.dbflute.allcommon.*;
 import org.docksidestage.dbflute.exentity.*;
 
 /**
- * The DB meta of member_following. (Singleton)
+ * The DB meta of MEMBER_FOLLOWING. (Singleton)
  * @author DBFlute(AutoGenerator)
  */
 public class MemberFollowingDbm extends AbstractDBMeta {
@@ -82,7 +82,7 @@ public class MemberFollowingDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                          Table Info
     //                                                                          ==========
-    protected final String _tableDbName = "member_following";
+    protected final String _tableDbName = "MEMBER_FOLLOWING";
     protected final String _tableDispName = "MEMBER_FOLLOWING";
     protected final String _tablePropertyName = "memberFollowing";
     protected final TableSqlName _tableSqlName = new TableSqlName("MEMBER_FOLLOWING", _tableDbName);
@@ -108,12 +108,12 @@ public class MemberFollowingDbm extends AbstractDBMeta {
      */
     public ColumnInfo columnMemberFollowingId() { return _columnMemberFollowingId; }
     /**
-     * (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to member}
+     * (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to MEMBER}
      * @return The information object of specified column. (NotNull)
      */
     public ColumnInfo columnMyMemberId() { return _columnMyMemberId; }
     /**
-     * (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to member}
+     * (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to MEMBER}
      * @return The information object of specified column. (NotNull)
      */
     public ColumnInfo columnYourMemberId() { return _columnYourMemberId; }

@@ -36,7 +36,7 @@ import org.docksidestage.dbflute.cbean.*;
 import org.docksidestage.dbflute.cbean.cq.*;
 
 /**
- * The base condition-bean of withdrawal_reason.
+ * The base condition-bean of WITHDRAWAL_REASON.
  * @author DBFlute(AutoGenerator)
  */
 public class BsWithdrawalReasonCB extends AbstractConditionBean {
@@ -88,7 +88,7 @@ public class BsWithdrawalReasonCB extends AbstractConditionBean {
     }
 
     public String asTableDbName() {
-        return "withdrawal_reason";
+        return "WITHDRAWAL_REASON";
     }
 
     // ===================================================================================
@@ -332,10 +332,10 @@ public class BsWithdrawalReasonCB extends AbstractConditionBean {
             columnWithdrawalReasonCode(); // PK
         }
         @Override
-        protected String getTableDbName() { return "withdrawal_reason"; }
+        protected String getTableDbName() { return "WITHDRAWAL_REASON"; }
         /**
          * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>
-         * {select max(FOO) from member_withdrawal where ...) as FOO_MAX} <br>
+         * {select max(FOO) from MEMBER_WITHDRAWAL where ...) as FOO_MAX} <br>
          * (会員退会情報)MEMBER_WITHDRAWAL by WITHDRAWAL_REASON_CODE, named 'memberWithdrawalList'.
          * <pre>
          * cb.specify().<span style="color: #CC4747">derived${relationMethodIdentityName}()</span>.<span style="color: #CC4747">max</span>(withdrawalCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {

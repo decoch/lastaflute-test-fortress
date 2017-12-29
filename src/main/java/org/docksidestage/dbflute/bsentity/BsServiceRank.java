@@ -113,7 +113,7 @@ public abstract class BsServiceRank extends AbstractEntity implements DomainEnti
 
     /** {@inheritDoc} */
     public String asTableDbName() {
-        return "service_rank";
+        return "SERVICE_RANK";
     }
 
     // ===================================================================================

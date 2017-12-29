@@ -27,7 +27,7 @@ import org.docksidestage.dbflute.cbean.cq.bs.*;
 import org.docksidestage.dbflute.cbean.cq.*;
 
 /**
- * The condition-query for in-line of member_following.
+ * The condition-query for in-line of MEMBER_FOLLOWING.
  * @author DBFlute(AutoGenerator)
  */
 public class MemberFollowingCIQ extends AbstractBsMemberFollowingCQ {

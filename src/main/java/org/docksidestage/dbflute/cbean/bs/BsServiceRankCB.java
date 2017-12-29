@@ -36,7 +36,7 @@ import org.docksidestage.dbflute.cbean.*;
 import org.docksidestage.dbflute.cbean.cq.*;
 
 /**
- * The base condition-bean of service_rank.
+ * The base condition-bean of SERVICE_RANK.
  * @author DBFlute(AutoGenerator)
  */
 public class BsServiceRankCB extends AbstractConditionBean {
@@ -88,7 +88,7 @@ public class BsServiceRankCB extends AbstractConditionBean {
     }
 
     public String asTableDbName() {
-        return "service_rank";
+        return "SERVICE_RANK";
     }
 
     // ===================================================================================
@@ -347,10 +347,10 @@ public class BsServiceRankCB extends AbstractConditionBean {
             columnServiceRankCode(); // PK
         }
         @Override
-        protected String getTableDbName() { return "service_rank"; }
+        protected String getTableDbName() { return "SERVICE_RANK"; }
         /**
          * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>
-         * {select max(FOO) from member_service where ...) as FOO_MAX} <br>
+         * {select max(FOO) from MEMBER_SERVICE where ...) as FOO_MAX} <br>
          * (会員サービス)MEMBER_SERVICE by SERVICE_RANK_CODE, named 'memberServiceList'.
          * <pre>
          * cb.specify().<span style="color: #CC4747">derived${relationMethodIdentityName}()</span>.<span style="color: #CC4747">max</span>(serviceCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {

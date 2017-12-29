@@ -94,7 +94,7 @@ public abstract class BsRegion extends AbstractEntity implements DomainEntity {
 
     /** {@inheritDoc} */
     public String asTableDbName() {
-        return "region";
+        return "REGION";
     }
 
     // ===================================================================================

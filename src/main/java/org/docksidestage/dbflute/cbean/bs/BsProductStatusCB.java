@@ -36,7 +36,7 @@ import org.docksidestage.dbflute.cbean.*;
 import org.docksidestage.dbflute.cbean.cq.*;
 
 /**
- * The base condition-bean of product_status.
+ * The base condition-bean of PRODUCT_STATUS.
  * @author DBFlute(AutoGenerator)
  */
 public class BsProductStatusCB extends AbstractConditionBean {
@@ -88,7 +88,7 @@ public class BsProductStatusCB extends AbstractConditionBean {
     }
 
     public String asTableDbName() {
-        return "product_status";
+        return "PRODUCT_STATUS";
     }
 
     // ===================================================================================
@@ -332,10 +332,10 @@ public class BsProductStatusCB extends AbstractConditionBean {
             columnProductStatusCode(); // PK
         }
         @Override
-        protected String getTableDbName() { return "product_status"; }
+        protected String getTableDbName() { return "PRODUCT_STATUS"; }
         /**
          * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>
-         * {select max(FOO) from product where ...) as FOO_MAX} <br>
+         * {select max(FOO) from PRODUCT where ...) as FOO_MAX} <br>
          * (商品)PRODUCT by PRODUCT_STATUS_CODE, named 'productList'.
          * <pre>
          * cb.specify().<span style="color: #CC4747">derived${relationMethodIdentityName}()</span>.<span style="color: #CC4747">max</span>(productCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {

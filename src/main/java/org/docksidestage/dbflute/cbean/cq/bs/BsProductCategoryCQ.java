@@ -28,7 +28,7 @@ import org.docksidestage.dbflute.cbean.*;
 import org.docksidestage.dbflute.cbean.cq.*;
 
 /**
- * The base condition-query of product_category.
+ * The base condition-query of PRODUCT_CATEGORY.
  * @author DBFlute(AutoGenerator)
  */
 public class BsProductCategoryCQ extends AbstractBsProductCategoryCQ {
@@ -50,7 +50,7 @@ public class BsProductCategoryCQ extends AbstractBsProductCategoryCQ {
     //                                                                 ===================
     /**
      * Prepare InlineView query. <br>
-     * {select ... from ... left outer join (select * from product_category) where FOO = [value] ...}
+     * {select ... from ... left outer join (select * from PRODUCT_CATEGORY) where FOO = [value] ...}
      * <pre>
      * cb.query().queryMemberStatus().<span style="color: #CC4747">inline()</span>.setFoo...;
      * </pre>
@@ -73,7 +73,7 @@ public class BsProductCategoryCQ extends AbstractBsProductCategoryCQ {
 
     /**
      * Prepare OnClause query. <br>
-     * {select ... from ... left outer join product_category on ... and FOO = [value] ...}
+     * {select ... from ... left outer join PRODUCT_CATEGORY on ... and FOO = [value] ...}
      * <pre>
      * cb.query().queryMemberStatus().<span style="color: #CC4747">on()</span>.setFoo...;
      * </pre>
@@ -164,14 +164,14 @@ public class BsProductCategoryCQ extends AbstractBsProductCategoryCQ {
 
     /** 
      * Add order-by as ascend. <br>
-     * (親カテゴリコード)PARENT_CATEGORY_CODE: {IX, CHAR(3), FK to product_category}
+     * (親カテゴリコード)PARENT_CATEGORY_CODE: {IX, CHAR(3), FK to PRODUCT_CATEGORY}
      * @return this. (NotNull)
      */
     public BsProductCategoryCQ addOrderBy_ParentCategoryCode_Asc() { regOBA("PARENT_CATEGORY_CODE"); return this; }
 
     /**
      * Add order-by as descend. <br>
-     * (親カテゴリコード)PARENT_CATEGORY_CODE: {IX, CHAR(3), FK to product_category}
+     * (親カテゴリコード)PARENT_CATEGORY_CODE: {IX, CHAR(3), FK to PRODUCT_CATEGORY}
      * @return this. (NotNull)
      */
     public BsProductCategoryCQ addOrderBy_ParentCategoryCode_Desc() { regOBD("PARENT_CATEGORY_CODE"); return this; }
@@ -239,7 +239,7 @@ public class BsProductCategoryCQ extends AbstractBsProductCategoryCQ {
         return xgetQueRlMap(prop);
     }
     protected ProductCategoryCQ xcreateQueryProductCategorySelf() {
-        String nrp = xresolveNRP("product_category", "productCategorySelf"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        String nrp = xresolveNRP("PRODUCT_CATEGORY", "productCategorySelf"); String jan = xresolveJAN(nrp, xgetNNLvl());
         return xinitRelCQ(new ProductCategoryCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "productCategorySelf", nrp);
     }
     protected void xsetupOuterJoinProductCategorySelf() { xregOutJo("productCategorySelf"); }

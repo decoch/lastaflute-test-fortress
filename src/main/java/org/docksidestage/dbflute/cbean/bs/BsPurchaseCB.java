@@ -36,7 +36,7 @@ import org.docksidestage.dbflute.cbean.cq.*;
 import org.docksidestage.dbflute.cbean.nss.*;
 
 /**
- * The base condition-bean of purchase.
+ * The base condition-bean of PURCHASE.
  * @author DBFlute(AutoGenerator)
  */
 public class BsPurchaseCB extends AbstractConditionBean {
@@ -88,7 +88,7 @@ public class BsPurchaseCB extends AbstractConditionBean {
     }
 
     public String asTableDbName() {
-        return "purchase";
+        return "PURCHASE";
     }
 
     // ===================================================================================
@@ -108,8 +108,8 @@ public class BsPurchaseCB extends AbstractConditionBean {
 
     /**
      * Accept the query condition of unique key as equal.
-     * @param memberId (会員ID): UQ+, IX+, NotNull, INT(10), FK to member. (NotNull)
-     * @param productId (商品ID): +UQ, IX+, NotNull, INT(10), FK to product. (NotNull)
+     * @param memberId (会員ID): UQ+, IX+, NotNull, INT(10), FK to MEMBER. (NotNull)
+     * @param productId (商品ID): +UQ, IX+, NotNull, INT(10), FK to PRODUCT. (NotNull)
      * @param purchaseDatetime (購入日時): +UQ, IX+, NotNull, DATETIME(19). (NotNull)
      * @return this. (NotNull)
      */
@@ -378,12 +378,12 @@ public class BsPurchaseCB extends AbstractConditionBean {
          */
         public SpecifiedColumn columnPurchaseId() { return doColumn("PURCHASE_ID"); }
         /**
-         * (会員ID)MEMBER_ID: {UQ+, IX+, NotNull, INT(10), FK to member}
+         * (会員ID)MEMBER_ID: {UQ+, IX+, NotNull, INT(10), FK to MEMBER}
          * @return The information object of specified column. (NotNull)
          */
         public SpecifiedColumn columnMemberId() { return doColumn("MEMBER_ID"); }
         /**
-         * (商品ID)PRODUCT_ID: {+UQ, IX+, NotNull, INT(10), FK to product}
+         * (商品ID)PRODUCT_ID: {+UQ, IX+, NotNull, INT(10), FK to PRODUCT}
          * @return The information object of specified column. (NotNull)
          */
         public SpecifiedColumn columnProductId() { return doColumn("PRODUCT_ID"); }
@@ -447,7 +447,7 @@ public class BsPurchaseCB extends AbstractConditionBean {
             }
         }
         @Override
-        protected String getTableDbName() { return "purchase"; }
+        protected String getTableDbName() { return "PURCHASE"; }
         /**
          * Prepare to specify functions about relation table. <br>
          * (会員)MEMBER by my MEMBER_ID, named 'member'.
@@ -490,7 +490,7 @@ public class BsPurchaseCB extends AbstractConditionBean {
         }
         /**
          * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>
-         * {select max(FOO) from purchase_payment where ...) as FOO_MAX} <br>
+         * {select max(FOO) from PURCHASE_PAYMENT where ...) as FOO_MAX} <br>
          * (購入支払)PURCHASE_PAYMENT by PURCHASE_ID, named 'purchasePaymentList'.
          * <pre>
          * cb.specify().<span style="color: #CC4747">derived${relationMethodIdentityName}()</span>.<span style="color: #CC4747">max</span>(paymentCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {

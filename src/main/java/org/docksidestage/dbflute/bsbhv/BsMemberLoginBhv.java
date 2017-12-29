@@ -80,7 +80,7 @@ public abstract class BsMemberLoginBhv extends AbstractBehaviorWritable<MemberLo
     /** {@inheritDoc} */
     public MemberLoginDbm asDBMeta() { return MemberLoginDbm.getInstance(); }
     /** {@inheritDoc} */
-    public String asTableDbName() { return "member_login"; }
+    public String asTableDbName() { return "MEMBER_LOGIN"; }
 
     // ===================================================================================
     //                                                                        New Instance
@@ -201,7 +201,7 @@ public abstract class BsMemberLoginBhv extends AbstractBehaviorWritable<MemberLo
 
     /**
      * Select the entity by the unique-key value.
-     * @param memberId (会員ID): UQ+, NotNull, INT(10), FK to member. (NotNull)
+     * @param memberId (会員ID): UQ+, NotNull, INT(10), FK to MEMBER. (NotNull)
      * @param loginDatetime (ログイン日時): +UQ, IX, NotNull, DATETIME(19). (NotNull)
      * @return The optional entity selected by the unique key. (NotNull: if no data, empty entity)
      * @throws EntityAlreadyDeletedException When get(), required() of return value is called and the value is null, which means entity has already been deleted (not found).

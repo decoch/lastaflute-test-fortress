@@ -28,7 +28,7 @@ import org.docksidestage.dbflute.cbean.*;
 import org.docksidestage.dbflute.cbean.cq.*;
 
 /**
- * The base condition-query of member_status.
+ * The base condition-query of MEMBER_STATUS.
  * @author DBFlute(AutoGenerator)
  */
 public class BsMemberStatusCQ extends AbstractBsMemberStatusCQ {
@@ -50,7 +50,7 @@ public class BsMemberStatusCQ extends AbstractBsMemberStatusCQ {
     //                                                                 ===================
     /**
      * Prepare InlineView query. <br>
-     * {select ... from ... left outer join (select * from member_status) where FOO = [value] ...}
+     * {select ... from ... left outer join (select * from MEMBER_STATUS) where FOO = [value] ...}
      * <pre>
      * cb.query().queryMemberStatus().<span style="color: #CC4747">inline()</span>.setFoo...;
      * </pre>
@@ -73,7 +73,7 @@ public class BsMemberStatusCQ extends AbstractBsMemberStatusCQ {
 
     /**
      * Prepare OnClause query. <br>
-     * {select ... from ... left outer join member_status on ... and FOO = [value] ...}
+     * {select ... from ... left outer join MEMBER_STATUS on ... and FOO = [value] ...}
      * <pre>
      * cb.query().queryMemberStatus().<span style="color: #CC4747">on()</span>.setFoo...;
      * </pre>

@@ -80,7 +80,7 @@ public abstract class BsProductCategoryBhv extends AbstractBehaviorWritable<Prod
     /** {@inheritDoc} */
     public ProductCategoryDbm asDBMeta() { return ProductCategoryDbm.getInstance(); }
     /** {@inheritDoc} */
-    public String asTableDbName() { return "product_category"; }
+    public String asTableDbName() { return "PRODUCT_CATEGORY"; }
 
     // ===================================================================================
     //                                                                        New Instance

@@ -81,7 +81,7 @@ public abstract class BsProductStatusBhv extends AbstractBehaviorWritable<Produc
     /** {@inheritDoc} */
     public ProductStatusDbm asDBMeta() { return ProductStatusDbm.getInstance(); }
     /** {@inheritDoc} */
-    public String asTableDbName() { return "product_status"; }
+    public String asTableDbName() { return "PRODUCT_STATUS"; }
 
     // ===================================================================================
     //                                                                        New Instance

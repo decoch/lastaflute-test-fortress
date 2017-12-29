@@ -103,7 +103,7 @@ public abstract class BsMemberAddress extends AbstractEntity implements DomainEn
     /** (会員住所ID)MEMBER_ADDRESS_ID: {PK, ID, NotNull, INT(10)} */
     protected Integer _memberAddressId;
 
-    /** (会員ID)MEMBER_ID: {UQ+, NotNull, INT(10), FK to member} */
+    /** (会員ID)MEMBER_ID: {UQ+, NotNull, INT(10), FK to MEMBER} */
     protected Integer _memberId;
 
     /** (有効開始日)VALID_BEGIN_DATE: {+UQ, NotNull, DATE(10)} */
@@ -115,7 +115,7 @@ public abstract class BsMemberAddress extends AbstractEntity implements DomainEn
     /** (住所)ADDRESS: {NotNull, VARCHAR(200)} */
     protected String _address;
 
-    /** (地域ID)REGION_ID: {IX, NotNull, INT(10), FK to region, classification=Region} */
+    /** (地域ID)REGION_ID: {IX, NotNull, INT(10), FK to REGION, classification=Region} */
     protected Integer _regionId;
 
     /** (登録日時)REGISTER_DATETIME: {NotNull, DATETIME(19)} */
@@ -143,7 +143,7 @@ public abstract class BsMemberAddress extends AbstractEntity implements DomainEn
 
     /** {@inheritDoc} */
     public String asTableDbName() {
-        return "member_address";
+        return "MEMBER_ADDRESS";
     }
 
     // ===================================================================================
@@ -158,7 +158,7 @@ public abstract class BsMemberAddress extends AbstractEntity implements DomainEn
     /**
      * To be unique by the unique column. <br>
      * You can update the entity by the key when entity update (NOT batch update).
-     * @param memberId (会員ID): UQ+, NotNull, INT(10), FK to member. (NotNull)
+     * @param memberId (会員ID): UQ+, NotNull, INT(10), FK to MEMBER. (NotNull)
      * @param validBeginDate (有効開始日): +UQ, NotNull, DATE(10). (NotNull)
      */
     public void uniqueBy(Integer memberId, java.time.LocalDate validBeginDate) {
@@ -173,7 +173,7 @@ public abstract class BsMemberAddress extends AbstractEntity implements DomainEn
     //                                                             =======================
     /**
      * Get the value of regionId as the classification of Region. <br>
-     * (地域ID)REGION_ID: {IX, NotNull, INT(10), FK to region, classification=Region} <br>
+     * (地域ID)REGION_ID: {IX, NotNull, INT(10), FK to REGION, classification=Region} <br>
      * mainly region of member address
      * <p>It's treated as case insensitive and if the code value is null, it returns null.</p>
      * @return The instance of classification definition (as ENUM type). (NullAllowed: when the column value is null)
@@ -184,7 +184,7 @@ public abstract class BsMemberAddress extends AbstractEntity implements DomainEn
 
     /**
      * Set the value of regionId as the classification of Region. <br>
-     * (地域ID)REGION_ID: {IX, NotNull, INT(10), FK to region, classification=Region} <br>
+     * (地域ID)REGION_ID: {IX, NotNull, INT(10), FK to REGION, classification=Region} <br>
      * mainly region of member address
      * @param cdef The instance of classification definition (as ENUM type). (NullAllowed: if null, null value is set to the column)
      */
@@ -426,7 +426,7 @@ public abstract class BsMemberAddress extends AbstractEntity implements DomainEn
     }
 
     /**
-     * [get] (会員ID)MEMBER_ID: {UQ+, NotNull, INT(10), FK to member} <br>
+     * [get] (会員ID)MEMBER_ID: {UQ+, NotNull, INT(10), FK to MEMBER} <br>
      * 会員を参照するID。<br>
      * 期間ごとのデータがあるので、これだけではユニークにはならない。有効開始日と合わせて複合ユニーク制約となるが、厳密には完全な制約にはなっていない。有効期間の概念はRDBでは表現しきれないのである。
      * @return The value of the column 'MEMBER_ID'. (basically NotNull if selected: for the constraint)
@@ -437,7 +437,7 @@ public abstract class BsMemberAddress extends AbstractEntity implements DomainEn
     }
 
     /**
-     * [set] (会員ID)MEMBER_ID: {UQ+, NotNull, INT(10), FK to member} <br>
+     * [set] (会員ID)MEMBER_ID: {UQ+, NotNull, INT(10), FK to MEMBER} <br>
      * 会員を参照するID。<br>
      * 期間ごとのデータがあるので、これだけではユニークにはならない。有効開始日と合わせて複合ユニーク制約となるが、厳密には完全な制約にはなっていない。有効期間の概念はRDBでは表現しきれないのである。
      * @param memberId The value of the column 'MEMBER_ID'. (basically NotNull if update: for the constraint)
@@ -512,7 +512,7 @@ public abstract class BsMemberAddress extends AbstractEntity implements DomainEn
     }
 
     /**
-     * [get] (地域ID)REGION_ID: {IX, NotNull, INT(10), FK to region, classification=Region} <br>
+     * [get] (地域ID)REGION_ID: {IX, NotNull, INT(10), FK to REGION, classification=Region} <br>
      * 地域を参照するID。かなり漠然とした地域。
      * @return The value of the column 'REGION_ID'. (basically NotNull if selected: for the constraint)
      */
@@ -522,7 +522,7 @@ public abstract class BsMemberAddress extends AbstractEntity implements DomainEn
     }
 
     /**
-     * [set] (地域ID)REGION_ID: {IX, NotNull, INT(10), FK to region, classification=Region} <br>
+     * [set] (地域ID)REGION_ID: {IX, NotNull, INT(10), FK to REGION, classification=Region} <br>
      * 地域を参照するID。かなり漠然とした地域。
      * @param regionId The value of the column 'REGION_ID'. (basically NotNull if update: for the constraint)
      */

@@ -80,7 +80,7 @@ public abstract class BsMemberServiceBhv extends AbstractBehaviorWritable<Member
     /** {@inheritDoc} */
     public MemberServiceDbm asDBMeta() { return MemberServiceDbm.getInstance(); }
     /** {@inheritDoc} */
-    public String asTableDbName() { return "member_service"; }
+    public String asTableDbName() { return "MEMBER_SERVICE"; }
 
     // ===================================================================================
     //                                                                        New Instance
@@ -201,7 +201,7 @@ public abstract class BsMemberServiceBhv extends AbstractBehaviorWritable<Member
 
     /**
      * Select the entity by the unique-key value.
-     * @param memberId (会員ID): UQ, NotNull, INT(10), FK to member. (NotNull)
+     * @param memberId (会員ID): UQ, NotNull, INT(10), FK to MEMBER. (NotNull)
      * @return The optional entity selected by the unique key. (NotNull: if no data, empty entity)
      * @throws EntityAlreadyDeletedException When get(), required() of return value is called and the value is null, which means entity has already been deleted (not found).
      * @throws EntityDuplicatedException When the entity has been duplicated.

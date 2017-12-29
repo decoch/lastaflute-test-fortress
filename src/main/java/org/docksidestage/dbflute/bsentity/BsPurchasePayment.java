@@ -98,7 +98,7 @@ public abstract class BsPurchasePayment extends AbstractEntity implements Domain
     /** (購入支払ID)PURCHASE_PAYMENT_ID: {PK, ID, NotNull, BIGINT(19)} */
     protected Long _purchasePaymentId;
 
-    /** (購入ID)PURCHASE_ID: {IX, NotNull, BIGINT(19), FK to purchase} */
+    /** (購入ID)PURCHASE_ID: {IX, NotNull, BIGINT(19), FK to PURCHASE} */
     protected Long _purchaseId;
 
     /** (支払金額)PAYMENT_AMOUNT: {NotNull, DECIMAL(10, 2)} */
@@ -132,7 +132,7 @@ public abstract class BsPurchasePayment extends AbstractEntity implements Domain
 
     /** {@inheritDoc} */
     public String asTableDbName() {
-        return "purchase_payment";
+        return "PURCHASE_PAYMENT";
     }
 
     // ===================================================================================
@@ -385,7 +385,7 @@ public abstract class BsPurchasePayment extends AbstractEntity implements Domain
     }
 
     /**
-     * [get] (購入ID)PURCHASE_ID: {IX, NotNull, BIGINT(19), FK to purchase} <br>
+     * [get] (購入ID)PURCHASE_ID: {IX, NotNull, BIGINT(19), FK to PURCHASE} <br>
      * 支払い対象の購入へのID
      * @return The value of the column 'PURCHASE_ID'. (basically NotNull if selected: for the constraint)
      */
@@ -395,7 +395,7 @@ public abstract class BsPurchasePayment extends AbstractEntity implements Domain
     }
 
     /**
-     * [set] (購入ID)PURCHASE_ID: {IX, NotNull, BIGINT(19), FK to purchase} <br>
+     * [set] (購入ID)PURCHASE_ID: {IX, NotNull, BIGINT(19), FK to PURCHASE} <br>
      * 支払い対象の購入へのID
      * @param purchaseId The value of the column 'PURCHASE_ID'. (basically NotNull if update: for the constraint)
      */

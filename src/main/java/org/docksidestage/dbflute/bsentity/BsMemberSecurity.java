@@ -95,7 +95,7 @@ public abstract class BsMemberSecurity extends AbstractEntity implements DomainE
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    /** (会員ID)MEMBER_ID: {PK, NotNull, INT(10), FK to member} */
+    /** (会員ID)MEMBER_ID: {PK, NotNull, INT(10), FK to MEMBER} */
     protected Integer _memberId;
 
     /** (ログインパスワード)LOGIN_PASSWORD: {NotNull, VARCHAR(100)} */
@@ -135,7 +135,7 @@ public abstract class BsMemberSecurity extends AbstractEntity implements DomainE
 
     /** {@inheritDoc} */
     public String asTableDbName() {
-        return "member_security";
+        return "MEMBER_SECURITY";
     }
 
     // ===================================================================================
@@ -251,7 +251,7 @@ public abstract class BsMemberSecurity extends AbstractEntity implements DomainE
     //                                                                            Accessor
     //                                                                            ========
     /**
-     * [get] (会員ID)MEMBER_ID: {PK, NotNull, INT(10), FK to member} <br>
+     * [get] (会員ID)MEMBER_ID: {PK, NotNull, INT(10), FK to MEMBER} <br>
      * そのまま one-to-one を構成するためのFKとなる。
      * @return The value of the column 'MEMBER_ID'. (basically NotNull if selected: for the constraint)
      */
@@ -261,7 +261,7 @@ public abstract class BsMemberSecurity extends AbstractEntity implements DomainE
     }
 
     /**
-     * [set] (会員ID)MEMBER_ID: {PK, NotNull, INT(10), FK to member} <br>
+     * [set] (会員ID)MEMBER_ID: {PK, NotNull, INT(10), FK to MEMBER} <br>
      * そのまま one-to-one を構成するためのFKとなる。
      * @param memberId The value of the column 'MEMBER_ID'. (basically NotNull if update: for the constraint)
      */

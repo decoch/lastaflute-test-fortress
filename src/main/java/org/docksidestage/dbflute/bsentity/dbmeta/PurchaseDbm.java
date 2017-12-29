@@ -29,7 +29,7 @@ import org.docksidestage.dbflute.allcommon.*;
 import org.docksidestage.dbflute.exentity.*;
 
 /**
- * The DB meta of purchase. (Singleton)
+ * The DB meta of PURCHASE. (Singleton)
  * @author DBFlute(AutoGenerator)
  */
 public class PurchaseDbm extends AbstractDBMeta {
@@ -97,7 +97,7 @@ public class PurchaseDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                          Table Info
     //                                                                          ==========
-    protected final String _tableDbName = "purchase";
+    protected final String _tableDbName = "PURCHASE";
     protected final String _tableDispName = "PURCHASE";
     protected final String _tablePropertyName = "purchase";
     protected final TableSqlName _tableSqlName = new TableSqlName("PURCHASE", _tableDbName);
@@ -131,12 +131,12 @@ public class PurchaseDbm extends AbstractDBMeta {
      */
     public ColumnInfo columnPurchaseId() { return _columnPurchaseId; }
     /**
-     * (会員ID)MEMBER_ID: {UQ+, IX+, NotNull, INT(10), FK to member}
+     * (会員ID)MEMBER_ID: {UQ+, IX+, NotNull, INT(10), FK to MEMBER}
      * @return The information object of specified column. (NotNull)
      */
     public ColumnInfo columnMemberId() { return _columnMemberId; }
     /**
-     * (商品ID)PRODUCT_ID: {+UQ, IX+, NotNull, INT(10), FK to product}
+     * (商品ID)PRODUCT_ID: {+UQ, IX+, NotNull, INT(10), FK to PRODUCT}
      * @return The information object of specified column. (NotNull)
      */
     public ColumnInfo columnProductId() { return _columnProductId; }

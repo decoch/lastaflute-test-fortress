@@ -4,7 +4,7 @@
 <database name="">
     <table
         comment="会員 : 会員のプロフィールやアカウントなどの基本情報を保持する。&#xa;基本的に物理削除はなく、退会したらステータスが退会会員になる。&#xa;ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。"
-        name="member" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
+        name="MEMBER" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
         <column autoIncrement="true"
             comment="会員ID : 連番として自動採番される。会員IDだけに限らず採番方法はDBMS次第。"
             dbType="INT" javaType="Integer" name="MEMBER_ID"
@@ -44,7 +44,7 @@
             dbType="BIGINT" javaType="Long" name="VERSION_NO"
             required="true" size="19" type="BIGINT"/>
         <foreign-key foreignSchema="maihamadb.$$NoNameSchema$$"
-            foreignTable="member_status" name="FK_MEMBER_MEMBER_STATUS">
+            foreignTable="MEMBER_STATUS" name="FK_MEMBER_MEMBER_STATUS">
             <reference foreign="MEMBER_STATUS_CODE" local="MEMBER_STATUS_CODE"/>
         </foreign-key>
         <unique name="MEMBER_ACCOUNT">
@@ -62,7 +62,7 @@
     </table>
     <table
         comment="会員住所情報 : 会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。&#xa;会員を基点に考えた場合、構造的には one-to-many だが、業務的な定型条件で one-to-one になる。このような構造を「業務的one-to-one」と呼ぶ！&#xa;有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な) &quot;1 : 0..1&quot; である。"
-        name="member_address" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
+        name="MEMBER_ADDRESS" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
         <column autoIncrement="true"
             comment="会員住所ID : 会員住所を識別するID。&#xa;期間ごとに同じ会員のデータを保持することがあるため、これは単なるPKであってFKではない。"
             dbType="INT" javaType="Integer" name="MEMBER_ADDRESS_ID"
@@ -101,11 +101,11 @@
             dbType="BIGINT" javaType="Long" name="VERSION_NO"
             required="true" size="19" type="BIGINT"/>
         <foreign-key foreignSchema="maihamadb.$$NoNameSchema$$"
-            foreignTable="member" name="FK_MEMBER_ADDRESS_MEMBER">
+            foreignTable="MEMBER" name="FK_MEMBER_ADDRESS_MEMBER">
             <reference foreign="MEMBER_ID" local="MEMBER_ID"/>
         </foreign-key>
         <foreign-key foreignSchema="maihamadb.$$NoNameSchema$$"
-            foreignTable="region" name="FK_MEMBER_ADDRESS_REGION">
+            foreignTable="REGION" name="FK_MEMBER_ADDRESS_REGION">
             <reference foreign="REGION_ID" local="REGION_ID"/>
         </foreign-key>
         <unique name="UQ_MEMBER_ADDRESS">
@@ -118,7 +118,7 @@
     </table>
     <table
         comment="会員フォローイング : とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。"
-        name="member_following" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
+        name="MEMBER_FOLLOWING" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
         <column autoIncrement="true" comment="会員フォローイングID : 連番"
             dbType="BIGINT" javaType="Long" name="MEMBER_FOLLOWING_ID"
             pkName="PRIMARY" pkPosition="1" primaryKey="true"
@@ -133,11 +133,11 @@
             dbType="DATETIME" javaType="java.time.LocalDateTime"
             name="FOLLOW_DATETIME" required="true" size="19" type="TIMESTAMP"/>
         <foreign-key foreignSchema="maihamadb.$$NoNameSchema$$"
-            foreignTable="member" name="FK_MEMBER_FOLLOWING_MY_MEMBER_ID">
+            foreignTable="MEMBER" name="FK_MEMBER_FOLLOWING_MY_MEMBER_ID">
             <reference foreign="MEMBER_ID" local="MY_MEMBER_ID"/>
         </foreign-key>
         <foreign-key foreignSchema="maihamadb.$$NoNameSchema$$"
-            foreignTable="member" name="FK_MEMBER_FOLLOWING_YOUR_MEMBER_ID">
+            foreignTable="MEMBER" name="FK_MEMBER_FOLLOWING_YOUR_MEMBER_ID">
             <reference foreign="MEMBER_ID" local="YOUR_MEMBER_ID"/>
         </foreign-key>
         <unique name="UQ_MEMBER_FOLLOWING">
@@ -153,7 +153,7 @@
     </table>
     <table
         comment="会員ログイン : ログインするたびに登録されるログイン履歴。&#xa;登録されたら更新されるも削除されることもない。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。"
-        name="member_login" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
+        name="MEMBER_LOGIN" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
         <column autoIncrement="true" comment="会員ログインID" dbType="BIGINT"
             javaType="Long" name="MEMBER_LOGIN_ID" pkName="PRIMARY"
             pkPosition="1" primaryKey="true" required="true" size="19" type="BIGINT"/>
@@ -171,11 +171,11 @@
             javaType="String" name="LOGIN_MEMBER_STATUS_CODE"
             required="true" size="3" type="CHAR"/>
         <foreign-key foreignSchema="maihamadb.$$NoNameSchema$$"
-            foreignTable="member" name="FK_MEMBER_LOGIN_MEMBER">
+            foreignTable="MEMBER" name="FK_MEMBER_LOGIN_MEMBER">
             <reference foreign="MEMBER_ID" local="MEMBER_ID"/>
         </foreign-key>
         <foreign-key foreignSchema="maihamadb.$$NoNameSchema$$"
-            foreignTable="member_status" name="FK_MEMBER_LOGIN_MEMBER_STATUS">
+            foreignTable="MEMBER_STATUS" name="FK_MEMBER_LOGIN_MEMBER_STATUS">
             <reference foreign="MEMBER_STATUS_CODE" local="LOGIN_MEMBER_STATUS_CODE"/>
         </foreign-key>
         <unique name="UQ_MEMBER_LOGIN">
@@ -191,7 +191,7 @@
     </table>
     <table
         comment="会員セキュリティ : 会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある"
-        name="member_security" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
+        name="MEMBER_SECURITY" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
         <column comment="会員ID : そのまま one-to-one を構成するためのFKとなる。"
             dbType="INT" javaType="Integer" name="MEMBER_ID"
             pkName="PRIMARY" pkPosition="1" primaryKey="true"
@@ -226,13 +226,13 @@
             dbType="BIGINT" javaType="Long" name="VERSION_NO"
             required="true" size="19" type="BIGINT"/>
         <foreign-key foreignSchema="maihamadb.$$NoNameSchema$$"
-            foreignTable="member" name="FK_MEMBER_SECURITY_MEMBER">
+            foreignTable="MEMBER" name="FK_MEMBER_SECURITY_MEMBER">
             <reference foreign="MEMBER_ID" local="MEMBER_ID"/>
         </foreign-key>
     </table>
     <table
         comment="会員サービス : 会員のサービス情報（ポイントサービスなど）。&#xa;テストケースのために、あえて統一性を崩してユニーク制約経由の one-to-one を表現している。"
-        name="member_service" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
+        name="MEMBER_SERVICE" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
         <column autoIncrement="true"
             comment="会員サービスID : 独立した主キーとなるが、実質的に会員IDとは one-to-one である。"
             dbType="INT" javaType="Integer" name="MEMBER_SERVICE_ID"
@@ -263,11 +263,11 @@
             dbType="BIGINT" javaType="Long" name="VERSION_NO"
             required="true" size="19" type="BIGINT"/>
         <foreign-key foreignSchema="maihamadb.$$NoNameSchema$$"
-            foreignTable="member" name="FK_MEMBER_SERVICE_MEMBER">
+            foreignTable="MEMBER" name="FK_MEMBER_SERVICE_MEMBER">
             <reference foreign="MEMBER_ID" local="MEMBER_ID"/>
         </foreign-key>
         <foreign-key foreignSchema="maihamadb.$$NoNameSchema$$"
-            foreignTable="service_rank" name="FK_MEMBER_SERVICE_SERVICE_RANK_CODE">
+            foreignTable="SERVICE_RANK" name="FK_MEMBER_SERVICE_SERVICE_RANK_CODE">
             <reference foreign="SERVICE_RANK_CODE" local="SERVICE_RANK_CODE"/>
         </foreign-key>
         <unique name="MEMBER_ID">
@@ -282,7 +282,7 @@
     </table>
     <table
         comment="会員ステータス : 会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！&#xa;業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。&#xa;&#xa;こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。"
-        name="member_status" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
+        name="MEMBER_STATUS" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
         <column
             comment="会員ステータスコード : 会員ステータスを識別するコード。&#xa;固定的なデータなので連番とか番号にはせず、データを直接見たときも人が直感的にわかるように、例えば &quot;FML&quot; とかの３桁のコード形式にしている。(3って何会員だっけ？とかの問答をやりたくないので)&#xa;"
             dbType="CHAR" javaType="String" name="MEMBER_STATUS_CODE"
@@ -306,7 +306,7 @@
     </table>
     <table
         comment="会員退会情報 : 退会会員の退会に関する詳細な情報。&#xa;退会会員のみデータが存在し、&quot;1 : 0..1&quot; のパターンの one-to-one である。&#xa;共通カラムがあってバージョンNOがないパターン。&#xa;基本的に更新は入らないが、重要なデータなので万が一のために更新系の共通カラムも。"
-        name="member_withdrawal" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
+        name="MEMBER_WITHDRAWAL" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
         <column comment="会員ID : 連番として自動採番される。会員IDだけに限らず採番方法はDBMS次第。"
             dbType="INT" javaType="Integer" name="MEMBER_ID"
             pkName="PRIMARY" pkPosition="1" primaryKey="true"
@@ -336,18 +336,18 @@
             javaType="String" name="UPDATE_USER" required="true"
             size="200" type="VARCHAR"/>
         <foreign-key foreignSchema="maihamadb.$$NoNameSchema$$"
-            foreignTable="member" name="FK_MEMBER_WITHDRAWAL_MEMBER">
+            foreignTable="MEMBER" name="FK_MEMBER_WITHDRAWAL_MEMBER">
             <reference foreign="MEMBER_ID" local="MEMBER_ID"/>
         </foreign-key>
         <foreign-key foreignSchema="maihamadb.$$NoNameSchema$$"
-            foreignTable="withdrawal_reason" name="FK_MEMBER_WITHDRAWAL_WITHDRAWAL_REASON">
+            foreignTable="WITHDRAWAL_REASON" name="FK_MEMBER_WITHDRAWAL_WITHDRAWAL_REASON">
             <reference foreign="WITHDRAWAL_REASON_CODE" local="WITHDRAWAL_REASON_CODE"/>
         </foreign-key>
         <index name="FK_MEMBER_WITHDRAWAL_WITHDRAWAL_REASON">
             <index-column name="WITHDRAWAL_REASON_CODE" position="1"/>
         </index>
     </table>
-    <table comment="商品" name="product"
+    <table comment="商品" name="PRODUCT"
         schema="maihamadb.$$NoNameSchema$$" type="TABLE">
         <column autoIncrement="true" comment="商品ID" dbType="INT"
             javaType="Integer" name="PRODUCT_ID" pkName="PRIMARY"
@@ -384,11 +384,11 @@
             dbType="BIGINT" javaType="Long" name="VERSION_NO"
             required="true" size="19" type="BIGINT"/>
         <foreign-key foreignSchema="maihamadb.$$NoNameSchema$$"
-            foreignTable="product_category" name="FK_PRODUCT_PRODUCT_CATEGORY">
+            foreignTable="PRODUCT_CATEGORY" name="FK_PRODUCT_PRODUCT_CATEGORY">
             <reference foreign="PRODUCT_CATEGORY_CODE" local="PRODUCT_CATEGORY_CODE"/>
         </foreign-key>
         <foreign-key foreignSchema="maihamadb.$$NoNameSchema$$"
-            foreignTable="product_status" name="FK_PRODUCT_PRODUCT_STATUS">
+            foreignTable="PRODUCT_STATUS" name="FK_PRODUCT_PRODUCT_STATUS">
             <reference foreign="PRODUCT_STATUS_CODE" local="PRODUCT_STATUS_CODE"/>
         </foreign-key>
         <unique name="PRODUCT_HANDLE_CODE">
@@ -405,7 +405,7 @@
         </index>
     </table>
     <table comment="商品カテゴリ : 商品のカテゴリを表現するマスタ。自己参照FKの階層になっている。"
-        name="product_category" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
+        name="PRODUCT_CATEGORY" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
         <column comment="商品カテゴリコード : 自分のテーブルの別のレコードからも参照される。"
             dbType="CHAR" javaType="String" name="PRODUCT_CATEGORY_CODE"
             pkName="PRIMARY" pkPosition="1" primaryKey="true"
@@ -416,7 +416,7 @@
             dbType="CHAR" javaType="String" name="PARENT_CATEGORY_CODE"
             size="3" type="CHAR"/>
         <foreign-key foreignSchema="maihamadb.$$NoNameSchema$$"
-            foreignTable="product_category" name="FK_PRODUCT_CATEGORY_PARENT">
+            foreignTable="PRODUCT_CATEGORY" name="FK_PRODUCT_CATEGORY_PARENT">
             <reference foreign="PRODUCT_CATEGORY_CODE" local="PARENT_CATEGORY_CODE"/>
         </foreign-key>
         <index name="FK_PRODUCT_CATEGORY_PARENT">
@@ -424,7 +424,7 @@
         </index>
     </table>
     <table comment="商品ステータス : 商品のステータスを表現する固定的なマスタ。"
-        name="product_status" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
+        name="PRODUCT_STATUS" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
         <column comment="商品ステータスコード : 商品ステータスを識別するコード。" dbType="CHAR"
             javaType="String" name="PRODUCT_STATUS_CODE"
             pkName="PRIMARY" pkPosition="1" primaryKey="true"
@@ -442,7 +442,7 @@
     </table>
     <table
         comment="購入 : 一つの商品に対する購入を表現する(購入履歴とも言える)。&#xa;実業務であれば購入詳細というテーブルを作り、「購入という行為」と「その中身（詳細）」を違う粒度のデータとしてそれぞれ管理するのが一般的と言えるでしょう。というか、注文とか請求とかそういうことを考え始めたらもっと複雑になるはずですが、ExampleDBということで割り切っています。"
-        name="purchase" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
+        name="PURCHASE" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
         <column autoIncrement="true" comment="購入ID :  連番"
             dbType="BIGINT" javaType="Long" name="PURCHASE_ID"
             pkName="PRIMARY" pkPosition="1" primaryKey="true"
@@ -483,11 +483,11 @@
             dbType="BIGINT" javaType="Long" name="VERSION_NO"
             required="true" size="19" type="BIGINT"/>
         <foreign-key foreignSchema="maihamadb.$$NoNameSchema$$"
-            foreignTable="member" name="FK_PURCHASE_MEMBER">
+            foreignTable="MEMBER" name="FK_PURCHASE_MEMBER">
             <reference foreign="MEMBER_ID" local="MEMBER_ID"/>
         </foreign-key>
         <foreign-key foreignSchema="maihamadb.$$NoNameSchema$$"
-            foreignTable="product" name="FK_PURCHASE_PRODUCT">
+            foreignTable="PRODUCT" name="FK_PURCHASE_PRODUCT">
             <reference foreign="PRODUCT_ID" local="PRODUCT_ID"/>
         </foreign-key>
         <unique name="UQ_PURCHASE">
@@ -515,7 +515,7 @@
     </table>
     <table
         comment="購入支払 : 購入に対する支払。&#xa;分割払いもできるのでmanyとなり、会員からの孫テーブルのテストができてうれしい。"
-        name="purchase_payment" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
+        name="PURCHASE_PAYMENT" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
         <column autoIncrement="true" comment="購入支払ID : 連番"
             dbType="BIGINT" javaType="Long" name="PURCHASE_PAYMENT_ID"
             pkName="PRIMARY" pkPosition="1" primaryKey="true"
@@ -544,7 +544,7 @@
             javaType="String" name="UPDATE_USER" required="true"
             size="200" type="VARCHAR"/>
         <foreign-key foreignSchema="maihamadb.$$NoNameSchema$$"
-            foreignTable="purchase" name="FK_PURCHASE_PAYMENT_PURCHASE">
+            foreignTable="PURCHASE" name="FK_PURCHASE_PAYMENT_PURCHASE">
             <reference foreign="PURCHASE_ID" local="PURCHASE_ID"/>
         </foreign-key>
         <index name="FK_PURCHASE_PAYMENT_PURCHASE">
@@ -557,7 +557,7 @@
     </table>
     <table
         comment="地域 : 主に会員の住所に対応する漠然とした地域。&#xa;かなりざっくりした感じではある。唯一の業務的one-to-oneの親テーブルのケース。"
-        name="region" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
+        name="REGION" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
         <column
             comment="地域ID : 地域をしっかりと識別するID。&#xa;珍しく(固定的な)マスタテーブルとしては数値だが、Exampleなのでやはり色々なパターンがないとね、ってところで。"
             dbType="INT" javaType="Integer" name="REGION_ID"
@@ -568,7 +568,7 @@
             size="50" type="VARCHAR"/>
     </table>
     <table comment="サービスランク : 会員のサービスレベルを表現するランク。(ゴールドとかプラチナとか)"
-        name="service_rank" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
+        name="SERVICE_RANK" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
         <column comment="サービスランクコード : サービスランクを識別するコード。" dbType="CHAR"
             javaType="String" name="SERVICE_RANK_CODE" pkName="PRIMARY"
             pkPosition="1" primaryKey="true" required="true" size="3" type="CHAR"/>
@@ -594,7 +594,7 @@
         </unique>
     </table>
     <table comment="退会理由 : 会員に選ばせる定型的な退会理由のマスタ。そういえば、これ表示順カラムがないですねぇ..."
-        name="withdrawal_reason" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
+        name="WITHDRAWAL_REASON" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
         <column comment="退会理由コード" dbType="CHAR" javaType="String"
             name="WITHDRAWAL_REASON_CODE" pkName="PRIMARY"
             pkPosition="1" primaryKey="true" required="true" size="3" type="CHAR"/>

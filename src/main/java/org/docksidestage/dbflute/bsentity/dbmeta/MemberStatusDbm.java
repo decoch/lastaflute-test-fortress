@@ -28,7 +28,7 @@ import org.docksidestage.dbflute.allcommon.*;
 import org.docksidestage.dbflute.exentity.*;
 
 /**
- * The DB meta of member_status. (Singleton)
+ * The DB meta of MEMBER_STATUS. (Singleton)
  * @author DBFlute(AutoGenerator)
  */
 public class MemberStatusDbm extends AbstractDBMeta {
@@ -75,7 +75,7 @@ public class MemberStatusDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                          Table Info
     //                                                                          ==========
-    protected final String _tableDbName = "member_status";
+    protected final String _tableDbName = "MEMBER_STATUS";
     protected final String _tableDispName = "MEMBER_STATUS";
     protected final String _tablePropertyName = "memberStatus";
     protected final TableSqlName _tableSqlName = new TableSqlName("MEMBER_STATUS", _tableDbName);

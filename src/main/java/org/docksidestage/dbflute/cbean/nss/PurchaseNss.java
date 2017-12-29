@@ -18,7 +18,7 @@ package org.docksidestage.dbflute.cbean.nss;
 import org.docksidestage.dbflute.cbean.cq.PurchaseCQ;
 
 /**
- * The nest select set-upper of purchase.
+ * The nest select set-upper of PURCHASE.
  * @author DBFlute(AutoGenerator)
  */
 public class PurchaseNss {

@@ -86,7 +86,7 @@ public abstract class BsProductCategory extends AbstractEntity implements Domain
     /** (商品カテゴリ名称)PRODUCT_CATEGORY_NAME: {NotNull, VARCHAR(50)} */
     protected String _productCategoryName;
 
-    /** (親カテゴリコード)PARENT_CATEGORY_CODE: {IX, CHAR(3), FK to product_category} */
+    /** (親カテゴリコード)PARENT_CATEGORY_CODE: {IX, CHAR(3), FK to PRODUCT_CATEGORY} */
     protected String _parentCategoryCode;
 
     // ===================================================================================
@@ -99,7 +99,7 @@ public abstract class BsProductCategory extends AbstractEntity implements Domain
 
     /** {@inheritDoc} */
     public String asTableDbName() {
-        return "product_category";
+        return "PRODUCT_CATEGORY";
     }
 
     // ===================================================================================
@@ -294,7 +294,7 @@ public abstract class BsProductCategory extends AbstractEntity implements Domain
     }
 
     /**
-     * [get] (親カテゴリコード)PARENT_CATEGORY_CODE: {IX, CHAR(3), FK to product_category} <br>
+     * [get] (親カテゴリコード)PARENT_CATEGORY_CODE: {IX, CHAR(3), FK to PRODUCT_CATEGORY} <br>
      * 最上位の場合はデータなし。まさひく自己参照FKカラム！
      * @return The value of the column 'PARENT_CATEGORY_CODE'. (NullAllowed even if selected: for no constraint)
      */
@@ -304,7 +304,7 @@ public abstract class BsProductCategory extends AbstractEntity implements Domain
     }
 
     /**
-     * [set] (親カテゴリコード)PARENT_CATEGORY_CODE: {IX, CHAR(3), FK to product_category} <br>
+     * [set] (親カテゴリコード)PARENT_CATEGORY_CODE: {IX, CHAR(3), FK to PRODUCT_CATEGORY} <br>
      * 最上位の場合はデータなし。まさひく自己参照FKカラム！
      * @param parentCategoryCode The value of the column 'PARENT_CATEGORY_CODE'. (NullAllowed: null update allowed for no constraint)
      */

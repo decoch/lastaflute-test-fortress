@@ -28,7 +28,7 @@ import org.docksidestage.dbflute.cbean.*;
 import org.docksidestage.dbflute.cbean.cq.*;
 
 /**
- * The base condition-query of service_rank.
+ * The base condition-query of SERVICE_RANK.
  * @author DBFlute(AutoGenerator)
  */
 public class BsServiceRankCQ extends AbstractBsServiceRankCQ {
@@ -50,7 +50,7 @@ public class BsServiceRankCQ extends AbstractBsServiceRankCQ {
     //                                                                 ===================
     /**
      * Prepare InlineView query. <br>
-     * {select ... from ... left outer join (select * from service_rank) where FOO = [value] ...}
+     * {select ... from ... left outer join (select * from SERVICE_RANK) where FOO = [value] ...}
      * <pre>
      * cb.query().queryMemberStatus().<span style="color: #CC4747">inline()</span>.setFoo...;
      * </pre>
@@ -73,7 +73,7 @@ public class BsServiceRankCQ extends AbstractBsServiceRankCQ {
 
     /**
      * Prepare OnClause query. <br>
-     * {select ... from ... left outer join service_rank on ... and FOO = [value] ...}
+     * {select ... from ... left outer join SERVICE_RANK on ... and FOO = [value] ...}
      * <pre>
      * cb.query().queryMemberStatus().<span style="color: #CC4747">on()</span>.setFoo...;
      * </pre>

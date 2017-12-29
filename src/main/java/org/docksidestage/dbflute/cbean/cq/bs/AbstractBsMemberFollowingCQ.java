@@ -31,7 +31,7 @@ import org.docksidestage.dbflute.cbean.*;
 import org.docksidestage.dbflute.cbean.cq.*;
 
 /**
- * The abstract condition-query of member_following.
+ * The abstract condition-query of MEMBER_FOLLOWING.
  * @author DBFlute(AutoGenerator)
  */
 public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery {
@@ -52,7 +52,7 @@ public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery
     }
 
     public String asTableDbName() {
-        return "member_following";
+        return "MEMBER_FOLLOWING";
     }
 
     // ===================================================================================
@@ -189,7 +189,7 @@ public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery
 
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
-     * (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to member}
+     * (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to MEMBER}
      * @param myMemberId The value of myMemberId as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setMyMemberId_Equal(Integer myMemberId) {
@@ -202,7 +202,7 @@ public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery
 
     /**
      * NotEqual(&lt;&gt;). And NullIgnored, OnlyOnceRegistered. <br>
-     * (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to member}
+     * (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to MEMBER}
      * @param myMemberId The value of myMemberId as notEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setMyMemberId_NotEqual(Integer myMemberId) {
@@ -215,7 +215,7 @@ public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery
 
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
-     * (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to member}
+     * (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to MEMBER}
      * @param myMemberId The value of myMemberId as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setMyMemberId_GreaterThan(Integer myMemberId) {
@@ -224,7 +224,7 @@ public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery
 
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
-     * (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to member}
+     * (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to MEMBER}
      * @param myMemberId The value of myMemberId as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setMyMemberId_LessThan(Integer myMemberId) {
@@ -233,7 +233,7 @@ public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery
 
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
-     * (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to member}
+     * (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to MEMBER}
      * @param myMemberId The value of myMemberId as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setMyMemberId_GreaterEqual(Integer myMemberId) {
@@ -242,7 +242,7 @@ public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery
 
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
-     * (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to member}
+     * (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to MEMBER}
      * @param myMemberId The value of myMemberId as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setMyMemberId_LessEqual(Integer myMemberId) {
@@ -253,7 +253,7 @@ public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery
      * RangeOf with various options. (versatile) <br>
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
-     * (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to member}
+     * (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to MEMBER}
      * @param minNumber The min number of myMemberId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param maxNumber The max number of myMemberId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
@@ -266,7 +266,7 @@ public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery
      * RangeOf with various options. (versatile) <br>
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
-     * (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to member}
+     * (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to MEMBER}
      * @param minNumber The min number of myMemberId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param maxNumber The max number of myMemberId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
@@ -277,7 +277,7 @@ public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery
 
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
-     * (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to member}
+     * (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to MEMBER}
      * @param myMemberIdList The collection of myMemberId as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setMyMemberId_InScope(Collection<Integer> myMemberIdList) {
@@ -290,7 +290,7 @@ public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery
 
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
-     * (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to member}
+     * (わたし)MY_MEMBER_ID: {UQ+, NotNull, INT(10), FK to MEMBER}
      * @param myMemberIdList The collection of myMemberId as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setMyMemberId_NotInScope(Collection<Integer> myMemberIdList) {
@@ -306,7 +306,7 @@ public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery
 
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
-     * (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to member}
+     * (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to MEMBER}
      * @param yourMemberId The value of yourMemberId as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setYourMemberId_Equal(Integer yourMemberId) {
@@ -319,7 +319,7 @@ public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery
 
     /**
      * NotEqual(&lt;&gt;). And NullIgnored, OnlyOnceRegistered. <br>
-     * (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to member}
+     * (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to MEMBER}
      * @param yourMemberId The value of yourMemberId as notEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setYourMemberId_NotEqual(Integer yourMemberId) {
@@ -332,7 +332,7 @@ public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery
 
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
-     * (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to member}
+     * (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to MEMBER}
      * @param yourMemberId The value of yourMemberId as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setYourMemberId_GreaterThan(Integer yourMemberId) {
@@ -341,7 +341,7 @@ public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery
 
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
-     * (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to member}
+     * (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to MEMBER}
      * @param yourMemberId The value of yourMemberId as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setYourMemberId_LessThan(Integer yourMemberId) {
@@ -350,7 +350,7 @@ public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery
 
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
-     * (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to member}
+     * (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to MEMBER}
      * @param yourMemberId The value of yourMemberId as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setYourMemberId_GreaterEqual(Integer yourMemberId) {
@@ -359,7 +359,7 @@ public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery
 
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
-     * (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to member}
+     * (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to MEMBER}
      * @param yourMemberId The value of yourMemberId as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setYourMemberId_LessEqual(Integer yourMemberId) {
@@ -370,7 +370,7 @@ public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery
      * RangeOf with various options. (versatile) <br>
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
-     * (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to member}
+     * (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to MEMBER}
      * @param minNumber The min number of yourMemberId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param maxNumber The max number of yourMemberId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
@@ -383,7 +383,7 @@ public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery
      * RangeOf with various options. (versatile) <br>
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
-     * (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to member}
+     * (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to MEMBER}
      * @param minNumber The min number of yourMemberId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param maxNumber The max number of yourMemberId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
@@ -394,7 +394,7 @@ public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery
 
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
-     * (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to member}
+     * (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to MEMBER}
      * @param yourMemberIdList The collection of yourMemberId as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setYourMemberId_InScope(Collection<Integer> yourMemberIdList) {
@@ -407,7 +407,7 @@ public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery
 
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
-     * (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to member}
+     * (あなた)YOUR_MEMBER_ID: {+UQ, IX, NotNull, INT(10), FK to MEMBER}
      * @param yourMemberIdList The collection of yourMemberId as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setYourMemberId_NotInScope(Collection<Integer> yourMemberIdList) {
@@ -670,7 +670,6 @@ public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery
      * <span style="color: #3F7E5E">//   end asc, ...</span>
      *
      * cb.query().addOrderBy_MemberStatusCode_Asc().<span style="color: #CC4747">withManualOrder</span>(<span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_GreaterEqual</span>(priorityDate); <span style="color: #3F7E5E">// e.g. 2000/01/01</span>
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Withdrawal);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Formalized);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Provisional);

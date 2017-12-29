@@ -18,7 +18,7 @@ package org.docksidestage.dbflute.cbean.nss;
 import org.docksidestage.dbflute.cbean.cq.MemberAddressCQ;
 
 /**
- * The nest select set-upper of member_address.
+ * The nest select set-upper of MEMBER_ADDRESS.
  * @author DBFlute(AutoGenerator)
  */
 public class MemberAddressNss {

@@ -80,7 +80,7 @@ public abstract class BsMemberBhv extends AbstractBehaviorWritable<Member, Membe
     /** {@inheritDoc} */
     public MemberDbm asDBMeta() { return MemberDbm.getInstance(); }
     /** {@inheritDoc} */
-    public String asTableDbName() { return "member"; }
+    public String asTableDbName() { return "MEMBER"; }
 
     // ===================================================================================
     //                                                                        New Instance

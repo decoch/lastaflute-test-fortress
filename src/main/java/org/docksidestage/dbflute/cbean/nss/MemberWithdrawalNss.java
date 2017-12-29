@@ -18,7 +18,7 @@ package org.docksidestage.dbflute.cbean.nss;
 import org.docksidestage.dbflute.cbean.cq.MemberWithdrawalCQ;
 
 /**
- * The nest select set-upper of member_withdrawal.
+ * The nest select set-upper of MEMBER_WITHDRAWAL.
  * @author DBFlute(AutoGenerator)
  */
 public class MemberWithdrawalNss {

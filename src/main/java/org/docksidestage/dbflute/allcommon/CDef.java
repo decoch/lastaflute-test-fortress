@@ -715,11 +715,11 @@ public interface CDef extends Classification {
      * category of product. self reference
      */
     public enum ProductCategory implements CDef {
-        /** Music */
-        Music("MSC", "Music", emptyStrings())
-        ,
         /** Food */
         Food("FOD", "Food", emptyStrings())
+        ,
+        /** Music */
+        Music("MSC", "Music", emptyStrings())
         ,
         /** Herb: 0 */
         Herb("HEB", "Herb", emptyStrings())

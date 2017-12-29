@@ -29,7 +29,7 @@ import org.docksidestage.dbflute.allcommon.*;
 import org.docksidestage.dbflute.exentity.*;
 
 /**
- * The DB meta of product_category. (Singleton)
+ * The DB meta of PRODUCT_CATEGORY. (Singleton)
  * @author DBFlute(AutoGenerator)
  */
 public class ProductCategoryDbm extends AbstractDBMeta {
@@ -80,7 +80,7 @@ public class ProductCategoryDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                          Table Info
     //                                                                          ==========
-    protected final String _tableDbName = "product_category";
+    protected final String _tableDbName = "PRODUCT_CATEGORY";
     protected final String _tableDispName = "PRODUCT_CATEGORY";
     protected final String _tablePropertyName = "productCategory";
     protected final TableSqlName _tableSqlName = new TableSqlName("PRODUCT_CATEGORY", _tableDbName);
@@ -110,7 +110,7 @@ public class ProductCategoryDbm extends AbstractDBMeta {
      */
     public ColumnInfo columnProductCategoryName() { return _columnProductCategoryName; }
     /**
-     * (親カテゴリコード)PARENT_CATEGORY_CODE: {IX, CHAR(3), FK to product_category}
+     * (親カテゴリコード)PARENT_CATEGORY_CODE: {IX, CHAR(3), FK to PRODUCT_CATEGORY}
      * @return The information object of specified column. (NotNull)
      */
     public ColumnInfo columnParentCategoryCode() { return _columnParentCategoryCode; }
