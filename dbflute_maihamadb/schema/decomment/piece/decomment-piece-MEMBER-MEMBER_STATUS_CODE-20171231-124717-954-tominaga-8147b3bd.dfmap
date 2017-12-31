@@ -1,0 +1,21 @@
+map:{
+    ; formatVersion = 1.0
+    ; tableName = MEMBER
+    ; columnName = MEMBER_STATUS_CODE
+    ; targetType = COLUMN
+    ; decomment = 会員ステータスを参照するコード。
+ステータスが変わるたびに、このカラムが更新される。
+データベースコメントとのコンフリクト解消
+    ; databaseComment = 会員ステータスを参照するコード。
+ステータスが変わるたびに、このカラムが更新される。
+    ; commentVersion = 0
+    ; authorList = list:{
+        ; tominaga
+    }
+    ; pieceCode = 8147b3bd
+    ; pieceDatetime = 2017-12-31T12:47:17.953
+    ; pieceOwner = tominaga
+    ; previousPieceList = list:{
+        ; 920967ee
+    }
+}
