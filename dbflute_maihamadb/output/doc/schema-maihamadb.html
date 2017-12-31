@@ -3707,6 +3707,125 @@ function Decomment() {
 	// setup from dbflute if decomment pickup exists
 	this.embeddedPickup = {
 		'tables': [
+				 {
+				'tableName': 'MEMBER_FOLLOWING'
+				, 'properties': [
+						 {
+						'decomment': 'カラム情報でのコンフリクト'
+						, 'databaseComment': 'とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。'
+						, 'commentVersion': 0
+						, 'authors': ['tominaga']
+						, 'pieceCode': 'aea26238'
+						, 'pieceDatatime': '2017-12-31T12:30:12.752'
+						, 'previousPieces': []
+					}
+						, {
+						'decomment': 'とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。<br><br>カラム情報でのコンフリクト'
+						, 'databaseComment': 'とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。'
+						, 'commentVersion': 0
+						, 'authors': ['tominaga']
+						, 'pieceCode': '839dd874'
+						, 'pieceDatatime': '2017-12-31T12:30:04.742'
+						, 'previousPieces': []
+					}
+				]
+				, 'columns': [
+				]
+			}
+				, {
+				'tableName': 'MEMBER'
+				, 'properties': [
+						 {
+						'decomment': 'テーブルコメントのコンフリクト'
+						, 'databaseComment': '会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。<br>ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。'
+						, 'commentVersion': 0
+						, 'authors': ['tominaga']
+						, 'pieceCode': '720db4a6'
+						, 'pieceDatatime': '2017-12-31T12:29:29.008'
+						, 'previousPieces': ['d54ceb73']
+					}
+						, {
+						'decomment': '会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。<br>ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。<br>テーブルコメントのコンフリクトa'
+						, 'databaseComment': '会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。<br>ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。'
+						, 'commentVersion': 0
+						, 'authors': ['tominaga']
+						, 'pieceCode': '295633b2'
+						, 'pieceDatatime': '2017-12-31T12:29:30.831'
+						, 'previousPieces': ['d54ceb73']
+					}
+				]
+				, 'columns': [
+						 {
+						'columnName': 'MEMBER_ID'
+						, 'properties': [
+								 {
+								'decomment': '連番として自動採番される。会員IDだけに限らず採番方法はDBMS次第。<br>カラムコメントのコンフリクト<br>カラムコメントのコンフリクト'
+								, 'databaseComment': '連番として自動採番される。会員IDだけに限らず採番方法はDBMS次第。'
+								, 'commentVersion': 0
+								, 'authors': ['tominaga']
+								, 'pieceCode': '1231c6b1'
+								, 'pieceDatatime': '2017-12-31T12:33:22.199'
+								, 'previousPieces': ['3f913870']
+							}
+								, {
+								'decomment': 'カラムコメントのコンフリクト'
+								, 'databaseComment': '連番として自動採番される。会員IDだけに限らず採番方法はDBMS次第。'
+								, 'commentVersion': 0
+								, 'authors': ['tominaga']
+								, 'pieceCode': '684adc00'
+								, 'pieceDatatime': '2017-12-31T12:33:19.868'
+								, 'previousPieces': ['3f913870']
+							}
+						]
+					}
+						, {
+						'columnName': 'MEMBER_NAME'
+						, 'properties': [
+								 {
+								'decomment': '会員のフルネームの名称。<br>苗字と名前を分けて管理することが多いが、ここでは単純にひとまとめ。<br>カラムコメントのコンフリクト解消'
+								, 'databaseComment': '会員のフルネームの名称。<br>苗字と名前を分けて管理することが多いが、ここでは単純にひとまとめ。'
+								, 'commentVersion': 0
+								, 'authors': ['tominaga']
+								, 'pieceCode': '80223c7b'
+								, 'pieceDatatime': '2017-12-31T12:31:12.037'
+								, 'previousPieces': ['e72e30ba','23c41513']
+							}
+						]
+					}
+				]
+			}
+				, {
+				'tableName': 'MEMBER_ADDRESS'
+				, 'properties': [
+						 {
+						'decomment': '会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。<br>会員を基点に考えた場合、構造的には one-to-many だが、業務的な定型条件で one-to-one になる。このような構造を「業務的one-to-one」と呼ぶ！<br>有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な) &quot;1 : 0..1&quot; である。<br>コンフリクト解消'
+						, 'databaseComment': '会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。<br>会員を基点に考えた場合、構造的には&nbsp;one-to-many&nbsp;だが、業務的な定型条件で&nbsp;one-to-one&nbsp;になる。このような構造を「業務的one-to-one」と呼ぶ！<br>有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な)&nbsp;"1&nbsp;:&nbsp;0..1"&nbsp;である。'
+						, 'commentVersion': 0
+						, 'authors': ['tominaga']
+						, 'pieceCode': '7ac42f48'
+						, 'pieceDatatime': '2017-12-31T12:29:47.373'
+						, 'previousPieces': ['a5a396a4','4dbfb0a8']
+					}
+				]
+				, 'columns': [
+				]
+			}
+				, {
+				'tableName': 'MEMBER_LOGIN'
+				, 'properties': [
+						 {
+						'decomment': 'ログインするたびに登録されるログイン履歴。<br>登録されたら更新されるも削除されることもない。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。<br>カラム情報でのコンフリクト解消'
+						, 'databaseComment': 'ログインするたびに登録されるログイン履歴。<br>登録されたら更新されるも削除されることもない。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。'
+						, 'commentVersion': 0
+						, 'authors': ['tominaga']
+						, 'pieceCode': '9a92a7b0'
+						, 'pieceDatatime': '2017-12-31T12:30:36.167'
+						, 'previousPieces': ['dc839b98','a57c5e4c']
+					}
+				]
+				, 'columns': [
+				]
+			}
 		]}
 	this.pickupStore = {
 		'MEMBER': {
