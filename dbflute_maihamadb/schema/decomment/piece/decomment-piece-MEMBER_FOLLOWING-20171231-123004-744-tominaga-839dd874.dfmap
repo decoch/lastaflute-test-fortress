@@ -1,0 +1,18 @@
+map:{
+    ; formatVersion = 1.0
+    ; tableName = MEMBER_FOLLOWING
+    ; columnName = null
+    ; targetType = TABLE
+    ; decomment = とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。
+
+カラム情報でのコンフリクト
+    ; databaseComment = とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。
+    ; commentVersion = 0
+    ; authorList = list:{
+        ; tominaga
+    }
+    ; pieceCode = 839dd874
+    ; pieceDatetime = 2017-12-31T12:30:04.742
+    ; pieceOwner = tominaga
+    ; previousPieceList = list:{}
+}
