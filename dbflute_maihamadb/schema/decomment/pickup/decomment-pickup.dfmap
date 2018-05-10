@@ -1,168 +1,111 @@
 map:{
-    ; formatVersion = 1.0
-    ; pickupDatetime = 2017-12-31T12:33:31.965
+    ; formatVersion = null
+    ; pickupDatetime = 2018-05-10T12:43:19.966
     ; decoMap = map:{
         ; tableList = list:{
             ; map:{
-                ; tableName = MEMBER_FOLLOWING
-                ; propertyList = list:{
+                ; tableName = MEMBER_SERVICE
+                ; mappingMapList = list:{
                     ; map:{
-                        ; decomment = カラム情報でのコンフリクト
-                        ; databaseComment = とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。
-                        ; pieceCode = aea26238
-                        ; pieceOwner = tominaga
-                        ; pieceDatetime = 2017-12-31T12:30:12.752
-                        ; previousPieceList = list:{}
+                        ; decomment = 会員のサービス情報（ポイントサービスなど）。
+テストケースのために、あえて統一性を崩してユニーク制約経由の one-to-one を表現している。
+データベースコメントとのコンフリクト解消
+                        ; databaseComment = 会員のサービス情報（ポイントサービスなど）。
+テストケースのために、あえて統一性を崩してユニーク制約経由の&nbsp\;one-to-one&nbsp\;を表現している。
                         ; commentVersion = 0
                         ; authorList = list:{
                             ; tominaga
                         }
-                    }
-                    ; map:{
-                        ; decomment = とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。
-
-カラム情報でのコンフリクト
-                        ; databaseComment = とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。
-                        ; pieceCode = 839dd874
+                        ; pieceCode = c5dc0125
                         ; pieceOwner = tominaga
-                        ; pieceDatetime = 2017-12-31T12:30:04.742
-                        ; previousPieceList = list:{}
+                        ; pieceGitBranch = null
+                        ; pieceDatetime = 2017-12-31T12:47:35.110
+                        ; previousPieceList = list:{
+                            ; 3710699e
+                        }
+                    }
+                }
+                ; propertyList = list:{
+                    ; map:{
+                        ; decomment = 会員のサービス情報（ポイントサービスなど）。
+テストケースのために、あえて統一性を崩してユニーク制約経由の one-to-one を表現している。
+データベースコメントとのコンフリクト解消
+                        ; databaseComment = 会員のサービス情報（ポイントサービスなど）。
+テストケースのために、あえて統一性を崩してユニーク制約経由の&nbsp\;one-to-one&nbsp\;を表現している。
                         ; commentVersion = 0
                         ; authorList = list:{
                             ; tominaga
+                        }
+                        ; pieceCode = c5dc0125
+                        ; pieceOwner = tominaga
+                        ; pieceGitBranch = null
+                        ; pieceDatetime = 2017-12-31T12:47:35.110
+                        ; previousPieceList = list:{
+                            ; 3710699e
                         }
                     }
                 }
                 ; columnList = list:{}
             }
             ; map:{
-                ; tableName = MEMBER
-                ; propertyList = list:{
+                ; tableName = MEMBER_SECURITY
+                ; mappingMapList = list:{
                     ; map:{
-                        ; decomment = テーブルコメントのコンフリクト
-                        ; databaseComment = 会員のプロフィールやアカウントなどの基本情報を保持する。
-基本的に物理削除はなく、退会したらステータスが退会会員になる。
-ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。
-                        ; pieceCode = 720db4a6
-                        ; pieceOwner = tominaga
-                        ; pieceDatetime = 2017-12-31T12:29:29.008
-                        ; previousPieceList = list:{
-                            ; d54ceb73
-                        }
+                        ; decomment = 会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある
+データベースコメントとのコンフリクト
+                        ; databaseComment = 会員とは&nbsp\;one-to-one&nbsp\;
                         ; commentVersion = 0
                         ; authorList = list:{
                             ; tominaga
                         }
-                    }
-                    ; map:{
-                        ; decomment = 会員のプロフィールやアカウントなどの基本情報を保持する。
-基本的に物理削除はなく、退会したらステータスが退会会員になる。
-ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。
-テーブルコメントのコンフリクトa
-                        ; databaseComment = 会員のプロフィールやアカウントなどの基本情報を保持する。
-基本的に物理削除はなく、退会したらステータスが退会会員になる。
-ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。
-                        ; pieceCode = 295633b2
+                        ; pieceCode = 2a372816
                         ; pieceOwner = tominaga
-                        ; pieceDatetime = 2017-12-31T12:29:30.831
-                        ; previousPieceList = list:{
-                            ; d54ceb73
-                        }
-                        ; commentVersion = 0
-                        ; authorList = list:{
-                            ; tominaga
-                        }
+                        ; pieceGitBranch = null
+                        ; pieceDatetime = 2017-12-31T12:45:34.883
+                        ; previousPieceList = list:{}
                     }
                 }
-                ; columnList = list:{
-                    ; map:{
-                        ; columnName = MEMBER_ID
-                        ; propertyList = list:{
-                            ; map:{
-                                ; decomment = 連番として自動採番される。会員IDだけに限らず採番方法はDBMS次第。
-カラムコメントのコンフリクト
-カラムコメントのコンフリクト
-                                ; databaseComment = 連番として自動採番される。会員IDだけに限らず採番方法はDBMS次第。
-                                ; pieceCode = 1231c6b1
-                                ; pieceOwner = tominaga
-                                ; pieceDatetime = 2017-12-31T12:33:22.199
-                                ; previousPieceList = list:{
-                                    ; 3f913870
-                                }
-                                ; commentVersion = 0
-                                ; authorList = list:{
-                                    ; tominaga
-                                }
-                            }
-                            ; map:{
-                                ; decomment = カラムコメントのコンフリクト
-                                ; databaseComment = 連番として自動採番される。会員IDだけに限らず採番方法はDBMS次第。
-                                ; pieceCode = 684adc00
-                                ; pieceOwner = tominaga
-                                ; pieceDatetime = 2017-12-31T12:33:19.868
-                                ; previousPieceList = list:{
-                                    ; 3f913870
-                                }
-                                ; commentVersion = 0
-                                ; authorList = list:{
-                                    ; tominaga
-                                }
-                            }
-                        }
-                    }
-                    ; map:{
-                        ; columnName = MEMBER_NAME
-                        ; propertyList = list:{
-                            ; map:{
-                                ; decomment = 会員のフルネームの名称。
-苗字と名前を分けて管理することが多いが、ここでは単純にひとまとめ。
-カラムコメントのコンフリクト解消
-                                ; databaseComment = 会員のフルネームの名称。
-苗字と名前を分けて管理することが多いが、ここでは単純にひとまとめ。
-                                ; pieceCode = 80223c7b
-                                ; pieceOwner = tominaga
-                                ; pieceDatetime = 2017-12-31T12:31:12.037
-                                ; previousPieceList = list:{
-                                    ; e72e30ba
-                                    ; 23c41513
-                                }
-                                ; commentVersion = 0
-                                ; authorList = list:{
-                                    ; tominaga
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            ; map:{
-                ; tableName = MEMBER_ADDRESS
                 ; propertyList = list:{
                     ; map:{
-                        ; decomment = 会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。
-会員を基点に考えた場合、構造的には one-to-many だが、業務的な定型条件で one-to-one になる。このような構造を「業務的one-to-one」と呼ぶ！
-有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な) &quot\;1 : 0..1&quot\; である。
-コンフリクト解消
-                        ; databaseComment = 会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。
-会員を基点に考えた場合、構造的には&nbsp\;one-to-many&nbsp\;だが、業務的な定型条件で&nbsp\;one-to-one&nbsp\;になる。このような構造を「業務的one-to-one」と呼ぶ！
-有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な)&nbsp\;"1&nbsp\;:&nbsp\;0..1"&nbsp\;である。
-                        ; pieceCode = 7ac42f48
-                        ; pieceOwner = tominaga
-                        ; pieceDatetime = 2017-12-31T12:29:47.373
-                        ; previousPieceList = list:{
-                            ; a5a396a4
-                            ; 4dbfb0a8
-                        }
+                        ; decomment = 会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある
+データベースコメントとのコンフリクト
+                        ; databaseComment = 会員とは&nbsp\;one-to-one&nbsp\;
                         ; commentVersion = 0
                         ; authorList = list:{
                             ; tominaga
                         }
+                        ; pieceCode = 2a372816
+                        ; pieceOwner = tominaga
+                        ; pieceGitBranch = null
+                        ; pieceDatetime = 2017-12-31T12:45:34.883
+                        ; previousPieceList = list:{}
                     }
                 }
                 ; columnList = list:{}
             }
             ; map:{
                 ; tableName = MEMBER_LOGIN
+                ; mappingMapList = list:{
+                    ; map:{
+                        ; decomment = ログインするたびに登録されるログイン履歴。
+登録されたら更新されるも削除されることもない。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。
+カラム情報でのコンフリクト解消
+                        ; databaseComment = ログインするたびに登録されるログイン履歴。
+登録されたら更新されるも削除されることもない。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。
+                        ; commentVersion = 0
+                        ; authorList = list:{
+                            ; tominaga
+                        }
+                        ; pieceCode = 9a92a7b0
+                        ; pieceOwner = tominaga
+                        ; pieceGitBranch = null
+                        ; pieceDatetime = 2017-12-31T12:30:36.167
+                        ; previousPieceList = list:{
+                            ; dc839b98
+                            ; a57c5e4c
+                        }
+                    }
+                }
                 ; propertyList = list:{
                     ; map:{
                         ; decomment = ログインするたびに登録されるログイン履歴。
@@ -170,17 +113,351 @@ map:{
 カラム情報でのコンフリクト解消
                         ; databaseComment = ログインするたびに登録されるログイン履歴。
 登録されたら更新されるも削除されることもない。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。
+                        ; commentVersion = 0
+                        ; authorList = list:{
+                            ; tominaga
+                        }
                         ; pieceCode = 9a92a7b0
                         ; pieceOwner = tominaga
+                        ; pieceGitBranch = null
                         ; pieceDatetime = 2017-12-31T12:30:36.167
                         ; previousPieceList = list:{
                             ; dc839b98
                             ; a57c5e4c
                         }
+                    }
+                }
+                ; columnList = list:{}
+            }
+            ; map:{
+                ; tableName = MEMBER_ADDRESS
+                ; mappingMapList = list:{
+                    ; map:{
+                        ; decomment = 会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。
+会員を基点に考えた場合、構造的には one-to-many だが、業務的な定型条件で one-to-one になる。このような構造を「業務的one-to-one」と呼ぶ！
+有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な) &quot\;1 : 0..1&quot\; である。
+コンフリクト解消
+
+コメントめっちゃ追加するぞー
+追加追加
+                        ; databaseComment = 会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。
+会員を基点に考えた場合、構造的には&nbsp\;one-to-many&nbsp\;だが、業務的な定型条件で&nbsp\;one-to-one&nbsp\;になる。このような構造を「業務的one-to-one」と呼ぶ！
+有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な)&nbsp\;"1&nbsp\;:&nbsp\;0..1"&nbsp\;である。
+                        ; commentVersion = 0
+                        ; authorList = list:{
+                            ; tominaga
+                            ; jflute
+                        }
+                        ; pieceCode = d5d7518f
+                        ; pieceOwner = jflute
+                        ; pieceGitBranch = null
+                        ; pieceDatetime = 2017-12-31T16:08:07.377
+                        ; previousPieceList = list:{
+                            ; 7ac42f48
+                        }
+                    }
+                }
+                ; propertyList = list:{
+                    ; map:{
+                        ; decomment = 会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。
+会員を基点に考えた場合、構造的には one-to-many だが、業務的な定型条件で one-to-one になる。このような構造を「業務的one-to-one」と呼ぶ！
+有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な) &quot\;1 : 0..1&quot\; である。
+コンフリクト解消
+
+コメントめっちゃ追加するぞー
+追加追加
+                        ; databaseComment = 会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。
+会員を基点に考えた場合、構造的には&nbsp\;one-to-many&nbsp\;だが、業務的な定型条件で&nbsp\;one-to-one&nbsp\;になる。このような構造を「業務的one-to-one」と呼ぶ！
+有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な)&nbsp\;"1&nbsp\;:&nbsp\;0..1"&nbsp\;である。
+                        ; commentVersion = 0
+                        ; authorList = list:{
+                            ; tominaga
+                            ; jflute
+                        }
+                        ; pieceCode = d5d7518f
+                        ; pieceOwner = jflute
+                        ; pieceGitBranch = null
+                        ; pieceDatetime = 2017-12-31T16:08:07.377
+                        ; previousPieceList = list:{
+                            ; 7ac42f48
+                        }
+                    }
+                }
+                ; columnList = list:{}
+            }
+            ; map:{
+                ; tableName = MEMBER
+                ; mappingMapList = list:{
+                    ; map:{
+                        ; decomment = テーブルのコンフリクトなおしたぞー
+                        ; databaseComment = 会員のプロフィールやアカウントなどの基本情報を保持する。
+基本的に物理削除はなく、退会したらステータスが退会会員になる。
+ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。
+                        ; commentVersion = 0
+                        ; authorList = list:{
+                            ; tominaga
+                            ; jflute
+                        }
+                        ; pieceCode = 841391c0
+                        ; pieceOwner = jflute
+                        ; pieceGitBranch = null
+                        ; pieceDatetime = 2017-12-31T16:07:36.154
+                        ; previousPieceList = list:{
+                            ; 720db4a6
+                            ; 295633b2
+                        }
+                    }
+                }
+                ; propertyList = list:{
+                    ; map:{
+                        ; decomment = テーブルのコンフリクトなおしたぞー
+                        ; databaseComment = 会員のプロフィールやアカウントなどの基本情報を保持する。
+基本的に物理削除はなく、退会したらステータスが退会会員になる。
+ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。
+                        ; commentVersion = 0
+                        ; authorList = list:{
+                            ; tominaga
+                            ; jflute
+                        }
+                        ; pieceCode = 841391c0
+                        ; pieceOwner = jflute
+                        ; pieceGitBranch = null
+                        ; pieceDatetime = 2017-12-31T16:07:36.154
+                        ; previousPieceList = list:{
+                            ; 720db4a6
+                            ; 295633b2
+                        }
+                    }
+                }
+                ; columnList = list:{
+                    ; map:{
+                        ; columnName = MEMBER_STATUS_CODE
+                        ; mappingList = list:{
+                            ; map:{
+                                ; decomment = 会員ステータスを参照するコード。
+ステータスが変わるたびに、このカラムが更新される。
+データベースコメントとのコンフリクト解消
+                                ; databaseComment = 会員ステータスを参照するコード。
+ステータスが変わるたびに、このカラムが更新される。
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; tominaga
+                                }
+                                ; pieceCode = 8147b3bd
+                                ; pieceOwner = tominaga
+                                ; pieceGitBranch = null
+                                ; pieceDatetime = 2017-12-31T12:47:17.953
+                                ; previousPieceList = list:{
+                                    ; 920967ee
+                                }
+                            }
+                        }
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = 会員ステータスを参照するコード。
+ステータスが変わるたびに、このカラムが更新される。
+データベースコメントとのコンフリクト解消
+                                ; databaseComment = 会員ステータスを参照するコード。
+ステータスが変わるたびに、このカラムが更新される。
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; tominaga
+                                }
+                                ; pieceCode = 8147b3bd
+                                ; pieceOwner = tominaga
+                                ; pieceGitBranch = null
+                                ; pieceDatetime = 2017-12-31T12:47:17.953
+                                ; previousPieceList = list:{
+                                    ; 920967ee
+                                }
+                            }
+                        }
+                    }
+                    ; map:{
+                        ; columnName = MEMBER_NAME
+                        ; mappingList = list:{
+                            ; map:{
+                                ; decomment = 会員のフルネームの名称。
+苗字と名前を分けて管理することが多いが、ここでは単純にひとまとめ。
+カラムコメントのコンフリクト解消
+                                ; databaseComment = 会員のフルネームの名称。
+苗字と名前を分けて管理することが多いが、ここでは単純にひとまとめ。
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; tominaga
+                                }
+                                ; pieceCode = 80223c7b
+                                ; pieceOwner = tominaga
+                                ; pieceGitBranch = null
+                                ; pieceDatetime = 2017-12-31T12:31:12.037
+                                ; previousPieceList = list:{
+                                    ; e72e30ba
+                                    ; 23c41513
+                                }
+                            }
+                        }
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = 会員のフルネームの名称。
+苗字と名前を分けて管理することが多いが、ここでは単純にひとまとめ。
+カラムコメントのコンフリクト解消
+                                ; databaseComment = 会員のフルネームの名称。
+苗字と名前を分けて管理することが多いが、ここでは単純にひとまとめ。
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; tominaga
+                                }
+                                ; pieceCode = 80223c7b
+                                ; pieceOwner = tominaga
+                                ; pieceGitBranch = null
+                                ; pieceDatetime = 2017-12-31T12:31:12.037
+                                ; previousPieceList = list:{
+                                    ; e72e30ba
+                                    ; 23c41513
+                                }
+                            }
+                        }
+                    }
+                    ; map:{
+                        ; columnName = MEMBER_ACCOUNT
+                        ; mappingList = list:{
+                            ; map:{
+                                ; decomment = ログインIDとして利用する。
+昨今メールアドレスをログインIDとすることが多いので、あまり見かけないかも!?
+データベースコメントとのコンフリクト
+                                ; databaseComment = ログインIDとして利用する。
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; tominaga
+                                }
+                                ; pieceCode = 9202c06f
+                                ; pieceOwner = tominaga
+                                ; pieceGitBranch = null
+                                ; pieceDatetime = 2017-12-31T12:45:49.810
+                                ; previousPieceList = list:{}
+                            }
+                        }
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = ログインIDとして利用する。
+昨今メールアドレスをログインIDとすることが多いので、あまり見かけないかも!?
+データベースコメントとのコンフリクト
+                                ; databaseComment = ログインIDとして利用する。
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; tominaga
+                                }
+                                ; pieceCode = 9202c06f
+                                ; pieceOwner = tominaga
+                                ; pieceGitBranch = null
+                                ; pieceDatetime = 2017-12-31T12:45:49.810
+                                ; previousPieceList = list:{}
+                            }
+                        }
+                    }
+                    ; map:{
+                        ; columnName = MEMBER_ID
+                        ; mappingList = list:{
+                            ; map:{
+                                ; decomment = カラムのコンフリクトなおしたぞー
+                                ; databaseComment = 連番として自動採番される。会員IDだけに限らず採番方法はDBMS次第。
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; tominaga
+                                    ; jflute
+                                }
+                                ; pieceCode = cc86e020
+                                ; pieceOwner = jflute
+                                ; pieceGitBranch = null
+                                ; pieceDatetime = 2017-12-31T16:07:42.119
+                                ; previousPieceList = list:{
+                                    ; 1231c6b1
+                                    ; 684adc00
+                                }
+                            }
+                        }
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = カラムのコンフリクトなおしたぞー
+                                ; databaseComment = 連番として自動採番される。会員IDだけに限らず採番方法はDBMS次第。
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; tominaga
+                                    ; jflute
+                                }
+                                ; pieceCode = cc86e020
+                                ; pieceOwner = jflute
+                                ; pieceGitBranch = null
+                                ; pieceDatetime = 2017-12-31T16:07:42.119
+                                ; previousPieceList = list:{
+                                    ; 1231c6b1
+                                    ; 684adc00
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            ; map:{
+                ; tableName = MEMBER_FOLLOWING
+                ; mappingMapList = list:{
+                    ; map:{
+                        ; decomment = カラム情報でのコンフリクト
+                        ; databaseComment = とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。
                         ; commentVersion = 0
                         ; authorList = list:{
                             ; tominaga
                         }
+                        ; pieceCode = aea26238
+                        ; pieceOwner = tominaga
+                        ; pieceGitBranch = null
+                        ; pieceDatetime = 2017-12-31T12:30:12.752
+                        ; previousPieceList = list:{}
+                    }
+                    ; map:{
+                        ; decomment = とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。
+
+カラム情報でのコンフリクト
+                        ; databaseComment = とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。
+                        ; commentVersion = 0
+                        ; authorList = list:{
+                            ; tominaga
+                        }
+                        ; pieceCode = 839dd874
+                        ; pieceOwner = tominaga
+                        ; pieceGitBranch = null
+                        ; pieceDatetime = 2017-12-31T12:30:04.742
+                        ; previousPieceList = list:{}
+                    }
+                }
+                ; propertyList = list:{
+                    ; map:{
+                        ; decomment = カラム情報でのコンフリクト
+                        ; databaseComment = とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。
+                        ; commentVersion = 0
+                        ; authorList = list:{
+                            ; tominaga
+                        }
+                        ; pieceCode = aea26238
+                        ; pieceOwner = tominaga
+                        ; pieceGitBranch = null
+                        ; pieceDatetime = 2017-12-31T12:30:12.752
+                        ; previousPieceList = list:{}
+                    }
+                    ; map:{
+                        ; decomment = とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。
+
+カラム情報でのコンフリクト
+                        ; databaseComment = とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。
+                        ; commentVersion = 0
+                        ; authorList = list:{
+                            ; tominaga
+                        }
+                        ; pieceCode = 839dd874
+                        ; pieceOwner = tominaga
+                        ; pieceGitBranch = null
+                        ; pieceDatetime = 2017-12-31T12:30:04.742
+                        ; previousPieceList = list:{}
                     }
                 }
                 ; columnList = list:{}
