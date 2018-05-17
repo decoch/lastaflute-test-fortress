@@ -1,11 +1,40 @@
 map:{
     ; formatVersion = 1.1
-    ; pickupDatetime = 2018-05-18T00:45:24.405
+    ; pickupDatetime = 2018-05-18T00:49:36.345
     ; decoMap = map:{
         ; tableList = list:{
             ; map:{
                 ; tableName = MEMBER_SECURITY
-                ; mappingList = list:{}
+                ; mappingList = list:{
+                    ; map:{
+                        ; newTableName = REGION
+                        ; newColumnName = null
+                        ; authorList = list:{
+                            ; yuto
+                        }
+                        ; mappingCode = a3fb807a
+                        ; mappingOwner = yuto
+                        ; mappingDatetime = 2018-05-18T00:47:40.433
+                        ; previousMappingList = list:{
+                            ; 9bd46211
+                            ; 2fe18d28
+                        }
+                    }
+                    ; map:{
+                        ; newTableName = NEW_MEMBER_SECURITY
+                        ; newColumnName = null
+                        ; authorList = list:{
+                            ; yuto
+                        }
+                        ; mappingCode = be8b361b
+                        ; mappingOwner = yuto
+                        ; mappingDatetime = 2018-05-18T00:48:14.412
+                        ; previousMappingList = list:{
+                            ; 9bd46211
+                            ; 2fe18d28
+                        }
+                    }
+                }
                 ; propertyList = list:{
                     ; map:{
                         ; decomment = 会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある
