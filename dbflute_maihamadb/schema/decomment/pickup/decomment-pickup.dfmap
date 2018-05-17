@@ -1,6 +1,6 @@
 map:{
     ; formatVersion = 1.1
-    ; pickupDatetime = 2018-05-18T00:35:33.660
+    ; pickupDatetime = 2018-05-18T00:39:44.723
     ; decoMap = map:{
         ; tableList = list:{
             ; map:{
@@ -9,37 +9,8 @@ map:{
                 ; propertyList = list:{}
                 ; columnList = list:{
                     ; map:{
-                        ; columnName = NEW_REMINDER_USE_COUNT
-                        ; mappingList = list:{
-                            ; map:{
-                                ; newTableName = MEMBER_SECURITY
-                                ; newColumnName = REMINDER_USE_COUNT
-                                ; authorList = list:{
-                                    ; yuto
-                                }
-                                ; mappingCode = 1a8dfbe2
-                                ; mappingOwner = yuto
-                                ; mappingDatetime = 2018-05-18T00:35:21.714
-                                ; previousMappingList = list:{
-                                    ; ca703ad0
-                                    ; cfeb51c3
-                                }
-                            }
-                            ; map:{
-                                ; newTableName = MEMBER_SECURITY
-                                ; newColumnName = VERSION_NO
-                                ; authorList = list:{
-                                    ; yuto
-                                }
-                                ; mappingCode = 692300c8
-                                ; mappingOwner = yuto
-                                ; mappingDatetime = 2018-05-18T00:35:24.252
-                                ; previousMappingList = list:{
-                                    ; ca703ad0
-                                    ; cfeb51c3
-                                }
-                            }
-                        }
+                        ; columnName = REMINDER_USE_COUNT
+                        ; mappingList = list:{}
                         ; propertyList = list:{
                             ; map:{
                                 ; decomment = リマインダを利用した回数。
