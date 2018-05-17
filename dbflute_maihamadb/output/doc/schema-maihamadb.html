@@ -1413,7 +1413,7 @@ dl.procedurelist dd.column pre {
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">*</td>
 		<td class="aliascell">リマインダ利用回数</td>
-		<td class=" columnnamecell" id="member_security_new_reminder_use_count">NEW_REMINDER_USE_COUNT</td>
+		<td class=" columnnamecell" id="member_security_reminder_use_count">REMINDER_USE_COUNT</td>
 		<td class="typecell">INT</td>
 		<td class="sizecell"> 10 </td>
 		<td class="relcell">&nbsp;&nbsp;</td>
@@ -1421,7 +1421,7 @@ dl.procedurelist dd.column pre {
 		<td class="relcell"> &nbsp;</td>
 		<td class="commentcell"><pre>リマインダを利用した回数。
 これが多いと忘れっぽい会員と言えるが、そんなことを知ってもしょうがない。</pre></td>
-		<td class="subcell">newReminderUseCount</td>
+		<td class="subcell">reminderUseCount</td>
 		<td class="subcell">Integer</td>
 	</tr>
 	<tr>
@@ -4111,7 +4111,7 @@ function StoreClient() {
 				, 'REMINDER_ANSWER': {
 					'databaseComment': 'パスワードを忘れた際のリマインダ機能における質問の答え。'
 				}
-				, 'NEW_REMINDER_USE_COUNT': {
+				, 'REMINDER_USE_COUNT': {
 					'databaseComment': 'リマインダを利用した回数。<br>これが多いと忘れっぽい会員と言えるが、そんなことを知ってもしょうがない。'
 				}
 				, 'REGISTER_DATETIME': {

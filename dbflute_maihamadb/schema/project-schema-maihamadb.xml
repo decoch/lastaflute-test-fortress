@@ -208,8 +208,8 @@
             required="true" size="50" type="VARCHAR"/>
         <column
             comment="リマインダ利用回数 : リマインダを利用した回数。&#xa;これが多いと忘れっぽい会員と言えるが、そんなことを知ってもしょうがない。"
-            dbType="INT" javaType="Integer"
-            name="NEW_REMINDER_USE_COUNT" required="true" size="10" type="INTEGER"/>
+            dbType="INT" javaType="Integer" name="REMINDER_USE_COUNT"
+            required="true" size="10" type="INTEGER"/>
         <column comment="登録日時 : レコードが登録された日時" dbType="DATETIME"
             javaType="java.time.LocalDateTime" name="REGISTER_DATETIME"
             required="true" size="19" type="TIMESTAMP"/>

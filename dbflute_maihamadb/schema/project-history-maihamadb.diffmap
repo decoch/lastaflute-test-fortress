@@ -1,4 +1,23 @@
 map:{
+    ; 2018/05/18 00:34:26 = map:{
+        ; diffDate = 2018/05/18 00:34:26
+        ; tableDiff = map:{
+            ; MEMBER_SECURITY = map:{
+                ; tableName = MEMBER_SECURITY
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; REMINDER_USE_COUNT = map:{
+                        ; columnName = REMINDER_USE_COUNT
+                        ; diffType = ADD
+                    }
+                    ; NEW_REMINDER_USE_COUNT = map:{
+                        ; columnName = NEW_REMINDER_USE_COUNT
+                        ; diffType = DELETE
+                    }
+                }
+            }
+        }
+    }
     ; 2018/05/18 00:28:29 = map:{
         ; diffDate = 2018/05/18 00:28:29
         ; tableDiff = map:{

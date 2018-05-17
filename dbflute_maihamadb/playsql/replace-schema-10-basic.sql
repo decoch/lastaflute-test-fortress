@@ -66,7 +66,7 @@ CREATE TABLE MEMBER_SECURITY
 	LOGIN_PASSWORD VARCHAR(100) NOT NULL COMMENT 'ログインパスワード : ログイン時に利用するパスワード。本当は良くないが、Exampleなのでひとまず暗号化していない。',
 	REMINDER_QUESTION VARCHAR(50) NOT NULL COMMENT 'リマインダ質問 : パスワードを忘れた際のリマインダ機能における質問の内容。',
 	REMINDER_ANSWER VARCHAR(50) NOT NULL COMMENT 'リマインダ回答 : パスワードを忘れた際のリマインダ機能における質問の答え。',
-	NEW_REMINDER_USE_COUNT INT NOT NULL COMMENT 'リマインダ利用回数 : リマインダを利用した回数。これが多いと忘れっぽい会員と言えるが、そんなことを知ってもしょうがない。',
+	REMINDER_USE_COUNT INT NOT NULL COMMENT 'リマインダ利用回数 : リマインダを利用した回数。これが多いと忘れっぽい会員と言えるが、そんなことを知ってもしょうがない。',
 	REGISTER_DATETIME DATETIME NOT NULL COMMENT '登録日時 : レコードが登録された日時',
 	REGISTER_USER VARCHAR(200) NOT NULL COMMENT '登録ユーザー : レコードを登録したユーザー',
 	UPDATE_DATETIME DATETIME NOT NULL COMMENT '更新日時 : レコードが(最後に)更新された日時',

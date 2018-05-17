@@ -627,7 +627,7 @@
 					<not_null>true</not_null>
 				</normal_column>
 				<normal_column>
-					<physical_name>NEW_REMINDER_USE_COUNT</physical_name>
+					<physical_name>REMINDER_USE_COUNT</physical_name>
 					<logical_name>リマインダ利用回数</logical_name>
 					<type>integer</type>
 					<description>リマインダを利用した回数。&#x0D;これが多いと忘れっぽい会員と言えるが、そんなことを知ってもしょうがない。</description>
