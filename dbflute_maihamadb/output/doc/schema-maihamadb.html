@@ -441,7 +441,7 @@ dl.procedurelist dd.column pre {
 		<td class="namecell" data-name="MEMBER"><a href="#member" title="type=TABLE, primaryKey={MEMBER_ID}, nameLength=6, columnCount=11">MEMBER</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member_status" title="FK_MEMBER_MEMBER_STATUS">MEMBER_STATUS</a>, <a href="#member_address" class="additionalfk" title="FK_MEMBER_MEMBER_ADDRESS_VALID: fixedCondition=&quot;$$foreignAlias$$.VALID_BEGIN_DATE &lt;= /*$$locationBase$$.parameterMapMemberAddressAsValid.targetDate*/null\n     and $$foreignAlias$$.VALID_END_DATE &gt;= /*$$locationBase$$.parameterMapMemberAddressAsValid.targetDate*/null&quot;, comment=Member's address at the target date.">MEMBER_ADDRESS(AsValid)</a>, <a href="#member_login" class="additionalfk" title="FK_MEMBER_MEMBER_LOGIN_LATEST: fixedCondition=&quot;$$foreignAlias$$.LOGIN_DATETIME = ($$sqbegin$$\nselect max(login.LOGIN_DATETIME)\n  from MEMBER_LOGIN login\n where login.MEMBER_ID = $$foreignAlias$$.MEMBER_ID\n)$$sqend$$&quot;">MEMBER_LOGIN(AsLatest)</a></td>
-		<td class="relcell"><a href="#member_address" title="FK_MEMBER_ADDRESS_MEMBER">MEMBER_ADDRESS</a>, <a href="#member_following" title="FK_MEMBER_FOLLOWING_MY_MEMBER_ID">MEMBER_FOLLOWING</a>, <a href="#member_following" title="FK_MEMBER_FOLLOWING_YOUR_MEMBER_ID">MEMBER_FOLLOWING</a>, <a href="#member_login" title="FK_MEMBER_LOGIN_MEMBER">MEMBER_LOGIN</a>, <a href="#member_security" title="FK_MEMBER_SECURITY_MEMBER">MEMBER_SECURITY</a>, <a href="#member_service" title="FK_MEMBER_SERVICE_MEMBER">MEMBER_SERVICE</a>, <a href="#member_withdrawal" title="FK_MEMBER_WITHDRAWAL_MEMBER">MEMBER_WITHDRAWAL</a>, <a href="#purchase" title="FK_PURCHASE_MEMBER">PURCHASE</a></td>
+		<td class="relcell"><a href="#member_address" title="FK_MEMBER_ADDRESS_MEMBER">MEMBER_ADDRESS</a>, <a href="#member_following" title="FK_MEMBER_FOLLOWING_MY_MEMBER_ID">MEMBER_FOLLOWING</a>, <a href="#member_following" title="FK_MEMBER_FOLLOWING_YOUR_MEMBER_ID">MEMBER_FOLLOWING</a>, <a href="#member_login" title="FK_MEMBER_LOGIN_MEMBER">MEMBER_LOGIN</a>, <a href="#member_service" title="FK_MEMBER_SERVICE_MEMBER">MEMBER_SERVICE</a>, <a href="#member_withdrawal" title="FK_MEMBER_WITHDRAWAL_MEMBER">MEMBER_WITHDRAWAL</a>, <a href="#new_member_security" title="FK_NEW_MEMBER_SECURITY_MEMBER">NEW_MEMBER_SECURITY</a>, <a href="#purchase" title="FK_PURCHASE_MEMBER">PURCHASE</a></td>
 		<td class="commentcell MEMBER_comment"><pre>会員のプロフィールやアカウントなどの基本情報を保持する。
 基本的に物理削除はなく、退会したらステータスが退会会員になる。
 ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。</pre></td>
@@ -482,16 +482,6 @@ dl.procedurelist dd.column pre {
 	</tr>
 	<tr>
 		<td class="rownumcell">5</td>
-		<td class="aliascell">会員セキュリティ</td>
-		<td class="namecell" data-name="MEMBER_SECURITY"><a href="#member_security" title="type=TABLE, primaryKey={MEMBER_ID}, nameLength=15, columnCount=10">MEMBER_SECURITY</a></td>
-		<td class="typecell">TABLE</td>
-		<td class="relcell"><a href="#member" title="FK_MEMBER_SECURITY_MEMBER">MEMBER</a></td>
-		<td class="relcell">&nbsp;</td>
-		<td class="commentcell MEMBER_SECURITY_comment"><pre>会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある</pre></td>
-		<td class="subcell">MemberSecurity</td>
-	</tr>
-	<tr>
-		<td class="rownumcell">6</td>
 		<td class="aliascell">会員サービス</td>
 		<td class="namecell" data-name="MEMBER_SERVICE"><a href="#member_service" title="type=TABLE, primaryKey={MEMBER_SERVICE_ID}, nameLength=14, columnCount=9">MEMBER_SERVICE</a></td>
 		<td class="typecell">TABLE</td>
@@ -502,7 +492,7 @@ dl.procedurelist dd.column pre {
 		<td class="subcell">MemberService</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">7</td>
+		<td class="rownumcell">6</td>
 		<td class="aliascell">会員ステータス</td>
 		<td class="namecell" data-name="MEMBER_STATUS"><a href="#member_status" title="type=TABLE, primaryKey={MEMBER_STATUS_CODE}, nameLength=13, columnCount=4">MEMBER_STATUS</a></td>
 		<td class="typecell">TABLE</td>
@@ -515,7 +505,7 @@ dl.procedurelist dd.column pre {
 		<td class="subcell">MemberStatus</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">8</td>
+		<td class="rownumcell">7</td>
 		<td class="aliascell">会員退会情報</td>
 		<td class="namecell" data-name="MEMBER_WITHDRAWAL"><a href="#member_withdrawal" title="type=TABLE, primaryKey={MEMBER_ID}, nameLength=17, columnCount=8">MEMBER_WITHDRAWAL</a></td>
 		<td class="typecell">TABLE</td>
@@ -526,6 +516,16 @@ dl.procedurelist dd.column pre {
 共通カラムがあってバージョンNOがないパターン。
 基本的に更新は入らないが、重要なデータなので万が一のために更新系の共通カラムも。</pre></td>
 		<td class="subcell">MemberWithdrawal</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">8</td>
+		<td class="aliascell">会員セキュリティ</td>
+		<td class="namecell" data-name="NEW_MEMBER_SECURITY"><a href="#new_member_security" title="type=TABLE, primaryKey={MEMBER_ID}, nameLength=19, columnCount=10">NEW_MEMBER_SECURITY</a></td>
+		<td class="typecell">TABLE</td>
+		<td class="relcell"><a href="#member" title="FK_NEW_MEMBER_SECURITY_MEMBER">MEMBER</a></td>
+		<td class="relcell">&nbsp;</td>
+		<td class="commentcell NEW_MEMBER_SECURITY_comment"><pre>会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある</pre></td>
+		<td class="subcell">NewMemberSecurity</td>
 	</tr>
 	<tr>
 		<td class="rownumcell">9</td>
@@ -654,7 +654,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">INT</td>
 		<td class="sizecell"> 10 </td>
 		<td class="relcell"><a href="#member_address" class="additionalfk" title="FK_MEMBER_MEMBER_ADDRESS_VALID: fixedCondition=&quot;$$foreignAlias$$.VALID_BEGIN_DATE &lt;= /*$$locationBase$$.parameterMapMemberAddressAsValid.targetDate*/null\n     and $$foreignAlias$$.VALID_END_DATE &gt;= /*$$locationBase$$.parameterMapMemberAddressAsValid.targetDate*/null&quot;, comment=Member's address at the target date.">MEMBER_ADDRESS(AsValid)</a>,<br><a href="#member_login" class="additionalfk" title="FK_MEMBER_MEMBER_LOGIN_LATEST: fixedCondition=&quot;$$foreignAlias$$.LOGIN_DATETIME = ($$sqbegin$$\nselect max(login.LOGIN_DATETIME)\n  from MEMBER_LOGIN login\n where login.MEMBER_ID = $$foreignAlias$$.MEMBER_ID\n)$$sqend$$&quot;">MEMBER_LOGIN(AsLatest)</a>&nbsp;</td>
-		<td class="relcell"><a href="#member_address" title="FK_MEMBER_ADDRESS_MEMBER">MEMBER_ADDRESS</a>,<br><a href="#member_following" title="FK_MEMBER_FOLLOWING_MY_MEMBER_ID">MEMBER_FOLLOWING</a>,<br><a href="#member_following" title="FK_MEMBER_FOLLOWING_YOUR_MEMBER_ID">MEMBER_FOLLOWING</a>,<br><a href="#member_login" title="FK_MEMBER_LOGIN_MEMBER">MEMBER_LOGIN</a>,<br><a href="#member_security" title="FK_MEMBER_SECURITY_MEMBER">MEMBER_SECURITY</a>,<br><a href="#member_service" title="FK_MEMBER_SERVICE_MEMBER">MEMBER_SERVICE</a>,<br><a href="#member_withdrawal" title="FK_MEMBER_WITHDRAWAL_MEMBER">MEMBER_WITHDRAWAL</a>,<br><a href="#purchase" title="FK_PURCHASE_MEMBER">PURCHASE</a>&nbsp;</td>
+		<td class="relcell"><a href="#member_address" title="FK_MEMBER_ADDRESS_MEMBER">MEMBER_ADDRESS</a>,<br><a href="#member_following" title="FK_MEMBER_FOLLOWING_MY_MEMBER_ID">MEMBER_FOLLOWING</a>,<br><a href="#member_following" title="FK_MEMBER_FOLLOWING_YOUR_MEMBER_ID">MEMBER_FOLLOWING</a>,<br><a href="#member_login" title="FK_MEMBER_LOGIN_MEMBER">MEMBER_LOGIN</a>,<br><a href="#member_service" title="FK_MEMBER_SERVICE_MEMBER">MEMBER_SERVICE</a>,<br><a href="#member_withdrawal" title="FK_MEMBER_WITHDRAWAL_MEMBER">MEMBER_WITHDRAWAL</a>,<br><a href="#new_member_security" title="FK_NEW_MEMBER_SECURITY_MEMBER">NEW_MEMBER_SECURITY</a>,<br><a href="#purchase" title="FK_PURCHASE_MEMBER">PURCHASE</a>&nbsp;</td>
 		<td class="relcell"> &nbsp;</td>
 		<td class="commentcell"><pre>連番として自動採番される。会員IDだけに限らず採番方法はDBMS次第。</pre></td>
 		<td class="subcell">memberId</td>
@@ -1305,218 +1305,6 @@ dl.procedurelist dd.column pre {
 	</tbody>
 </table>
 
-<h2 id="member_security" title="type=TABLE, primaryKey={MEMBER_ID}, nameLength=15, columnCount=10">
-(会員セキュリティ)MEMBER_SECURITY
-</h2>
-<div class="tablecomment MEMBER_SECURITY_comment" data-name="MEMBER_SECURITY"><pre>会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある</pre></div>
-<input type="hidden" value="MEMBER_SECURITY">
-<table class="tablecontent">
-	<thead>
-	<tr>
-		<th class="rownumhead">No.</th>
-		<th>PK</th>
-		<th>ID</th>
-		<th>UQ</th>
-		<th>IX</th>
-		<th>Not<br />Null</th>
-		<th>Alias</th>
-		<th>Name</th>
-		<th>Type</th>
-		<th>Size</th>
-		<th>ForeignTable</th>
-		<th>ReferrerTable</th>
-		<th>Classification</th>
-		<th>ColumnComment</th>
-		<th>PropertyName</th>
-		<th>JavaType</th>
-	</tr>
-	</thead>
-	<tbody id="member_security-body">
-	<tr>
-		<td class="rownumcell">1</td>
-		<td class="flgcell" title="PRIMARY">o</td>
-		<td class="flgcell"> &nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">*</td>
-		<td class="aliascell">会員ID</td>
-		<td class=" columnnamecell" id="member_security_member_id">MEMBER_ID</td>
-		<td class="typecell">INT</td>
-		<td class="sizecell"> 10 </td>
-		<td class="relcell"><a href="#member" title="FK_MEMBER_SECURITY_MEMBER">MEMBER</a>&nbsp;</td>
-		<td class="relcell">&nbsp;</td>
-		<td class="relcell"> &nbsp;</td>
-		<td class="commentcell"><pre>そのまま one-to-one を構成するためのFKとなる。</pre></td>
-		<td class="subcell">memberId</td>
-		<td class="subcell">Integer</td>
-	</tr>
-	<tr>
-		<td class="rownumcell">2</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell"> &nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">*</td>
-		<td class="aliascell">ログインパスワード</td>
-		<td class=" columnnamecell" id="member_security_login_password">LOGIN_PASSWORD</td>
-		<td class="typecell">VARCHAR</td>
-		<td class="sizecell"> 100 </td>
-		<td class="relcell">&nbsp;&nbsp;</td>
-		<td class="relcell">&nbsp;</td>
-		<td class="relcell"> &nbsp;</td>
-		<td class="commentcell"><pre>ログイン時に利用するパスワード。
-本当は良くないが、Exampleなのでひとまず暗号化していない。</pre></td>
-		<td class="subcell">loginPassword</td>
-		<td class="subcell">String</td>
-	</tr>
-	<tr>
-		<td class="rownumcell">3</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell"> &nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">*</td>
-		<td class="aliascell">リマインダ質問</td>
-		<td class=" columnnamecell" id="member_security_reminder_question">REMINDER_QUESTION</td>
-		<td class="typecell">VARCHAR</td>
-		<td class="sizecell"> 50 </td>
-		<td class="relcell">&nbsp;&nbsp;</td>
-		<td class="relcell">&nbsp;</td>
-		<td class="relcell"> &nbsp;</td>
-		<td class="commentcell"><pre>パスワードを忘れた際のリマインダ機能における質問の内容。</pre></td>
-		<td class="subcell">reminderQuestion</td>
-		<td class="subcell">String</td>
-	</tr>
-	<tr>
-		<td class="rownumcell">4</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell"> &nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">*</td>
-		<td class="aliascell">リマインダ回答</td>
-		<td class=" columnnamecell" id="member_security_reminder_answer">REMINDER_ANSWER</td>
-		<td class="typecell">VARCHAR</td>
-		<td class="sizecell"> 50 </td>
-		<td class="relcell">&nbsp;&nbsp;</td>
-		<td class="relcell">&nbsp;</td>
-		<td class="relcell"> &nbsp;</td>
-		<td class="commentcell"><pre>パスワードを忘れた際のリマインダ機能における質問の答え。</pre></td>
-		<td class="subcell">reminderAnswer</td>
-		<td class="subcell">String</td>
-	</tr>
-	<tr>
-		<td class="rownumcell">5</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell"> &nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">*</td>
-		<td class="aliascell">リマインダ利用回数</td>
-		<td class=" columnnamecell" id="member_security_reminder_use_count">REMINDER_USE_COUNT</td>
-		<td class="typecell">INT</td>
-		<td class="sizecell"> 10 </td>
-		<td class="relcell">&nbsp;&nbsp;</td>
-		<td class="relcell">&nbsp;</td>
-		<td class="relcell"> &nbsp;</td>
-		<td class="commentcell"><pre>リマインダを利用した回数。
-これが多いと忘れっぽい会員と言えるが、そんなことを知ってもしょうがない。</pre></td>
-		<td class="subcell">reminderUseCount</td>
-		<td class="subcell">Integer</td>
-	</tr>
-	<tr>
-		<td class="rownumcell">6</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell"> &nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">*</td>
-		<td class="aliascell comcolcell">登録日時</td>
-		<td class="comcolcell columnnamecell" id="member_security_register_datetime">REGISTER_DATETIME</td>
-		<td class="typecell">DATETIME</td>
-		<td class="sizecell"> 19 </td>
-		<td class="relcell">&nbsp;&nbsp;</td>
-		<td class="relcell">&nbsp;</td>
-		<td class="relcell"> &nbsp;</td>
-		<td class="commentcell"><pre>レコードが登録された日時</pre></td>
-		<td class="subcell">registerDatetime</td>
-		<td class="subcell">LocalDateTime</td>
-	</tr>
-	<tr>
-		<td class="rownumcell">7</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell"> &nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">*</td>
-		<td class="aliascell comcolcell">登録ユーザー</td>
-		<td class="comcolcell columnnamecell" id="member_security_register_user">REGISTER_USER</td>
-		<td class="typecell">VARCHAR</td>
-		<td class="sizecell"> 200 </td>
-		<td class="relcell">&nbsp;&nbsp;</td>
-		<td class="relcell">&nbsp;</td>
-		<td class="relcell"> &nbsp;</td>
-		<td class="commentcell"><pre>レコードを登録したユーザー</pre></td>
-		<td class="subcell">registerUser</td>
-		<td class="subcell">String</td>
-	</tr>
-	<tr>
-		<td class="rownumcell">8</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell"> &nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">*</td>
-		<td class="aliascell comcolcell">更新日時</td>
-		<td class="comcolcell columnnamecell" id="member_security_update_datetime">UPDATE_DATETIME</td>
-		<td class="typecell">DATETIME</td>
-		<td class="sizecell"> 19 </td>
-		<td class="relcell">&nbsp;&nbsp;</td>
-		<td class="relcell">&nbsp;</td>
-		<td class="relcell"> &nbsp;</td>
-		<td class="commentcell"><pre>レコードが(最後に)更新された日時</pre></td>
-		<td class="subcell">updateDatetime</td>
-		<td class="subcell">LocalDateTime</td>
-	</tr>
-	<tr>
-		<td class="rownumcell">9</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell"> &nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">*</td>
-		<td class="aliascell comcolcell">更新ユーザー</td>
-		<td class="comcolcell columnnamecell" id="member_security_update_user">UPDATE_USER</td>
-		<td class="typecell">VARCHAR</td>
-		<td class="sizecell"> 200 </td>
-		<td class="relcell">&nbsp;&nbsp;</td>
-		<td class="relcell">&nbsp;</td>
-		<td class="relcell"> &nbsp;</td>
-		<td class="commentcell"><pre>レコードを(最後に)更新したユーザー</pre></td>
-		<td class="subcell">updateUser</td>
-		<td class="subcell">String</td>
-	</tr>
-	<tr>
-		<td class="rownumcell">10</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell"> &nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">&nbsp;</td>
-		<td class="flgcell">*</td>
-		<td class="aliascell optcell">バージョン番号</td>
-		<td class="optcell columnnamecell" id="member_security_version_no">VERSION_NO</td>
-		<td class="typecell">BIGINT</td>
-		<td class="sizecell"> 19 </td>
-		<td class="relcell">&nbsp;&nbsp;</td>
-		<td class="relcell">&nbsp;</td>
-		<td class="relcell"> &nbsp;</td>
-		<td class="commentcell"><pre>排他制御用、更新されるごとにインクリメントされる</pre></td>
-		<td class="subcell">versionNo</td>
-		<td class="subcell">Long</td>
-	</tr>
-	</tbody>
-</table>
-
 <h2 id="member_service" title="type=TABLE, primaryKey={MEMBER_SERVICE_ID}, nameLength=14, columnCount=9">
 (会員サービス)MEMBER_SERVICE
 </h2>
@@ -1995,6 +1783,218 @@ dl.procedurelist dd.column pre {
 		<td class="commentcell"><pre>レコードを(最後に)更新したユーザー</pre></td>
 		<td class="subcell">updateUser</td>
 		<td class="subcell">String</td>
+	</tr>
+	</tbody>
+</table>
+
+<h2 id="new_member_security" title="type=TABLE, primaryKey={MEMBER_ID}, nameLength=19, columnCount=10">
+(会員セキュリティ)NEW_MEMBER_SECURITY
+</h2>
+<div class="tablecomment NEW_MEMBER_SECURITY_comment" data-name="NEW_MEMBER_SECURITY"><pre>会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある</pre></div>
+<input type="hidden" value="NEW_MEMBER_SECURITY">
+<table class="tablecontent">
+	<thead>
+	<tr>
+		<th class="rownumhead">No.</th>
+		<th>PK</th>
+		<th>ID</th>
+		<th>UQ</th>
+		<th>IX</th>
+		<th>Not<br />Null</th>
+		<th>Alias</th>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Size</th>
+		<th>ForeignTable</th>
+		<th>ReferrerTable</th>
+		<th>Classification</th>
+		<th>ColumnComment</th>
+		<th>PropertyName</th>
+		<th>JavaType</th>
+	</tr>
+	</thead>
+	<tbody id="new_member_security-body">
+	<tr>
+		<td class="rownumcell">1</td>
+		<td class="flgcell" title="PRIMARY">o</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td class="aliascell">会員ID</td>
+		<td class=" columnnamecell" id="new_member_security_member_id">MEMBER_ID</td>
+		<td class="typecell">INT</td>
+		<td class="sizecell"> 10 </td>
+		<td class="relcell"><a href="#member" title="FK_NEW_MEMBER_SECURITY_MEMBER">MEMBER</a>&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="commentcell"><pre>そのまま one-to-one を構成するためのFKとなる。</pre></td>
+		<td class="subcell">memberId</td>
+		<td class="subcell">Integer</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td class="aliascell">ログインパスワード</td>
+		<td class=" columnnamecell" id="new_member_security_login_password">LOGIN_PASSWORD</td>
+		<td class="typecell">VARCHAR</td>
+		<td class="sizecell"> 100 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="commentcell"><pre>ログイン時に利用するパスワード。
+本当は良くないが、Exampleなのでひとまず暗号化していない。</pre></td>
+		<td class="subcell">loginPassword</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">3</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td class="aliascell">リマインダ質問</td>
+		<td class=" columnnamecell" id="new_member_security_reminder_question">REMINDER_QUESTION</td>
+		<td class="typecell">VARCHAR</td>
+		<td class="sizecell"> 50 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="commentcell"><pre>パスワードを忘れた際のリマインダ機能における質問の内容。</pre></td>
+		<td class="subcell">reminderQuestion</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">4</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td class="aliascell">リマインダ回答</td>
+		<td class=" columnnamecell" id="new_member_security_reminder_answer">REMINDER_ANSWER</td>
+		<td class="typecell">VARCHAR</td>
+		<td class="sizecell"> 50 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="commentcell"><pre>パスワードを忘れた際のリマインダ機能における質問の答え。</pre></td>
+		<td class="subcell">reminderAnswer</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">5</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td class="aliascell">リマインダ利用回数</td>
+		<td class=" columnnamecell" id="new_member_security_reminder_use_count">REMINDER_USE_COUNT</td>
+		<td class="typecell">INT</td>
+		<td class="sizecell"> 10 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="commentcell"><pre>リマインダを利用した回数。
+これが多いと忘れっぽい会員と言えるが、そんなことを知ってもしょうがない。</pre></td>
+		<td class="subcell">reminderUseCount</td>
+		<td class="subcell">Integer</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">6</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td class="aliascell comcolcell">登録日時</td>
+		<td class="comcolcell columnnamecell" id="new_member_security_register_datetime">REGISTER_DATETIME</td>
+		<td class="typecell">DATETIME</td>
+		<td class="sizecell"> 19 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="commentcell"><pre>レコードが登録された日時</pre></td>
+		<td class="subcell">registerDatetime</td>
+		<td class="subcell">LocalDateTime</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">7</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td class="aliascell comcolcell">登録ユーザー</td>
+		<td class="comcolcell columnnamecell" id="new_member_security_register_user">REGISTER_USER</td>
+		<td class="typecell">VARCHAR</td>
+		<td class="sizecell"> 200 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="commentcell"><pre>レコードを登録したユーザー</pre></td>
+		<td class="subcell">registerUser</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">8</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td class="aliascell comcolcell">更新日時</td>
+		<td class="comcolcell columnnamecell" id="new_member_security_update_datetime">UPDATE_DATETIME</td>
+		<td class="typecell">DATETIME</td>
+		<td class="sizecell"> 19 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="commentcell"><pre>レコードが(最後に)更新された日時</pre></td>
+		<td class="subcell">updateDatetime</td>
+		<td class="subcell">LocalDateTime</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">9</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td class="aliascell comcolcell">更新ユーザー</td>
+		<td class="comcolcell columnnamecell" id="new_member_security_update_user">UPDATE_USER</td>
+		<td class="typecell">VARCHAR</td>
+		<td class="sizecell"> 200 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="commentcell"><pre>レコードを(最後に)更新したユーザー</pre></td>
+		<td class="subcell">updateUser</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">10</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td class="aliascell optcell">バージョン番号</td>
+		<td class="optcell columnnamecell" id="new_member_security_version_no">VERSION_NO</td>
+		<td class="typecell">BIGINT</td>
+		<td class="sizecell"> 19 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="commentcell"><pre>排他制御用、更新されるごとにインクリメントされる</pre></td>
+		<td class="subcell">versionNo</td>
+		<td class="subcell">Long</td>
 	</tr>
 	</tbody>
 </table>
@@ -3960,6 +3960,15 @@ function StoreClient() {
 				, 'mappings' : [
 				]
 				, 'properties': [
+						{
+						'decomment': '会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある<br><br>テーブル名変更'
+						, 'databaseComment': '会員とは&nbsp;one-to-one&nbsp;で、会員一人につき必ず一つのセキュリティ情報がある'
+						, 'commentVersion': 0
+						, 'authors': ['yuto']
+						, 'pieceCode': '83945cee'
+						, 'pieceDatatime': '2018-05-18T00:43:36.683'
+						, 'previousPieces': []
+					}
 				]
 				, 'columns': [
 					 {
@@ -4096,41 +4105,6 @@ function StoreClient() {
 				}
 			}
 		}
-		, 'MEMBER_SECURITY': {
-			'databaseComment': '会員とは&nbsp;one-to-one&nbsp;で、会員一人につき必ず一つのセキュリティ情報がある'
-			, 'columns': {
-				'MEMBER_ID': {
-					'databaseComment': 'そのまま&nbsp;one-to-one&nbsp;を構成するためのFKとなる。'
-				}
-				, 'LOGIN_PASSWORD': {
-					'databaseComment': 'ログイン時に利用するパスワード。<br>本当は良くないが、Exampleなのでひとまず暗号化していない。'
-				}
-				, 'REMINDER_QUESTION': {
-					'databaseComment': 'パスワードを忘れた際のリマインダ機能における質問の内容。'
-				}
-				, 'REMINDER_ANSWER': {
-					'databaseComment': 'パスワードを忘れた際のリマインダ機能における質問の答え。'
-				}
-				, 'REMINDER_USE_COUNT': {
-					'databaseComment': 'リマインダを利用した回数。<br>これが多いと忘れっぽい会員と言えるが、そんなことを知ってもしょうがない。'
-				}
-				, 'REGISTER_DATETIME': {
-					'databaseComment': 'レコードが登録された日時'
-				}
-				, 'REGISTER_USER': {
-					'databaseComment': 'レコードを登録したユーザー'
-				}
-				, 'UPDATE_DATETIME': {
-					'databaseComment': 'レコードが(最後に)更新された日時'
-				}
-				, 'UPDATE_USER': {
-					'databaseComment': 'レコードを(最後に)更新したユーザー'
-				}
-				, 'VERSION_NO': {
-					'databaseComment': '排他制御用、更新されるごとにインクリメントされる'
-				}
-			}
-		}
 		, 'MEMBER_SERVICE': {
 			'databaseComment': '会員のサービス情報（ポイントサービスなど）。<br>テストケースのために、あえて統一性を崩してユニーク制約経由の&nbsp;one-to-one&nbsp;を表現している。'
 			, 'columns': {
@@ -4206,6 +4180,41 @@ function StoreClient() {
 				}
 				, 'UPDATE_USER': {
 					'databaseComment': 'レコードを(最後に)更新したユーザー'
+				}
+			}
+		}
+		, 'NEW_MEMBER_SECURITY': {
+			'databaseComment': '会員とは&nbsp;one-to-one&nbsp;で、会員一人につき必ず一つのセキュリティ情報がある'
+			, 'columns': {
+				'MEMBER_ID': {
+					'databaseComment': 'そのまま&nbsp;one-to-one&nbsp;を構成するためのFKとなる。'
+				}
+				, 'LOGIN_PASSWORD': {
+					'databaseComment': 'ログイン時に利用するパスワード。<br>本当は良くないが、Exampleなのでひとまず暗号化していない。'
+				}
+				, 'REMINDER_QUESTION': {
+					'databaseComment': 'パスワードを忘れた際のリマインダ機能における質問の内容。'
+				}
+				, 'REMINDER_ANSWER': {
+					'databaseComment': 'パスワードを忘れた際のリマインダ機能における質問の答え。'
+				}
+				, 'REMINDER_USE_COUNT': {
+					'databaseComment': 'リマインダを利用した回数。<br>これが多いと忘れっぽい会員と言えるが、そんなことを知ってもしょうがない。'
+				}
+				, 'REGISTER_DATETIME': {
+					'databaseComment': 'レコードが登録された日時'
+				}
+				, 'REGISTER_USER': {
+					'databaseComment': 'レコードを登録したユーザー'
+				}
+				, 'UPDATE_DATETIME': {
+					'databaseComment': 'レコードが(最後に)更新された日時'
+				}
+				, 'UPDATE_USER': {
+					'databaseComment': 'レコードを(最後に)更新したユーザー'
+				}
+				, 'VERSION_NO': {
+					'databaseComment': '排他制御用、更新されるごとにインクリメントされる'
 				}
 			}
 		}

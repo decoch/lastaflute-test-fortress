@@ -60,22 +60,6 @@ CREATE TABLE MEMBER_LOGIN
 ) COMMENT = '会員ログイン : ログインするたびに登録されるログイン履歴。登録されたら更新されるも削除されることもない。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。';
 
 
-CREATE TABLE MEMBER_SECURITY
-(
-	MEMBER_ID INT NOT NULL COMMENT '会員ID : そのまま one-to-one を構成するためのFKとなる。',
-	LOGIN_PASSWORD VARCHAR(100) NOT NULL COMMENT 'ログインパスワード : ログイン時に利用するパスワード。本当は良くないが、Exampleなのでひとまず暗号化していない。',
-	REMINDER_QUESTION VARCHAR(50) NOT NULL COMMENT 'リマインダ質問 : パスワードを忘れた際のリマインダ機能における質問の内容。',
-	REMINDER_ANSWER VARCHAR(50) NOT NULL COMMENT 'リマインダ回答 : パスワードを忘れた際のリマインダ機能における質問の答え。',
-	REMINDER_USE_COUNT INT NOT NULL COMMENT 'リマインダ利用回数 : リマインダを利用した回数。これが多いと忘れっぽい会員と言えるが、そんなことを知ってもしょうがない。',
-	REGISTER_DATETIME DATETIME NOT NULL COMMENT '登録日時 : レコードが登録された日時',
-	REGISTER_USER VARCHAR(200) NOT NULL COMMENT '登録ユーザー : レコードを登録したユーザー',
-	UPDATE_DATETIME DATETIME NOT NULL COMMENT '更新日時 : レコードが(最後に)更新された日時',
-	UPDATE_USER VARCHAR(200) NOT NULL COMMENT '更新ユーザー : レコードを(最後に)更新したユーザー',
-	VERSION_NO BIGINT NOT NULL COMMENT 'バージョン番号 : 排他制御用、更新されるごとにインクリメントされる',
-	PRIMARY KEY (MEMBER_ID)
-) COMMENT = '会員セキュリティ : 会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある';
-
-
 CREATE TABLE MEMBER_SERVICE
 (
 	MEMBER_SERVICE_ID INT NOT NULL AUTO_INCREMENT COMMENT '会員サービスID : 独立した主キーとなるが、実質的に会員IDとは one-to-one である。',
@@ -113,6 +97,22 @@ CREATE TABLE MEMBER_WITHDRAWAL
 	UPDATE_USER VARCHAR(200) NOT NULL COMMENT '更新ユーザー : レコードを(最後に)更新したユーザー',
 	PRIMARY KEY (MEMBER_ID)
 ) COMMENT = '会員退会情報 : 退会会員の退会に関する詳細な情報。退会会員のみデータが存在し、"1 : 0..1" のパターンの one-to-one である。共通カラムがあってバージョンNOがないパターン。基本的に更新は入らないが、重要なデータなので万が一のために更新系の共通カラムも。';
+
+
+CREATE TABLE NEW_MEMBER_SECURITY
+(
+	MEMBER_ID INT NOT NULL COMMENT '会員ID : そのまま one-to-one を構成するためのFKとなる。',
+	LOGIN_PASSWORD VARCHAR(100) NOT NULL COMMENT 'ログインパスワード : ログイン時に利用するパスワード。本当は良くないが、Exampleなのでひとまず暗号化していない。',
+	REMINDER_QUESTION VARCHAR(50) NOT NULL COMMENT 'リマインダ質問 : パスワードを忘れた際のリマインダ機能における質問の内容。',
+	REMINDER_ANSWER VARCHAR(50) NOT NULL COMMENT 'リマインダ回答 : パスワードを忘れた際のリマインダ機能における質問の答え。',
+	REMINDER_USE_COUNT INT NOT NULL COMMENT 'リマインダ利用回数 : リマインダを利用した回数。これが多いと忘れっぽい会員と言えるが、そんなことを知ってもしょうがない。',
+	REGISTER_DATETIME DATETIME NOT NULL COMMENT '登録日時 : レコードが登録された日時',
+	REGISTER_USER VARCHAR(200) NOT NULL COMMENT '登録ユーザー : レコードを登録したユーザー',
+	UPDATE_DATETIME DATETIME NOT NULL COMMENT '更新日時 : レコードが(最後に)更新された日時',
+	UPDATE_USER VARCHAR(200) NOT NULL COMMENT '更新ユーザー : レコードを(最後に)更新したユーザー',
+	VERSION_NO BIGINT NOT NULL COMMENT 'バージョン番号 : 排他制御用、更新されるごとにインクリメントされる',
+	PRIMARY KEY (MEMBER_ID)
+) COMMENT = '会員セキュリティ : 会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある';
 
 
 CREATE TABLE PRODUCT
@@ -268,14 +268,6 @@ ALTER TABLE MEMBER_LOGIN
 ;
 
 
-ALTER TABLE MEMBER_SECURITY
-	ADD CONSTRAINT FK_MEMBER_SECURITY_MEMBER FOREIGN KEY (MEMBER_ID)
-	REFERENCES MEMBER (MEMBER_ID)
-	ON UPDATE NO ACTION
-	ON DELETE NO ACTION
-;
-
-
 ALTER TABLE MEMBER_SERVICE
 	ADD CONSTRAINT FK_MEMBER_SERVICE_MEMBER FOREIGN KEY (MEMBER_ID)
 	REFERENCES MEMBER (MEMBER_ID)
@@ -286,6 +278,14 @@ ALTER TABLE MEMBER_SERVICE
 
 ALTER TABLE MEMBER_WITHDRAWAL
 	ADD CONSTRAINT FK_MEMBER_WITHDRAWAL_MEMBER FOREIGN KEY (MEMBER_ID)
+	REFERENCES MEMBER (MEMBER_ID)
+	ON UPDATE NO ACTION
+	ON DELETE NO ACTION
+;
+
+
+ALTER TABLE NEW_MEMBER_SECURITY
+	ADD CONSTRAINT FK_NEW_MEMBER_SECURITY_MEMBER FOREIGN KEY (MEMBER_ID)
 	REFERENCES MEMBER (MEMBER_ID)
 	ON UPDATE NO ACTION
 	ON DELETE NO ACTION

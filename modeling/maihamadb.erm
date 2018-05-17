@@ -566,84 +566,6 @@
 			</table_properties>
 		</table>
 		<table>
-			<physical_name>MEMBER_SECURITY</physical_name>
-			<logical_name>会員セキュリティ</logical_name>
-			<description>会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある</description>
-			<font_name>Lucida Grande</font_name>
-			<font_size>9</font_size>
-			<x>1331</x>
-			<y>217</y>
-			<color>
-				<r>128</r>
-				<g>128</g>
-				<b>192</b>
-			</color>
-			<connections>
-				<relationship>
-					<name>FK_MEMBER_SECURITY_MEMBER</name>
-					<source>table.MEMBER</source>
-					<target>table.MEMBER_SECURITY</target>
-					<fk_columns>
-						<fk_column>
-							<fk_column_name>MEMBER_ID</fk_column_name>
-						</fk_column>
-					</fk_columns>
-					<parent_cardinality>1</parent_cardinality>
-					<child_cardinality>1</child_cardinality>
-					<reference_for_pk>true</reference_for_pk>
-				</relationship>
-			</connections>
-			<columns>
-				<normal_column>
-					<physical_name>MEMBER_ID</physical_name>
-					<referred_column>table.MEMBER.MEMBER_ID</referred_column>
-					<relationship>FK_MEMBER_SECURITY_MEMBER</relationship>
-					<description>そのまま one-to-one を構成するためのFKとなる。</description>
-					<not_null>true</not_null>
-					<primary_key>true</primary_key>
-				</normal_column>
-				<normal_column>
-					<physical_name>LOGIN_PASSWORD</physical_name>
-					<logical_name>ログインパスワード</logical_name>
-					<type>varchar(n)</type>
-					<length>100</length>
-					<description>ログイン時に利用するパスワード。&#x0D;本当は良くないが、Exampleなのでひとまず暗号化していない。</description>
-					<not_null>true</not_null>
-				</normal_column>
-				<normal_column>
-					<physical_name>REMINDER_QUESTION</physical_name>
-					<logical_name>リマインダ質問</logical_name>
-					<type>varchar(n)</type>
-					<length>50</length>
-					<description>パスワードを忘れた際のリマインダ機能における質問の内容。</description>
-					<not_null>true</not_null>
-				</normal_column>
-				<normal_column>
-					<physical_name>REMINDER_ANSWER</physical_name>
-					<logical_name>リマインダ回答</logical_name>
-					<type>varchar(n)</type>
-					<length>50</length>
-					<description>パスワードを忘れた際のリマインダ機能における質問の答え。</description>
-					<not_null>true</not_null>
-				</normal_column>
-				<normal_column>
-					<physical_name>REMINDER_USE_COUNT</physical_name>
-					<logical_name>リマインダ利用回数</logical_name>
-					<type>integer</type>
-					<description>リマインダを利用した回数。&#x0D;これが多いと忘れっぽい会員と言えるが、そんなことを知ってもしょうがない。</description>
-					<not_null>true</not_null>
-				</normal_column>
-				<column_group>Common Column</column_group>
-				<column_group>OptimisticLock Column</column_group>
-			</columns>
-			<indexes>
-			</indexes>
-			<compound_unique_key_list>
-			</compound_unique_key_list>
-			<table_properties>
-			</table_properties>
-		</table>
-		<table>
 			<physical_name>MEMBER_SERVICE</physical_name>
 			<logical_name>会員サービス</logical_name>
 			<description>会員のサービス情報（ポイントサービスなど）。&#x0D;テストケースのために、あえて統一性を崩してユニーク制約経由の one-to-one を表現している。</description>
@@ -881,6 +803,84 @@
 						</column>
 					</columns>
 				</index>
+			</indexes>
+			<compound_unique_key_list>
+			</compound_unique_key_list>
+			<table_properties>
+			</table_properties>
+		</table>
+		<table>
+			<physical_name>NEW_MEMBER_SECURITY</physical_name>
+			<logical_name>会員セキュリティ</logical_name>
+			<description>会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある</description>
+			<font_name>Lucida Grande</font_name>
+			<font_size>9</font_size>
+			<x>1331</x>
+			<y>217</y>
+			<color>
+				<r>128</r>
+				<g>128</g>
+				<b>192</b>
+			</color>
+			<connections>
+				<relationship>
+					<name>FK_NEW_MEMBER_SECURITY_MEMBER</name>
+					<source>table.MEMBER</source>
+					<target>table.NEW_MEMBER_SECURITY</target>
+					<fk_columns>
+						<fk_column>
+							<fk_column_name>MEMBER_ID</fk_column_name>
+						</fk_column>
+					</fk_columns>
+					<parent_cardinality>1</parent_cardinality>
+					<child_cardinality>1</child_cardinality>
+					<reference_for_pk>true</reference_for_pk>
+				</relationship>
+			</connections>
+			<columns>
+				<normal_column>
+					<physical_name>MEMBER_ID</physical_name>
+					<referred_column>table.MEMBER.MEMBER_ID</referred_column>
+					<relationship>FK_NEW_MEMBER_SECURITY_MEMBER</relationship>
+					<description>そのまま one-to-one を構成するためのFKとなる。</description>
+					<not_null>true</not_null>
+					<primary_key>true</primary_key>
+				</normal_column>
+				<normal_column>
+					<physical_name>LOGIN_PASSWORD</physical_name>
+					<logical_name>ログインパスワード</logical_name>
+					<type>varchar(n)</type>
+					<length>100</length>
+					<description>ログイン時に利用するパスワード。&#x0D;本当は良くないが、Exampleなのでひとまず暗号化していない。</description>
+					<not_null>true</not_null>
+				</normal_column>
+				<normal_column>
+					<physical_name>REMINDER_QUESTION</physical_name>
+					<logical_name>リマインダ質問</logical_name>
+					<type>varchar(n)</type>
+					<length>50</length>
+					<description>パスワードを忘れた際のリマインダ機能における質問の内容。</description>
+					<not_null>true</not_null>
+				</normal_column>
+				<normal_column>
+					<physical_name>REMINDER_ANSWER</physical_name>
+					<logical_name>リマインダ回答</logical_name>
+					<type>varchar(n)</type>
+					<length>50</length>
+					<description>パスワードを忘れた際のリマインダ機能における質問の答え。</description>
+					<not_null>true</not_null>
+				</normal_column>
+				<normal_column>
+					<physical_name>REMINDER_USE_COUNT</physical_name>
+					<logical_name>リマインダ利用回数</logical_name>
+					<type>integer</type>
+					<description>リマインダを利用した回数。&#x0D;これが多いと忘れっぽい会員と言えるが、そんなことを知ってもしょうがない。</description>
+					<not_null>true</not_null>
+				</normal_column>
+				<column_group>Common Column</column_group>
+				<column_group>OptimisticLock Column</column_group>
+			</columns>
+			<indexes>
 			</indexes>
 			<compound_unique_key_list>
 			</compound_unique_key_list>

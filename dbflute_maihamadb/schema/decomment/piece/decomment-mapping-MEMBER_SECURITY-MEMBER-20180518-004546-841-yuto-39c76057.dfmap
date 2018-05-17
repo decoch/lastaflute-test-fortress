@@ -1,0 +1,15 @@
+map:{
+    ; formatVersion = 1.1
+    ; oldTableName = MEMBER_SECURITY
+    ; oldColumnName = null
+    ; newTableName = MEMBER
+    ; newColumnName = null
+    ; targetType = TABLE
+    ; authorList = list:{
+        ; yuto
+    }
+    ; mappingCode = 39c76057
+    ; mappingOwner = yuto
+    ; mappingDatetime = 2018-05-18T00:45:46.841
+    ; previousMappingList = list:{}
+}

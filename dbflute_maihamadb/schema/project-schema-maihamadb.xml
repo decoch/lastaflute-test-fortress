@@ -190,47 +190,6 @@
         </index>
     </table>
     <table
-        comment="会員セキュリティ : 会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある"
-        name="MEMBER_SECURITY" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
-        <column comment="会員ID : そのまま one-to-one を構成するためのFKとなる。"
-            dbType="INT" javaType="Integer" name="MEMBER_ID"
-            pkName="PRIMARY" pkPosition="1" primaryKey="true"
-            required="true" size="10" type="INTEGER"/>
-        <column
-            comment="ログインパスワード : ログイン時に利用するパスワード。&#xa;本当は良くないが、Exampleなのでひとまず暗号化していない。"
-            dbType="VARCHAR" javaType="String" name="LOGIN_PASSWORD"
-            required="true" size="100" type="VARCHAR"/>
-        <column comment="リマインダ質問 : パスワードを忘れた際のリマインダ機能における質問の内容。"
-            dbType="VARCHAR" javaType="String" name="REMINDER_QUESTION"
-            required="true" size="50" type="VARCHAR"/>
-        <column comment="リマインダ回答 : パスワードを忘れた際のリマインダ機能における質問の答え。"
-            dbType="VARCHAR" javaType="String" name="REMINDER_ANSWER"
-            required="true" size="50" type="VARCHAR"/>
-        <column
-            comment="リマインダ利用回数 : リマインダを利用した回数。&#xa;これが多いと忘れっぽい会員と言えるが、そんなことを知ってもしょうがない。"
-            dbType="INT" javaType="Integer" name="REMINDER_USE_COUNT"
-            required="true" size="10" type="INTEGER"/>
-        <column comment="登録日時 : レコードが登録された日時" dbType="DATETIME"
-            javaType="java.time.LocalDateTime" name="REGISTER_DATETIME"
-            required="true" size="19" type="TIMESTAMP"/>
-        <column comment="登録ユーザー : レコードを登録したユーザー" dbType="VARCHAR"
-            javaType="String" name="REGISTER_USER" required="true"
-            size="200" type="VARCHAR"/>
-        <column comment="更新日時 : レコードが(最後に)更新された日時" dbType="DATETIME"
-            javaType="java.time.LocalDateTime" name="UPDATE_DATETIME"
-            required="true" size="19" type="TIMESTAMP"/>
-        <column comment="更新ユーザー : レコードを(最後に)更新したユーザー" dbType="VARCHAR"
-            javaType="String" name="UPDATE_USER" required="true"
-            size="200" type="VARCHAR"/>
-        <column comment="バージョン番号 : 排他制御用、更新されるごとにインクリメントされる"
-            dbType="BIGINT" javaType="Long" name="VERSION_NO"
-            required="true" size="19" type="BIGINT"/>
-        <foreign-key foreignSchema="maihamadb.$$NoNameSchema$$"
-            foreignTable="MEMBER" name="FK_MEMBER_SECURITY_MEMBER">
-            <reference foreign="MEMBER_ID" local="MEMBER_ID"/>
-        </foreign-key>
-    </table>
-    <table
         comment="会員サービス : 会員のサービス情報（ポイントサービスなど）。&#xa;テストケースのために、あえて統一性を崩してユニーク制約経由の one-to-one を表現している。"
         name="MEMBER_SERVICE" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
         <column autoIncrement="true"
@@ -346,6 +305,47 @@
         <index name="FK_MEMBER_WITHDRAWAL_WITHDRAWAL_REASON">
             <index-column name="WITHDRAWAL_REASON_CODE" position="1"/>
         </index>
+    </table>
+    <table
+        comment="会員セキュリティ : 会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある"
+        name="NEW_MEMBER_SECURITY" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
+        <column comment="会員ID : そのまま one-to-one を構成するためのFKとなる。"
+            dbType="INT" javaType="Integer" name="MEMBER_ID"
+            pkName="PRIMARY" pkPosition="1" primaryKey="true"
+            required="true" size="10" type="INTEGER"/>
+        <column
+            comment="ログインパスワード : ログイン時に利用するパスワード。&#xa;本当は良くないが、Exampleなのでひとまず暗号化していない。"
+            dbType="VARCHAR" javaType="String" name="LOGIN_PASSWORD"
+            required="true" size="100" type="VARCHAR"/>
+        <column comment="リマインダ質問 : パスワードを忘れた際のリマインダ機能における質問の内容。"
+            dbType="VARCHAR" javaType="String" name="REMINDER_QUESTION"
+            required="true" size="50" type="VARCHAR"/>
+        <column comment="リマインダ回答 : パスワードを忘れた際のリマインダ機能における質問の答え。"
+            dbType="VARCHAR" javaType="String" name="REMINDER_ANSWER"
+            required="true" size="50" type="VARCHAR"/>
+        <column
+            comment="リマインダ利用回数 : リマインダを利用した回数。&#xa;これが多いと忘れっぽい会員と言えるが、そんなことを知ってもしょうがない。"
+            dbType="INT" javaType="Integer" name="REMINDER_USE_COUNT"
+            required="true" size="10" type="INTEGER"/>
+        <column comment="登録日時 : レコードが登録された日時" dbType="DATETIME"
+            javaType="java.time.LocalDateTime" name="REGISTER_DATETIME"
+            required="true" size="19" type="TIMESTAMP"/>
+        <column comment="登録ユーザー : レコードを登録したユーザー" dbType="VARCHAR"
+            javaType="String" name="REGISTER_USER" required="true"
+            size="200" type="VARCHAR"/>
+        <column comment="更新日時 : レコードが(最後に)更新された日時" dbType="DATETIME"
+            javaType="java.time.LocalDateTime" name="UPDATE_DATETIME"
+            required="true" size="19" type="TIMESTAMP"/>
+        <column comment="更新ユーザー : レコードを(最後に)更新したユーザー" dbType="VARCHAR"
+            javaType="String" name="UPDATE_USER" required="true"
+            size="200" type="VARCHAR"/>
+        <column comment="バージョン番号 : 排他制御用、更新されるごとにインクリメントされる"
+            dbType="BIGINT" javaType="Long" name="VERSION_NO"
+            required="true" size="19" type="BIGINT"/>
+        <foreign-key foreignSchema="maihamadb.$$NoNameSchema$$"
+            foreignTable="MEMBER" name="FK_NEW_MEMBER_SECURITY_MEMBER">
+            <reference foreign="MEMBER_ID" local="MEMBER_ID"/>
+        </foreign-key>
     </table>
     <table comment="商品" name="PRODUCT"
         schema="maihamadb.$$NoNameSchema$$" type="TABLE">
