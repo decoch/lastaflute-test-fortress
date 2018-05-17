@@ -1,0 +1,24 @@
+map:{
+    ; diffCode = 20180518004354
+    ; diffDate = 2018/05/18 00:43:54
+    ; hacomment = hacommentいいなぁ
+ちゃんと動くなぁ
+
+\=\=\=\=\=\=\=
+
+hacommentいいなぁ
+ちゃんと動くなぁ
+
+⬆️みたいなの、同じコメントならマージしてほしい感じがある...
+    ; diffComment = 
+    ; authorList = list:{
+        ; yuto
+    }
+    ; pieceCode = d973b45a
+    ; pieceOwner = yuto
+    ; pieceDatetime = 2018-05-18T00:54:12.623
+    ; previousPieceList = list:{
+        ; 7861df79
+        ; 96182e9c
+    }
+}
