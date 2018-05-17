@@ -4,6 +4,9 @@
 	<meta charset="UTF-8" />
 	<title>maihamadb schema</title>
 	<style type="text/css">
+/* -------------------------------------------------
+                                             Core
+------------------------------------------------- */
 * {
 	margin: 0;
 	padding: 0;
@@ -15,7 +18,9 @@ body {
 	background-color: #ffffe0;
 }
 
-/* heading */
+/* -------------------------------------------------
+                                        Structure
+------------------------------------------------- */
 h1 {
 	font-size: 1.5em;
 	border-bottom: 2px solid #af0000;
@@ -45,7 +50,9 @@ h4 {
 	color: #333333;
 }
 
-/* total info */
+/* -------------------------------------------------
+                                     Whole Header
+------------------------------------------------- */
 .updatedate {
 	text-align: right;
 }
@@ -71,7 +78,9 @@ h4 {
 	font-size: 100%;
 }
 
-/* keyword search */
+/* -------------------------------------------------
+                                   Keyword Search
+------------------------------------------------- */
 .keywordsearch {
 	padding: 0.7em 0 0.7em 0;
 }
@@ -91,7 +100,9 @@ h4 {
 	list-style-type: none;
 }
 
-/* table */
+/* -------------------------------------------------
+                                   Database Table
+------------------------------------------------- */
 table {
 	border-collapse:collapse;
 }
@@ -201,6 +212,10 @@ table.child, table.child td, table.child th {
 span.tableschema {
 	font-size: 0.6em;
 }
+
+/* -------------------------------------------------
+                             Behavior Query Path
+------------------------------------------------- */
 span.bqpcount {
 	font-size: 0.5em;
 }
@@ -235,6 +250,10 @@ dl.bqplist dd.subinfo span.ctet {
 dl.bqplist dd.subinfo span.pmb {
 	color: green;
 }
+
+/* -------------------------------------------------
+                                 Stored Procedure
+------------------------------------------------- */
 dl.procedurelist {
 	padding-left: 2em;
 }
@@ -269,7 +288,9 @@ dl.procedurelist dd.column pre {
 	padding-left: 1em;
 }
 
-/** decomment modal for dbflute intro */
+/* -------------------------------------------------
+                                  Decomment Modal
+------------------------------------------------- */
 .decommentmodal {
 	display: none;
 	position: fixed;
@@ -417,7 +438,7 @@ dl.procedurelist dd.column pre {
 	<tr>
 		<td class="rownumcell">1</td>
 		<td class="aliascell">会員</td>
-		<td class="namecell"><a href="#member" title="type=TABLE, primaryKey={MEMBER_ID}, nameLength=6, columnCount=11">MEMBER</a></td>
+		<td class="namecell" data-name="MEMBER"><a href="#member" title="type=TABLE, primaryKey={MEMBER_ID}, nameLength=6, columnCount=11">MEMBER</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member_status" title="FK_MEMBER_MEMBER_STATUS">MEMBER_STATUS</a>, <a href="#member_address" class="additionalfk" title="FK_MEMBER_MEMBER_ADDRESS_VALID: fixedCondition=&quot;$$foreignAlias$$.VALID_BEGIN_DATE &lt;= /*$$locationBase$$.parameterMapMemberAddressAsValid.targetDate*/null\n     and $$foreignAlias$$.VALID_END_DATE &gt;= /*$$locationBase$$.parameterMapMemberAddressAsValid.targetDate*/null&quot;, comment=Member's address at the target date.">MEMBER_ADDRESS(AsValid)</a>, <a href="#member_login" class="additionalfk" title="FK_MEMBER_MEMBER_LOGIN_LATEST: fixedCondition=&quot;$$foreignAlias$$.LOGIN_DATETIME = ($$sqbegin$$\nselect max(login.LOGIN_DATETIME)\n  from MEMBER_LOGIN login\n where login.MEMBER_ID = $$foreignAlias$$.MEMBER_ID\n)$$sqend$$&quot;">MEMBER_LOGIN(AsLatest)</a></td>
 		<td class="relcell"><a href="#member_address" title="FK_MEMBER_ADDRESS_MEMBER">MEMBER_ADDRESS</a>, <a href="#member_following" title="FK_MEMBER_FOLLOWING_MY_MEMBER_ID">MEMBER_FOLLOWING</a>, <a href="#member_following" title="FK_MEMBER_FOLLOWING_YOUR_MEMBER_ID">MEMBER_FOLLOWING</a>, <a href="#member_login" title="FK_MEMBER_LOGIN_MEMBER">MEMBER_LOGIN</a>, <a href="#member_security" title="FK_MEMBER_SECURITY_MEMBER">MEMBER_SECURITY</a>, <a href="#member_service" title="FK_MEMBER_SERVICE_MEMBER">MEMBER_SERVICE</a>, <a href="#member_withdrawal" title="FK_MEMBER_WITHDRAWAL_MEMBER">MEMBER_WITHDRAWAL</a>, <a href="#purchase" title="FK_PURCHASE_MEMBER">PURCHASE</a></td>
@@ -429,7 +450,7 @@ dl.procedurelist dd.column pre {
 	<tr>
 		<td class="rownumcell">2</td>
 		<td class="aliascell">会員住所情報</td>
-		<td class="namecell"><a href="#member_address" title="type=TABLE, primaryKey={MEMBER_ADDRESS_ID}, nameLength=14, columnCount=11">MEMBER_ADDRESS</a></td>
+		<td class="namecell" data-name="MEMBER_ADDRESS"><a href="#member_address" title="type=TABLE, primaryKey={MEMBER_ADDRESS_ID}, nameLength=14, columnCount=11">MEMBER_ADDRESS</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member" title="FK_MEMBER_ADDRESS_MEMBER">MEMBER</a>, <a href="#region" title="FK_MEMBER_ADDRESS_REGION">REGION</a></td>
 		<td class="relcell">&nbsp;</td>
@@ -441,7 +462,7 @@ dl.procedurelist dd.column pre {
 	<tr>
 		<td class="rownumcell">3</td>
 		<td class="aliascell">会員フォローイング</td>
-		<td class="namecell"><a href="#member_following" title="type=TABLE, primaryKey={MEMBER_FOLLOWING_ID}, nameLength=16, columnCount=4">MEMBER_FOLLOWING</a></td>
+		<td class="namecell" data-name="MEMBER_FOLLOWING"><a href="#member_following" title="type=TABLE, primaryKey={MEMBER_FOLLOWING_ID}, nameLength=16, columnCount=4">MEMBER_FOLLOWING</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member" title="FK_MEMBER_FOLLOWING_MY_MEMBER_ID">MEMBER</a>, <a href="#member" title="FK_MEMBER_FOLLOWING_YOUR_MEMBER_ID">MEMBER</a></td>
 		<td class="relcell">&nbsp;</td>
@@ -451,7 +472,7 @@ dl.procedurelist dd.column pre {
 	<tr>
 		<td class="rownumcell">4</td>
 		<td class="aliascell">会員ログイン</td>
-		<td class="namecell"><a href="#member_login" title="type=TABLE, primaryKey={MEMBER_LOGIN_ID}, nameLength=12, columnCount=5">MEMBER_LOGIN</a></td>
+		<td class="namecell" data-name="MEMBER_LOGIN"><a href="#member_login" title="type=TABLE, primaryKey={MEMBER_LOGIN_ID}, nameLength=12, columnCount=5">MEMBER_LOGIN</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member" title="FK_MEMBER_LOGIN_MEMBER">MEMBER</a>, <a href="#member_status" title="FK_MEMBER_LOGIN_MEMBER_STATUS">MEMBER_STATUS</a></td>
 		<td class="relcell">&nbsp;</td>
@@ -462,7 +483,7 @@ dl.procedurelist dd.column pre {
 	<tr>
 		<td class="rownumcell">5</td>
 		<td class="aliascell">会員セキュリティ</td>
-		<td class="namecell"><a href="#member_security" title="type=TABLE, primaryKey={MEMBER_ID}, nameLength=15, columnCount=10">MEMBER_SECURITY</a></td>
+		<td class="namecell" data-name="MEMBER_SECURITY"><a href="#member_security" title="type=TABLE, primaryKey={MEMBER_ID}, nameLength=15, columnCount=10">MEMBER_SECURITY</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member" title="FK_MEMBER_SECURITY_MEMBER">MEMBER</a></td>
 		<td class="relcell">&nbsp;</td>
@@ -472,7 +493,7 @@ dl.procedurelist dd.column pre {
 	<tr>
 		<td class="rownumcell">6</td>
 		<td class="aliascell">会員サービス</td>
-		<td class="namecell"><a href="#member_service" title="type=TABLE, primaryKey={MEMBER_SERVICE_ID}, nameLength=14, columnCount=9">MEMBER_SERVICE</a></td>
+		<td class="namecell" data-name="MEMBER_SERVICE"><a href="#member_service" title="type=TABLE, primaryKey={MEMBER_SERVICE_ID}, nameLength=14, columnCount=9">MEMBER_SERVICE</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member" title="FK_MEMBER_SERVICE_MEMBER">MEMBER</a>, <a href="#service_rank" title="FK_MEMBER_SERVICE_SERVICE_RANK_CODE">SERVICE_RANK</a></td>
 		<td class="relcell">&nbsp;</td>
@@ -483,7 +504,7 @@ dl.procedurelist dd.column pre {
 	<tr>
 		<td class="rownumcell">7</td>
 		<td class="aliascell">会員ステータス</td>
-		<td class="namecell"><a href="#member_status" title="type=TABLE, primaryKey={MEMBER_STATUS_CODE}, nameLength=13, columnCount=4">MEMBER_STATUS</a></td>
+		<td class="namecell" data-name="MEMBER_STATUS"><a href="#member_status" title="type=TABLE, primaryKey={MEMBER_STATUS_CODE}, nameLength=13, columnCount=4">MEMBER_STATUS</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"><a href="#member" title="FK_MEMBER_MEMBER_STATUS">MEMBER</a>, <a href="#member_login" title="FK_MEMBER_LOGIN_MEMBER_STATUS">MEMBER_LOGIN</a></td>
@@ -496,7 +517,7 @@ dl.procedurelist dd.column pre {
 	<tr>
 		<td class="rownumcell">8</td>
 		<td class="aliascell">会員退会情報</td>
-		<td class="namecell"><a href="#member_withdrawal" title="type=TABLE, primaryKey={MEMBER_ID}, nameLength=17, columnCount=8">MEMBER_WITHDRAWAL</a></td>
+		<td class="namecell" data-name="MEMBER_WITHDRAWAL"><a href="#member_withdrawal" title="type=TABLE, primaryKey={MEMBER_ID}, nameLength=17, columnCount=8">MEMBER_WITHDRAWAL</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member" title="FK_MEMBER_WITHDRAWAL_MEMBER">MEMBER</a>, <a href="#withdrawal_reason" title="FK_MEMBER_WITHDRAWAL_WITHDRAWAL_REASON">WITHDRAWAL_REASON</a></td>
 		<td class="relcell">&nbsp;</td>
@@ -509,7 +530,7 @@ dl.procedurelist dd.column pre {
 	<tr>
 		<td class="rownumcell">9</td>
 		<td class="aliascell">商品</td>
-		<td class="namecell"><a href="#product" title="type=TABLE, primaryKey={PRODUCT_ID}, nameLength=7, columnCount=11">PRODUCT</a></td>
+		<td class="namecell" data-name="PRODUCT"><a href="#product" title="type=TABLE, primaryKey={PRODUCT_ID}, nameLength=7, columnCount=11">PRODUCT</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#product_category" title="FK_PRODUCT_PRODUCT_CATEGORY">PRODUCT_CATEGORY</a>, <a href="#product_status" title="FK_PRODUCT_PRODUCT_STATUS">PRODUCT_STATUS</a></td>
 		<td class="relcell"><a href="#purchase" title="FK_PURCHASE_PRODUCT">PURCHASE</a></td>
@@ -519,7 +540,7 @@ dl.procedurelist dd.column pre {
 	<tr>
 		<td class="rownumcell">10</td>
 		<td class="aliascell">商品カテゴリ</td>
-		<td class="namecell"><a href="#product_category" title="type=TABLE, primaryKey={PRODUCT_CATEGORY_CODE}, nameLength=16, columnCount=3">PRODUCT_CATEGORY</a></td>
+		<td class="namecell" data-name="PRODUCT_CATEGORY"><a href="#product_category" title="type=TABLE, primaryKey={PRODUCT_CATEGORY_CODE}, nameLength=16, columnCount=3">PRODUCT_CATEGORY</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#product_category" title="FK_PRODUCT_CATEGORY_PARENT">PRODUCT_CATEGORY</a></td>
 		<td class="relcell"><a href="#product" title="FK_PRODUCT_PRODUCT_CATEGORY">PRODUCT</a>, <a href="#product_category" title="FK_PRODUCT_CATEGORY_PARENT">PRODUCT_CATEGORY</a></td>
@@ -529,7 +550,7 @@ dl.procedurelist dd.column pre {
 	<tr>
 		<td class="rownumcell">11</td>
 		<td class="aliascell">商品ステータス</td>
-		<td class="namecell"><a href="#product_status" title="type=TABLE, primaryKey={PRODUCT_STATUS_CODE}, nameLength=14, columnCount=3">PRODUCT_STATUS</a></td>
+		<td class="namecell" data-name="PRODUCT_STATUS"><a href="#product_status" title="type=TABLE, primaryKey={PRODUCT_STATUS_CODE}, nameLength=14, columnCount=3">PRODUCT_STATUS</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"><a href="#product" title="FK_PRODUCT_PRODUCT_STATUS">PRODUCT</a></td>
@@ -539,7 +560,7 @@ dl.procedurelist dd.column pre {
 	<tr>
 		<td class="rownumcell">12</td>
 		<td class="aliascell">購入</td>
-		<td class="namecell"><a href="#purchase" title="type=TABLE, primaryKey={PURCHASE_ID}, nameLength=8, columnCount=12">PURCHASE</a></td>
+		<td class="namecell" data-name="PURCHASE"><a href="#purchase" title="type=TABLE, primaryKey={PURCHASE_ID}, nameLength=8, columnCount=12">PURCHASE</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member" title="FK_PURCHASE_MEMBER">MEMBER</a>, <a href="#product" title="FK_PURCHASE_PRODUCT">PRODUCT</a></td>
 		<td class="relcell"><a href="#purchase_payment" title="FK_PURCHASE_PAYMENT_PURCHASE">PURCHASE_PAYMENT</a></td>
@@ -550,7 +571,7 @@ dl.procedurelist dd.column pre {
 	<tr>
 		<td class="rownumcell">13</td>
 		<td class="aliascell">購入支払</td>
-		<td class="namecell"><a href="#purchase_payment" title="type=TABLE, primaryKey={PURCHASE_PAYMENT_ID}, nameLength=16, columnCount=9">PURCHASE_PAYMENT</a></td>
+		<td class="namecell" data-name="PURCHASE_PAYMENT"><a href="#purchase_payment" title="type=TABLE, primaryKey={PURCHASE_PAYMENT_ID}, nameLength=16, columnCount=9">PURCHASE_PAYMENT</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#purchase" title="FK_PURCHASE_PAYMENT_PURCHASE">PURCHASE</a></td>
 		<td class="relcell">&nbsp;</td>
@@ -561,7 +582,7 @@ dl.procedurelist dd.column pre {
 	<tr>
 		<td class="rownumcell">14</td>
 		<td class="aliascell">地域</td>
-		<td class="namecell"><a href="#region" title="type=TABLE, primaryKey={REGION_ID}, nameLength=6, columnCount=2">REGION</a></td>
+		<td class="namecell" data-name="REGION"><a href="#region" title="type=TABLE, primaryKey={REGION_ID}, nameLength=6, columnCount=2">REGION</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"><a href="#member_address" title="FK_MEMBER_ADDRESS_REGION">MEMBER_ADDRESS</a></td>
@@ -572,7 +593,7 @@ dl.procedurelist dd.column pre {
 	<tr>
 		<td class="rownumcell">15</td>
 		<td class="aliascell">サービスランク</td>
-		<td class="namecell"><a href="#service_rank" title="type=TABLE, primaryKey={SERVICE_RANK_CODE}, nameLength=12, columnCount=6">SERVICE_RANK</a></td>
+		<td class="namecell" data-name="SERVICE_RANK"><a href="#service_rank" title="type=TABLE, primaryKey={SERVICE_RANK_CODE}, nameLength=12, columnCount=6">SERVICE_RANK</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"><a href="#member_service" title="FK_MEMBER_SERVICE_SERVICE_RANK_CODE">MEMBER_SERVICE</a></td>
@@ -582,7 +603,7 @@ dl.procedurelist dd.column pre {
 	<tr>
 		<td class="rownumcell">16</td>
 		<td class="aliascell">退会理由</td>
-		<td class="namecell"><a href="#withdrawal_reason" title="type=TABLE, primaryKey={WITHDRAWAL_REASON_CODE}, nameLength=17, columnCount=3">WITHDRAWAL_REASON</a></td>
+		<td class="namecell" data-name="WITHDRAWAL_REASON"><a href="#withdrawal_reason" title="type=TABLE, primaryKey={WITHDRAWAL_REASON_CODE}, nameLength=17, columnCount=3">WITHDRAWAL_REASON</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"><a href="#member_withdrawal" title="FK_MEMBER_WITHDRAWAL_WITHDRAWAL_REASON">MEMBER_WITHDRAWAL</a></td>
@@ -3934,187 +3955,6 @@ function StoreClient() {
 	// setup from dbflute if decomment pickup exists
 	this.embeddedPickup = {
 		'tables': [
-			{
-				'tableName': 'MEMBER_SERVICE'
-				, 'mappings' : [
-				]
-				, 'properties': [
-						{
-						'decomment': '会員のサービス情報（ポイントサービスなど）。<br>テストケースのために、あえて統一性を崩してユニーク制約経由の one-to-one を表現している。<br>データベースコメントとのコンフリクト解消'
-						, 'databaseComment': '会員のサービス情報（ポイントサービスなど）。<br>テストケースのために、あえて統一性を崩してユニーク制約経由の&nbsp;one-to-one&nbsp;を表現している。'
-						, 'commentVersion': 0
-						, 'authors': ['tominaga']
-						, 'pieceCode': 'c5dc0125'
-						, 'pieceDatatime': '2017-12-31T12:47:35.110'
-						, 'previousPieces': ['3710699e']
-					}
-				]
-				, 'columns': [
-				]
-			}
-			, {
-				'tableName': 'MEMBER_SECURITY'
-				, 'mappings' : [
-				]
-				, 'properties': [
-						{
-						'decomment': '会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある<br>データベースコメントとのコンフリクト'
-						, 'databaseComment': '会員とは&nbsp;one-to-one&nbsp;'
-						, 'commentVersion': 0
-						, 'authors': ['tominaga']
-						, 'pieceCode': '2a372816'
-						, 'pieceDatatime': '2017-12-31T12:45:34.883'
-						, 'previousPieces': []
-					}
-				]
-				, 'columns': [
-				]
-			}
-			, {
-				'tableName': 'MEMBER_LOGIN'
-				, 'mappings' : [
-				]
-				, 'properties': [
-						{
-						'decomment': 'ログインするたびに登録されるログイン履歴。<br>登録されたら更新されるも削除されることもない。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。<br>カラム情報でのコンフリクト解消'
-						, 'databaseComment': 'ログインするたびに登録されるログイン履歴。<br>登録されたら更新されるも削除されることもない。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。'
-						, 'commentVersion': 0
-						, 'authors': ['tominaga']
-						, 'pieceCode': '9a92a7b0'
-						, 'pieceDatatime': '2017-12-31T12:30:36.167'
-						, 'previousPieces': ['dc839b98','a57c5e4c']
-					}
-				]
-				, 'columns': [
-				]
-			}
-			, {
-				'tableName': 'MEMBER_ADDRESS'
-				, 'mappings' : [
-				]
-				, 'properties': [
-						{
-						'decomment': '会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。<br>会員を基点に考えた場合、構造的には one-to-many だが、業務的な定型条件で one-to-one になる。このような構造を「業務的one-to-one」と呼ぶ！<br>有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な) &quot;1 : 0..1&quot; である。<br>コンフリクト解消<br><br>コメントめっちゃ追加するぞー<br>追加追加'
-						, 'databaseComment': '会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。<br>会員を基点に考えた場合、構造的には&nbsp;one-to-many&nbsp;だが、業務的な定型条件で&nbsp;one-to-one&nbsp;になる。このような構造を「業務的one-to-one」と呼ぶ！<br>有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な)&nbsp;"1&nbsp;:&nbsp;0..1"&nbsp;である。'
-						, 'commentVersion': 0
-						, 'authors': ['tominaga','jflute']
-						, 'pieceCode': 'd5d7518f'
-						, 'pieceDatatime': '2017-12-31T16:08:07.377'
-						, 'previousPieces': ['7ac42f48']
-					}
-				]
-				, 'columns': [
-				]
-			}
-			, {
-				'tableName': 'MEMBER'
-				, 'mappings' : [
-				]
-				, 'properties': [
-						{
-						'decomment': 'テーブルのコンフリクトなおしたぞー'
-						, 'databaseComment': '会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。<br>ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。'
-						, 'commentVersion': 0
-						, 'authors': ['tominaga','jflute']
-						, 'pieceCode': '841391c0'
-						, 'pieceDatatime': '2017-12-31T16:07:36.154'
-						, 'previousPieces': ['720db4a6','295633b2']
-					}
-				]
-				, 'columns': [
-					 {
-						'columnName': 'MEMBER_STATUS_CODE'
-						, 'mappings' : [
-						]
-						, 'properties': [
-								 {
-								'decomment': '会員ステータスを参照するコード。<br>ステータスが変わるたびに、このカラムが更新される。<br>データベースコメントとのコンフリクト解消'
-								, 'databaseComment': '会員ステータスを参照するコード。<br>ステータスが変わるたびに、このカラムが更新される。'
-								, 'commentVersion': 0
-								, 'authors': ['tominaga']
-								, 'pieceCode': '8147b3bd'
-								, 'pieceDatatime': '2017-12-31T12:47:17.953'
-								, 'previousPieces': ['920967ee']
-							}
-						]
-					}
-					, {
-						'columnName': 'MEMBER_NAME'
-						, 'mappings' : [
-						]
-						, 'properties': [
-								 {
-								'decomment': '会員のフルネームの名称。<br>苗字と名前を分けて管理することが多いが、ここでは単純にひとまとめ。<br>カラムコメントのコンフリクト解消'
-								, 'databaseComment': '会員のフルネームの名称。<br>苗字と名前を分けて管理することが多いが、ここでは単純にひとまとめ。'
-								, 'commentVersion': 0
-								, 'authors': ['tominaga']
-								, 'pieceCode': '80223c7b'
-								, 'pieceDatatime': '2017-12-31T12:31:12.037'
-								, 'previousPieces': ['e72e30ba','23c41513']
-							}
-						]
-					}
-					, {
-						'columnName': 'MEMBER_ACCOUNT'
-						, 'mappings' : [
-						]
-						, 'properties': [
-								 {
-								'decomment': 'ログインIDとして利用する。<br>昨今メールアドレスをログインIDとすることが多いので、あまり見かけないかも!?<br>データベースコメントとのコンフリクト'
-								, 'databaseComment': 'ログインIDとして利用する。'
-								, 'commentVersion': 0
-								, 'authors': ['tominaga']
-								, 'pieceCode': '9202c06f'
-								, 'pieceDatatime': '2017-12-31T12:45:49.810'
-								, 'previousPieces': []
-							}
-						]
-					}
-					, {
-						'columnName': 'MEMBER_ID'
-						, 'mappings' : [
-						]
-						, 'properties': [
-								 {
-								'decomment': 'カラムのコンフリクトなおしたぞー'
-								, 'databaseComment': '連番として自動採番される。会員IDだけに限らず採番方法はDBMS次第。'
-								, 'commentVersion': 0
-								, 'authors': ['tominaga','jflute']
-								, 'pieceCode': 'cc86e020'
-								, 'pieceDatatime': '2017-12-31T16:07:42.119'
-								, 'previousPieces': ['1231c6b1','684adc00']
-							}
-						]
-					}
-				]
-			}
-			, {
-				'tableName': 'MEMBER_FOLLOWING'
-				, 'mappings' : [
-				]
-				, 'properties': [
-						{
-						'decomment': 'カラム情報でのコンフリクト'
-						, 'databaseComment': 'とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。'
-						, 'commentVersion': 0
-						, 'authors': ['tominaga']
-						, 'pieceCode': 'aea26238'
-						, 'pieceDatatime': '2017-12-31T12:30:12.752'
-						, 'previousPieces': []
-					}
-						, {
-						'decomment': 'とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。<br><br>カラム情報でのコンフリクト'
-						, 'databaseComment': 'とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。'
-						, 'commentVersion': 0
-						, 'authors': ['tominaga']
-						, 'pieceCode': '839dd874'
-						, 'pieceDatatime': '2017-12-31T12:30:04.742'
-						, 'previousPieces': []
-					}
-				]
-				, 'columns': [
-				]
-			}
 		]
 	}
 	this.pickupStore = {
@@ -4776,9 +4616,7 @@ PickupTableProperty.prototype = {
 	buildDisplayComment: function () {
 		var displayComment = "";
 		if (this.isDatabaseCommentConflict) {
-			displayComment = DecommentUtil.unescapeWhitespace(this.databaseComment);
-			displayComment = DecommentUtil.escapeNewlineCharacter(displayComment);
-			displayComment = DecommentUtil.escapeInputText(displayComment);
+            displayComment = this.getEscapedDatabaseComment();
 			displayComment = displayComment + '\n(from database comment)\n\n=======\n\n';
 		}
 
@@ -4801,6 +4639,16 @@ PickupTableProperty.prototype = {
 	},
 
 	/**
+	 * Get escaped database comment
+	 * @return {string} escaped database comment
+	 */
+	getEscapedDatabaseComment: function() {
+		var escapedComment = "";
+		escapedComment = DecommentUtil.escapeNewlineCharacter(escapedComment);
+		return escapedComment;
+	},
+
+	/**
 	 * Select target html element
 	 * @return {Array} html elements
 	 */
@@ -4815,6 +4663,18 @@ PickupTableProperty.prototype = {
 			}
 		});
 		return result;
+	},
+
+	/**
+	 * Get display html comment
+	 * @return {string} display html comment
+	 */
+	getDisplayHtmlComment: function() {
+		var child = this.selectTargetHtmlElements()[0].childNodes[0];
+		if (child != null && child.nodeName === "#text") {
+			return child.nodeValue.trim();
+		}
+		return ""
 	},
 
 	/**
@@ -4901,10 +4761,8 @@ PickupColumnProperty.prototype = {
 	buildDisplayComment: function () {
 		var displayComment = "";
 		if (this.isDatabaseCommentConflict) {
-			displayComment = DecommentUtil.unescapeWhitespace(this.databaseComment);
-			displayComment = DecommentUtil.escapeNewlineCharacter(this.databaseComment);
-			displayComment = DecommentUtil.escapeInputText(this.databaseComment);
-			displayComment = this.databaseComment + '\n(from database comment)\n\n=======\n\n';
+			displayComment = this.getEscapedDatabaseComment();
+			displayComment = displayComment + '\n(from database comment)\n\n=======\n\n';
 		}
 
 		var commentCount = this.decomments.length;
@@ -4926,6 +4784,16 @@ PickupColumnProperty.prototype = {
 	},
 
 	/**
+	 * Get escaped database comment
+	 * @return {string} escaped database comment
+	 */
+	getEscapedDatabaseComment: function() {
+		var escapedComment = "";
+		escapedComment = DecommentUtil.escapeNewlineCharacter(escapedComment);
+		return escapedComment;
+	},
+
+	/**
 	 * Select target html element
 	 * @return {Object} html element
 	 */
@@ -4937,6 +4805,18 @@ PickupColumnProperty.prototype = {
 			return null;
 		}
 		return columnElement.parentElement.querySelector('.commentcell').querySelector('pre')
+	},
+
+	/**
+	 * Get display html comment
+	 * @return {string} display html comment
+	 */
+	getDisplayHtmlComment: function() {
+		var child = this.selectTargetHtmlElement().childNodes[0];
+		if (child != null && child.nodeName === "#text") {
+			return child.nodeValue.trim();
+		}
+		return ""
 	},
 
 	/**
@@ -5042,7 +4922,7 @@ Decomment.prototype = {
 		var that = this;
 		var tableList = document.getElementById('table-list-body').querySelectorAll('tr');
 		Array.prototype.forEach.call(tableList, function (table) {
-			var tableName = table.querySelector('.namecell').querySelector('a').innerText;
+			var tableName = table.querySelector('.namecell').getAttribute('data-name');
 			var commentElement = table.querySelector('.commentcell');
 			that.setupSaveTableClickEvent(tableName, commentElement);
 		});
@@ -5060,7 +4940,7 @@ Decomment.prototype = {
 	 */
 	setupSaveTableClickEvent: function(tableName, commentElement) {
 		var tableProperty = this.storeClient.getTablePickup(tableName) || new PickupTableProperty(tableName, null)
-		commentElement.onclick = this.createSaveDecommentFunction(tableProperty, commentElement);
+		commentElement.onclick = this.createSaveDecommentFunction(tableProperty);
 	},
 
 	/**
@@ -5080,19 +4960,17 @@ Decomment.prototype = {
 				var tableName = that.getTableNameFromElement(table);
 				var columnName = column.querySelector('.columnnamecell').innerText;
 				var columnProperty = that.storeClient.getColumnPickup(tableName, columnName) || new PickupTableProperty(tableName, columnName)
-				commentElement.onclick = that.createSaveDecommentFunction(columnProperty, commentElement);
+				commentElement.onclick = that.createSaveDecommentFunction(columnProperty);
 			});
 		});
 	},
 
 	/**
  	 * Create save decomment function
-	 * param {string} tableName - Table name
-	 * param {string} columnName - Column name
+	 * param {object} commentProperty - Comment property
 	 * returns {function} Save decomment function
-	 * returns {Object} Coment element of table or column
 	 */
-	createSaveDecommentFunction: function (commentProperty, commentElement) {
+	createSaveDecommentFunction: function (commentProperty) {
 		var that = this;
  		return function () {
 	 		var modalElement = document.getElementById("decomment-modal");
@@ -5101,8 +4979,8 @@ Decomment.prototype = {
 			document.getElementById("decomment-modal-column-info").innerText = commentProperty.toDialogTitle();
 
 			var inputElement = document.getElementById("decomment-input");
-			var previousWholeComment = commentProperty.buildDisplayComment()
-			inputElement.value = previousWholeComment.length > 0 ? previousWholeComment : commentProperty.databaseComment;
+			var previousWholeComment = commentProperty.getDisplayHtmlComment();
+			inputElement.value = previousWholeComment;
 			inputElement.focus();
 
 			document.getElementById("decomment-close").onclick = function () {
@@ -5206,7 +5084,7 @@ UnmappedTableRow.prototype = {
 		return '<tr id="unmapped-table-row-' + this.tableName + '">'
 		+ '<td class="rownumcell">' + this.rowNum + '</td>'
 		+ '<td class="namecell">' + this.tableName + '</td>'
-		+ '<td class="namecell conflictcell">' + this.toConflictDisplayHtmlString() + '</td>'
+		+ '<td class="namecell tableconflictcell">' + this.toConflictDisplayHtmlString() + '</td>'
 		+ '<td class="tableselectorcell">' + '</td>'
 		+ '</tr>';
 	},
@@ -5286,7 +5164,9 @@ UnmappedTableArea.prototype = {
 
 		if (!this.isTableNameConflict()) {
 			document.querySelector('#unmapped-table-head th.conflictcell').style.display = 'none';
-			document.querySelector('#unmapped-table-body td.conflictcell').style.display = 'none';
+			Array.prototype.forEach.call(document.getElementsByClassName('tableconflictcell'), function (cell) {
+				cell.style.display = 'none'
+			});
 		}
 	},
 
@@ -5372,7 +5252,7 @@ UnmappedTableArea.prototype = {
 
 	postMappingTable: function() {
 		var mappings = Array.prototype.map.call(this.rows, function (row) {
-			var newTableName = document.querySelector('#unmapped-table-row-' + row.tableName + ' td.tableselectorcell select').value;
+			var newTableName = document.getElementById('unmapped-table-row-' + row.tableName).children[3].children[0].value;
 			return {
 				oldTableName: row.tableName,
 				newTableName: newTableName,
@@ -5435,7 +5315,7 @@ UnmappedColumnRow.prototype = {
 		+ '<td class="rownumcell">' + this.rowNum + '</td>'
 		+ '<td class="namecell">' + this.tableName + '</td>'
 		+ '<td class="namecell">' + this.oldColumnName + '</td>'
-		+ '<td class="namecell conflictcell">' + this.toConflictDisplayHtmlString() + '</td>'
+		+ '<td class="namecell columnconflictcell">' + this.toConflictDisplayHtmlString() + '</td>'
 		+ '<td id="columnselectorcell-' + this.tableName + '-' + this.oldColumnName + '">' + '</td>'
 		+ '</tr>';
 	},
@@ -5512,13 +5392,15 @@ UnmappedColumnArea.prototype = {
 		var tbody = this.getColumnBodyElement();
 		var that = this;
 		Array.prototype.forEach.call(this.rows, function (row) {
-			tbody.innerHTML = row.toDisplayHtmlString();
+			tbody.innerHTML += row.toDisplayHtmlString();
 			that.displayColumnSelector(row.tableName, row.oldColumnName);
 		});
 
 		if (!this.isColumnNameConflict()) {
 			document.querySelector('#unmapped-column-head th.conflictcell').style.display = 'none';
-			document.querySelector('#unmapped-column-body td.conflictcell').style.display = 'none';
+			Array.prototype.forEach.call(document.getElementsByClassName('columnconflictcell'), function (cell) {
+				cell.style.display = 'none'
+			});
 		}
 	},
 
@@ -5564,7 +5446,7 @@ UnmappedColumnArea.prototype = {
 		var columnList = [];
 		for (var i = 0, max = trs.length; i < max; i++) {
 			// TODO check that column name column num is 6
-			columnList.push(trs[i].getElementsByTagName('td')[6].innerText);
+			columnList.push(trs[i].getElementsByTagName('td')[7].innerText);
 		}
 		return columnList;
 	},
@@ -5606,8 +5488,8 @@ UnmappedColumnArea.prototype = {
 		var mappings = Array.prototype.map.call(this.rows, function (row) {
 			var tableName = row.tableName;
 			var oldColumnName = row.oldColumnName;
-			var selector = '#columnselectorcell-' + tableName + '-' + oldColumnName + ' select';
-			var newColumnName = document.querySelector(selector).value;
+			var selectorCellId = 'columnselectorcell-' + tableName + '-' + oldColumnName;
+			var newColumnName = document.getElementById(selectorCellId).children[0].value;
 			return {
 				oldTableName: tableName,
 				oldColumnName: oldColumnName,
