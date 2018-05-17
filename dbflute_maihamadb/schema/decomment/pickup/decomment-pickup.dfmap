@@ -1,0 +1,38 @@
+map:{
+    ; formatVersion = 1.1
+    ; pickupDatetime = 2018-05-18T00:30:27.696
+    ; decoMap = map:{
+        ; tableList = list:{
+            ; map:{
+                ; tableName = MEMBER_SECURITY
+                ; mappingList = list:{}
+                ; propertyList = list:{}
+                ; columnList = list:{
+                    ; map:{
+                        ; columnName = NEW_REMINDER_USE_COUNT
+                        ; mappingList = list:{}
+                        ; propertyList = list:{
+                            ; map:{
+                                ; decomment = リマインダを利用した回数。
+これが多いと忘れっぽい会員と言えるが、そんなことを知ってもしょうがない。
+
+修正
+                                ; databaseComment = リマインダを利用した回数。
+これが多いと忘れっぽい会員と言えるが、そんなことを知ってもしょうがない。
+                                ; commentVersion = 0
+                                ; authorList = list:{
+                                    ; yuto
+                                }
+                                ; pieceCode = cc6831de
+                                ; pieceOwner = yuto
+                                ; pieceGitBranch = master
+                                ; pieceDatetime = 2018-05-18T00:26:35.711
+                                ; previousPieceList = list:{}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

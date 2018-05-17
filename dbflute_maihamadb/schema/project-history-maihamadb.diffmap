@@ -1,4 +1,42 @@
 map:{
+    ; 2018/05/18 00:28:29 = map:{
+        ; diffDate = 2018/05/18 00:28:29
+        ; tableDiff = map:{
+            ; MEMBER_SECURITY = map:{
+                ; tableName = MEMBER_SECURITY
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; NEW_REMINDER_USE_COUNT = map:{
+                        ; columnName = NEW_REMINDER_USE_COUNT
+                        ; diffType = ADD
+                    }
+                    ; OLD_REMINDER_USE_COUNT = map:{
+                        ; columnName = OLD_REMINDER_USE_COUNT
+                        ; diffType = DELETE
+                    }
+                }
+            }
+        }
+    }
+    ; 2018/05/18 00:26:14 = map:{
+        ; diffDate = 2018/05/18 00:26:14
+        ; tableDiff = map:{
+            ; MEMBER_SECURITY = map:{
+                ; tableName = MEMBER_SECURITY
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; OLD_REMINDER_USE_COUNT = map:{
+                        ; columnName = OLD_REMINDER_USE_COUNT
+                        ; diffType = ADD
+                    }
+                    ; REMINDER_USE_COUNT = map:{
+                        ; columnName = REMINDER_USE_COUNT
+                        ; diffType = DELETE
+                    }
+                }
+            }
+        }
+    }
     ; 2017/12/29 19:49:28 = map:{
         ; diffDate = 2017/12/29 19:49:28
         ; tableDiff = map:{
